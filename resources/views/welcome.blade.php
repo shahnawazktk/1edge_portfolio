@@ -88,13 +88,39 @@
       color: #022f4a;
     }
     
-    .slider_section .img-box img {
-      max-width: 100%;
-      height: auto;
-      display: block;
+    /* Image Box Styling - Larger and Responsive */
+    .slider_section .img-box {
+      width: 100%;
+      max-width: 650px;
+      margin: 0 auto;
+      padding: 0 15px;
     }
     
-    /* Responsive Design */
+    .slider_section .img-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+    
+    .slider_section .img-box img:hover {
+      transform: scale(1.02);
+    }
+    
+    /* Responsive Design for Large Screens (Desktop) */
+    @media (min-width: 1200px) {
+      .slider_section .img-box {
+        max-width: 700px;
+      }
+      
+      .slider_section {
+        padding: 100px 0;
+      }
+    }
+    
+    /* Responsive Design for Medium Screens (Tablets) */
     @media (max-width: 991px) {
       .slider_section {
         padding: 60px 0;
@@ -107,8 +133,13 @@
       .slider_section .detail-box p {
         font-size: 1rem;
       }
+      
+      .slider_section .img-box {
+        max-width: 550px;
+      }
     }
     
+    /* Responsive Design for Small Screens (Mobile) */
     @media (max-width: 767px) {
       .slider_section {
         padding: 40px 0;
@@ -138,9 +169,16 @@
       
       .slider_section .img-box {
         margin-top: 30px;
+        max-width: 100%;
+        padding: 0 10px;
+      }
+      
+      .slider_section .img-box img {
+        border-radius: 8px;
       }
     }
     
+    /* Responsive Design for Extra Small Screens */
     @media (max-width: 575px) {
       .slider_section .detail-box h1 {
         font-size: 1.5rem;
@@ -151,6 +189,14 @@
         width: 100%;
         margin-right: 0;
         margin-bottom: 12px;
+      }
+      
+      .slider_section .img-box {
+        padding: 0 5px;
+      }
+      
+      .slider_section .img-box img {
+        border-radius: 6px;
       }
     }
     /* Navbar Logo */
@@ -336,32 +382,14 @@
   <!-- quick enquiry / demo request section -->
   <section class="find_section">
     <div class="container">
-      <form action="">
-        <div class="form-row">
-          <div class="col-lg-3">
-            <label for="schoolSize">School Size</label>
-            <select name="" id="schoolSize" class="form-control">
-              <option value="">Under 200 Students</option>
-              <option value="">200 – 600 Students</option>
-              <option value="">600 – 1200 Students</option>
-              <option value="">1200+ Students</option>
-            </select>
-          </div>
-          <div class="col-lg-3">
-            <label for="schoolName">School Name</label>
-            <input type="text" class="form-control" placeholder="e.g. Sunrise Public School" id="schoolName">
-          </div>
-          <div class="col-lg-3">
-            <label for="contactPhone">Your Phone Number</label>
-            <input type="text" class="form-control" placeholder="+91 98765 43210" id="contactPhone">
-          </div>
-          <div class="col-lg-3">
-            <div class="btn-container">
-              <button type="submit">Request Free Demo</button>
-            </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+          <div class="text-center" style="background: #fff; padding: 50px 40px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+            <h2 style="font-size: 2rem; font-weight: 700; color: #022f4a; margin-bottom: 15px;">Why Choose 1Edge?</h2>
+            <p style="font-size: 1.1rem; color: #666; margin: 0;">We combine innovation with reliability</p>
           </div>
         </div>
-      </form>
+      </div>
     </div>
   </section>
   <!-- end quick enquiry section -->
@@ -376,8 +404,8 @@
               <img src="images/money.png" alt="Affordable Plans">
             </div>
             <div class="detail-box">
-              <h5>Affordable Plans</h5>
-              <p>Starting at just ₹999/month. Transparent pricing with no hidden charges for schools of any size.</p>
+              <h5>Fast & Efficient</h5>
+              <p>Lightning-fast solutions that scale with your business</p>
             </div>
           </div>
         </div>
@@ -387,8 +415,8 @@
               <img src="images/clock.png" alt="Quick Setup">
             </div>
             <div class="detail-box">
-              <h5>Setup in 24 Hours</h5>
-              <p>Our onboarding team gets your school fully live within 24–48 hours. No technical expertise needed.</p>
+              <h5>Secure & Reliable</h5>
+              <p>Enterprise-grade security for your peace of mind</p>
             </div>
           </div>
         </div>
@@ -398,8 +426,8 @@
               <img src="images/man.png" alt="Dedicated Support">
             </div>
             <div class="detail-box">
-              <h5>Dedicated Support</h5>
-              <p>Phone, email, and live chat support available. Free training for all staff included with every plan.</p>
+              <h5>Innovation First</h5>
+              <p>Cutting-edge technology to keep you ahead</p>
             </div>
           </div>
         </div>
@@ -523,7 +551,7 @@
   <!-- end why section -->
 
   <!-- service section -->
-  <section class="service_section layout_padding-bottom">
+  <!-- <section class="service_section layout_padding-bottom">
     <div class="container">
       <div class="heading_container">
         <h2>Our Key Features</h2>
@@ -531,10 +559,10 @@
       <p>
         1Edge provides a complete suite of tools designed to simplify school operations,
         enhance learning outcomes, and keep every stakeholder connected and informed.
-      </p>
+      </p> -->
 
       <!-- Feature 1: Student Management -->
-      <div class="box">
+      <!-- <div class="box">
         <div class="img-box">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -551,10 +579,10 @@
           </p>
           <div><a href="product.html">Read More</a></div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Feature 2: Online Examinations -->
-      <div class="box">
+      <!-- <div class="box">
         <div class="img-box">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -572,10 +600,10 @@
           </p>
           <div><a href="product.html">Read More</a></div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Feature 3: Parent Communication -->
-      <div class="box">
+      <!-- <div class="box">
         <div class="img-box">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
@@ -589,10 +617,10 @@
           </p>
           <div><a href="service.html">Read More</a></div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Feature 4: Fee Management -->
-      <div class="box">
+      <!-- <div class="box">
         <div class="img-box">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
@@ -610,7 +638,7 @@
       </div>
 
     </div>
-  </section>
+  </section> -->
   <!-- end service section -->
 
   <!-- programs section -->

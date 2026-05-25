@@ -1,1347 +1,475 @@
-<!DOCTYPE html>
-<html>
+@extends('layouts.app')
 
-<head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="school, education, management, 1edge" />
-  <meta name="description" content="1Edge School System - Smart Education Management" />
-  <meta name="author" content="1Edge" />
+@section('title', '1Edge School System - Home')
 
-  <title>1Edge School System</title>
+@push('styles')
+<style>
+  /* ---- 1Edge School overrides ---- */
+  .hero_area {
+    background: linear-gradient(135deg, #022f4a 0%, #0f3a53 100%);
+  }
 
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.css')}}" />
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700|Roboto:400,700&display=swap" rel="stylesheet">
-  <!-- Custom styles for this template -->
-  <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="{{asset('assets/css/responsive.css')}}" rel="stylesheet" />
-
-  <style>
-    /* ---- 1Edge School overrides ---- */
-    .hero_area {
-      background: linear-gradient(135deg, #022f4a 0%, #0f3a53 100%);
+  /* Hero/Slider Section */
+  .slider_section {
+    padding: 80px 0;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background: transparent;
+  }
+  
+  .slider_section .detail-box h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  
+  .slider_section .detail-box p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  
+  .slider_section .btn {
+    padding: 12px 32px;
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s;
+    margin-right: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .slider_section .btn-primary {
+    background: #fe4801;
+    color: #fff;
+    border: 2px solid #fe4801;
+  }
+  
+  .slider_section .btn-primary:hover {
+    background: #e03d00;
+    border-color: #e03d00;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(254, 72, 1, 0.3);
+  }
+  
+  .slider_section .btn-outline-primary {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+  }
+  
+  .slider_section .btn-outline-primary:hover {
+    background: #fff;
+    color: #022f4a;
+  }
+  
+  /* Image Box Styling - Larger and Responsive */
+  .slider_section .img-box {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .slider_section .img-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  .slider_section .img-box img:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Responsive Design for Large Screens (Desktop) */
+  @media (min-width: 1200px) {
+    .slider_section .img-box {
+      max-width: 700px;
     }
-
-    /* Hero/Slider Section */
+    
     .slider_section {
-      padding: 80px 0;
-      min-height: 500px;
-      display: flex;
-      align-items: center;
-      background: transparent;
+      padding: 100px 0;
+    }
+  }
+  
+  /* Responsive Design for Medium Screens (Tablets) */
+  @media (max-width: 991px) {
+    .slider_section {
+      padding: 60px 0;
     }
     
     .slider_section .detail-box h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.2;
-      margin-bottom: 20px;
+      font-size: 2.2rem;
     }
     
     .slider_section .detail-box p {
-      font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.9);
-      line-height: 1.6;
-      margin-bottom: 30px;
+      font-size: 1rem;
     }
     
-    .slider_section .btn {
-      padding: 12px 32px;
-      font-weight: 600;
-      border-radius: 5px;
-      text-decoration: none;
-      display: inline-block;
-      transition: all 0.3s;
-      margin-right: 15px;
-      margin-bottom: 10px;
-    }
-    
-    .slider_section .btn-primary {
-      background: #fe4801;
-      color: #fff;
-      border: 2px solid #fe4801;
-    }
-    
-    .slider_section .btn-primary:hover {
-      background: #e03d00;
-      border-color: #e03d00;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(254, 72, 1, 0.3);
-    }
-    
-    .slider_section .btn-outline-primary {
-      background: transparent;
-      color: #fff;
-      border: 2px solid #fff;
-    }
-    
-    .slider_section .btn-outline-primary:hover {
-      background: #fff;
-      color: #022f4a;
-    }
-    
-    /* Image Box Styling - Larger and Responsive */
     .slider_section .img-box {
-      width: 100%;
-      max-width: 650px;
-      margin: 0 auto;
-      padding: 0 15px;
+      max-width: 550px;
+    }
+  }
+  
+  /* Responsive Design for Small Screens (Mobile) */
+  @media (max-width: 767px) {
+    .slider_section {
+      padding: 40px 0;
+      min-height: auto;
     }
     
-    .slider_section .img-box img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 10px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease;
-    }
-    
-    .slider_section .img-box img:hover {
-      transform: scale(1.02);
-    }
-    
-    /* Responsive Design for Large Screens (Desktop) */
-    @media (min-width: 1200px) {
-      .slider_section .img-box {
-        max-width: 700px;
-      }
-      
-      .slider_section {
-        padding: 100px 0;
-      }
-    }
-    
-    /* Responsive Design for Medium Screens (Tablets) */
-    @media (max-width: 991px) {
-      .slider_section {
-        padding: 60px 0;
-      }
-      
-      .slider_section .detail-box h1 {
-        font-size: 2.2rem;
-      }
-      
-      .slider_section .detail-box p {
-        font-size: 1rem;
-      }
-      
-      .slider_section .img-box {
-        max-width: 550px;
-      }
-    }
-    
-    /* Responsive Design for Small Screens (Mobile) */
-    @media (max-width: 767px) {
-      .slider_section {
-        padding: 40px 0;
-        min-height: auto;
-      }
-      
-      .slider_section .detail-box {
-        text-align: center;
-      }
-      
-      .slider_section .detail-box h1 {
-        font-size: 1.8rem;
-        margin-bottom: 15px;
-      }
-      
-      .slider_section .detail-box p {
-        font-size: 0.95rem;
-        margin-bottom: 25px;
-      }
-      
-      .slider_section .btn {
-        padding: 10px 24px;
-        font-size: 0.9rem;
-        margin-right: 8px;
-        margin-bottom: 10px;
-      }
-      
-      .slider_section .img-box {
-        margin-top: 30px;
-        max-width: 100%;
-        padding: 0 10px;
-      }
-      
-      .slider_section .img-box img {
-        border-radius: 8px;
-      }
-    }
-    
-    /* Responsive Design for Extra Small Screens */
-    @media (max-width: 575px) {
-      .slider_section .detail-box h1 {
-        font-size: 1.5rem;
-      }
-      
-      .slider_section .btn {
-        display: block;
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 12px;
-      }
-      
-      .slider_section .img-box {
-        padding: 0 5px;
-      }
-      
-      .slider_section .img-box img {
-        border-radius: 6px;
-      }
-    }
-    /* Navbar Logo */
-.navbar-brand {
-    padding: 0;
-    display: flex;
-    align-items: center;
-}
-
-.site-logo {
-    max-height: 60px;   /* Logo height */
-    width: auto;
-    object-fit: contain;
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-    .site-logo {
-        max-height: 45px;
-    }
-}
-
-    /* Stats section */
-    .school_stats { background-color: #f8f9fa; padding: 60px 0; }
-    .school_stats .stat-box { text-align: center; padding: 30px 20px; }
-    .school_stats .stat-box h3 { font-size: 2.8rem; font-weight: bold; color: #fe4801; }
-    .school_stats .stat-box p { color: #022f4a; font-weight: 600; margin: 0; }
-
-    /* Programs section */
-    .programs_section { padding: 75px 0; background: #fff; }
-    .programs_section .sec-title { text-align: center; margin-bottom: 45px; }
-    .programs_section .sec-title h2 { font-size: 2rem; font-weight: 700; color: #022f4a; }
-    .programs_section .sec-title p { color: #666; max-width: 560px; margin: 10px auto 0; }
-    .programs_section .program-card {
-      border: 1px solid #e0e0e0;
-      border-radius: 10px;
-      padding: 35px 20px;
+    .slider_section .detail-box {
       text-align: center;
-      transition: all 0.3s;
-      margin-bottom: 30px;
-      height: 100%;
-    }
-    .programs_section .program-card:hover {
-      border-color: #fe4801;
-      box-shadow: 0 8px 25px rgba(254,72,1,0.15);
-      transform: translateY(-5px);
-    }
-    .programs_section .program-card .icon {
-      width: 65px; height: 65px;
-      background: #fff3ee;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 18px;
-    }
-    .programs_section .program-card .icon svg {
-      width: 30px; height: 30px;
-      stroke: #fe4801;
-    }
-    .programs_section .program-card h5 { font-weight: 700; color: #022f4a; margin-bottom: 10px; }
-    .programs_section .program-card p { color: #666; font-size: 0.9rem; }
-
-    /* CTA Banner */
-    .cta_banner {
-      background: linear-gradient(135deg, #fe4801 0%, #ff6a35 100%);
-      padding: 65px 0;
-      text-align: center;
-      color: #fff;
-    }
-    .cta_banner h2 { font-size: 2rem; font-weight: 700; margin-bottom: 12px; }
-    .cta_banner p { font-size: 1rem; opacity: 0.92; margin-bottom: 28px; }
-    .cta_banner .btn-white {
-      display: inline-block;
-      background: #fff;
-      color: #fe4801;
-      padding: 13px 38px;
-      border-radius: 4px;
-      font-weight: 700;
-      text-decoration: none;
-      margin: 0 8px 10px;
-      transition: all 0.3s;
-    }
-    .cta_banner .btn-white:hover { background: #022f4a; color: #fff; }
-    .cta_banner .btn-outline {
-      display: inline-block;
-      border: 2px solid #fff;
-      color: #fff;
-      padding: 11px 36px;
-      border-radius: 4px;
-      font-weight: 700;
-      text-decoration: none;
-      margin: 0 8px 10px;
-      transition: all 0.3s;
-    }
-    .cta_banner .btn-outline:hover { background: #fff; color: #fe4801; }
-
-    /* Notice badge */
-    .notice-badge {
-      display: inline-block;
-      background: #fe4801;
-      color: #fff;
-      font-size: 0.7rem;
-      padding: 2px 8px;
-      border-radius: 20px;
-      margin-left: 6px;
-      vertical-align: middle;
-    }
-
-    /* ===== FOOTER RESPONSIVE STYLES ===== */
-    
-    /* Info Section (Footer Top) */
-    .info_section {
-      background: #022f4a;
-      color: #fff;
-      padding: 60px 0 40px;
     }
     
-    /* Footer Logo */
-    .footer-logo-box {
-      margin-bottom: 20px;
+    .slider_section .detail-box h1 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
     }
     
-    .footer-logo {
-      max-height: 70px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-    }
-    
-    .info_section h6 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    
-    .info_section p {
-      color: rgba(255, 255, 255, 0.8);
+    .slider_section .detail-box p {
       font-size: 0.95rem;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-    
-    .info_section ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    
-    .info_section ul li {
-      margin-bottom: 12px;
-    }
-    
-    .info_section ul li a {
-      color: rgba(255, 255, 255, 0.75);
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
-    
-    .info_section ul li a:hover {
-      color: #fe4801;
-      padding-left: 5px;
-    }
-    
-    /* Contact Info Links */
-    .info_link-box {
       margin-bottom: 25px;
     }
     
-    .info_link-box a {
-      display: flex;
-      align-items: center;
-      color: rgba(255, 255, 255, 0.8);
-      text-decoration: none;
-      margin-bottom: 15px;
-      transition: color 0.3s ease;
-    }
-    
-    .info_link-box a:hover {
-      color: #fe4801;
-    }
-    
-    .info_link-box a img {
-      width: 20px;
-      height: 20px;
-      margin-right: 12px;
-      filter: brightness(0) invert(1);
-      opacity: 0.8;
-    }
-    
-    .info_link-box a span {
+    .slider_section .btn {
+      padding: 10px 24px;
       font-size: 0.9rem;
-      line-height: 1.4;
+      margin-right: 8px;
+      margin-bottom: 10px;
     }
     
-    /* Social Media Icons */
-    .info_social {
-      display: flex;
-      gap: 15px;
-      margin-top: 20px;
+    .slider_section .img-box {
+      margin-top: 30px;
+      max-width: 100%;
+      padding: 0 10px;
     }
     
-    .info_social div {
-      width: 40px;
-      height: 40px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
+    .slider_section .img-box img {
+      border-radius: 8px;
+    }
+  }
+  
+  /* Responsive Design for Extra Small Screens */
+  @media (max-width: 575px) {
+    .slider_section .detail-box h1 {
+      font-size: 1.5rem;
     }
     
-    .info_social div:hover {
-      background: #fe4801;
-      transform: translateY(-3px);
-    }
-    
-    .info_social div a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .slider_section .btn {
+      display: block;
       width: 100%;
-      height: 100%;
+      margin-right: 0;
+      margin-bottom: 12px;
     }
     
-    .info_social div img {
-      width: 18px;
-      height: 18px;
-      filter: brightness(0) invert(1);
+    .slider_section .img-box {
+      padding: 0 5px;
     }
     
-    /* Footer Bottom Section */
-    .footer_section {
-      background: #011d2e;
-      padding: 25px 0;
-      text-align: center;
+    .slider_section .img-box img {
+      border-radius: 6px;
     }
-    
-    .footer_section p {
-      margin: 0;
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 0.9rem;
-    }
-    
-    .footer_section a {
-      color: #fe4801;
-      text-decoration: none;
-      font-weight: 600;
-      margin-left: 5px;
-      transition: color 0.3s ease;
-    }
-    
-    .footer_section a:hover {
-      color: #fff;
-    }
-    
-    /* ===== RESPONSIVE BREAKPOINTS ===== */
-    
-    /* Large Tablets and Small Desktops (992px - 1199px) */
-    @media (max-width: 1199px) {
-      .info_section {
-        padding: 50px 0 35px;
-      }
-      
-      .info_section h6 {
-        font-size: 1.15rem;
-        margin-bottom: 18px;
-      }
-    }
-    
-    /* Tablets (768px - 991px) */
-    @media (max-width: 991px) {
-      .info_section {
-        padding: 45px 0 30px;
-      }
-      
-      .info_section .row > div {
-        margin-bottom: 35px;
-      }
-      
-      .info_section .row > div:last-child {
-        margin-bottom: 0;
-      }
-      
-      .info_section h6 {
-        font-size: 1.1rem;
-        margin-bottom: 15px;
-      }
-    }
-    
-    /* Mobile Landscape and Small Tablets (576px - 767px) */
-    @media (max-width: 767px) {
-      .info_section {
-        padding: 40px 0 25px;
-      }
-      
-      .info_section .row > div {
-        text-align: center;
-        margin-bottom: 30px;
-      }
-      
-      /* Center logo on mobile */
-      .footer-logo-box {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 15px;
-      }
-      
-      .footer-logo {
-        max-height: 55px;
-      }
-      
-      .info_section h6 {
-        font-size: 1.05rem;
-        margin-bottom: 15px;
-      }
-      
-      .info_section p {
-        font-size: 0.9rem;
-        margin-bottom: 15px;
-      }
-      
-      .info_section ul li {
-        margin-bottom: 10px;
-      }
-      
-      .info_section ul li a {
-        font-size: 0.9rem;
-      }
-      
-      /* Center align contact links on mobile */
-      .info_link-box a {
-        justify-content: center;
-        margin-bottom: 12px;
-      }
-      
-      .info_link-box a span {
-        font-size: 0.85rem;
-      }
-      
-      /* Center social icons on mobile */
-      .info_social {
-        justify-content: center;
-        gap: 12px;
-        margin-top: 15px;
-      }
-      
-      .info_social div {
-        width: 38px;
-        height: 38px;
-      }
-      
-      .info_social div img {
-        width: 16px;
-        height: 16px;
-      }
-      
-      /* Footer bottom */
-      .footer_section {
-        padding: 20px 15px;
-      }
-      
-      .footer_section p {
-        font-size: 0.85rem;
-        line-height: 1.6;
-      }
-    }
-    
-    /* Mobile Portrait (up to 575px) */
-    @media (max-width: 575px) {
-      .info_section {
-        padding: 35px 0 20px;
-      }
-      
-      .info_section .row > div {
-        margin-bottom: 25px;
-      }
-      
-      .footer-logo {
-        max-height: 50px;
-      }
-      
-      .info_section h6 {
-        font-size: 1rem;
-        margin-bottom: 12px;
-      }
-      
-      .info_section p {
-        font-size: 0.85rem;
-      }
-      
-      .info_section ul li {
-        margin-bottom: 8px;
-      }
-      
-      .info_section ul li a {
-        font-size: 0.85rem;
-      }
-      
-      .info_link-box a {
-        margin-bottom: 10px;
-      }
-      
-      .info_link-box a img {
-        width: 18px;
-        height: 18px;
-        margin-right: 10px;
-      }
-      
-      .info_link-box a span {
-        font-size: 0.8rem;
-      }
-      
-      .info_social {
-        gap: 10px;
-      }
-      
-      .info_social div {
-        width: 36px;
-        height: 36px;
-      }
-      
-      .info_social div img {
-        width: 15px;
-        height: 15px;
-      }
-      
-      .footer_section {
-        padding: 18px 10px;
-      }
-      
-      .footer_section p {
-        font-size: 0.8rem;
-      }
-    }
-    
-    /* Extra Small Mobile (up to 400px) */
-    @media (max-width: 400px) {
-      .info_section {
-        padding: 30px 0 15px;
-      }
-      
-      .info_section .row > div {
-        margin-bottom: 20px;
-      }
-      
-      .footer-logo {
-        max-height: 45px;
-      }
-      
-      .info_section h6 {
-        font-size: 0.95rem;
-        margin-bottom: 10px;
-      }
-      
-      .info_section p {
-        font-size: 0.8rem;
-      }
-      
-      .info_link-box a span {
-        font-size: 0.75rem;
-      }
-      
-      .info_social div {
-        width: 34px;
-        height: 34px;
-      }
-      
-      .footer_section p {
-        font-size: 0.75rem;
-      }
-    }
-  </style>
-</head>
+  }
 
-<body>
-  <div class="hero_area">
-    <!-- header section -->
-    <header class="header_section">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="navbar-brand" href="{{ url('/') }}">
-              <img src="{{ asset('assets/images/1edgeLogo-06.png') }}" 
-                  alt="1Edge Logo" 
-                  class="site-logo">
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
-            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
-              <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about.html">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="product.html">Product</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="service.html">Services</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact Us</a>
-                </li>
-              </ul>
-              <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
-                <button class="btn my-2 my-sm-0 nav_search-btn" type="submit"></button>
-              </form>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <!-- end header section -->
+  /* Stats section */
+  .school_stats { background-color: #f8f9fa; padding: 60px 0; }
+  .school_stats .stat-box { text-align: center; padding: 30px 20px; }
+  .school_stats .stat-box h3 { font-size: 2.8rem; font-weight: bold; color: #fe4801; }
+  .school_stats .stat-box p { color: #022f4a; font-weight: 600; margin: 0; }
 
-    <!-- slider / hero section -->
-    <section class="slider_section">
-      <div class="container">
-        <div class="row align-items-center">
-          <!-- Left Side Content -->
-          <div class="col-lg-6 col-md-12">
-            <div class="detail-box">
-              <h1>Transform Your Business with 1Edge Technologies</h1>
-              <p>We deliver innovative IT solutions and cutting-edge products that empower businesses to thrive in the digital age.</p>
-              <div>
-                <a href="contact.html" class="btn btn-primary">Explore Products</a>
-                <a href="contact.html" class="btn btn-outline-primary">Our Services</a>
-              </div>
-            </div>
-          </div>
+  /* Programs section */
+  .programs_section { padding: 75px 0; background: #fff; }
+  .programs_section .sec-title { text-align: center; margin-bottom: 45px; }
+  .programs_section .sec-title h2 { font-size: 2rem; font-weight: 700; color: #022f4a; }
+  .programs_section .sec-title p { color: #666; max-width: 560px; margin: 10px auto 0; }
+  .programs_section .program-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 35px 20px;
+    text-align: center;
+    transition: all 0.3s;
+    margin-bottom: 30px;
+    height: 100%;
+  }
+  .programs_section .program-card:hover {
+    border-color: #fe4801;
+    box-shadow: 0 8px 25px rgba(254,72,1,0.15);
+    transform: translateY(-5px);
+  }
+  .programs_section .program-card .icon {
+    width: 65px; height: 65px;
+    background: #fff3ee;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 18px;
+  }
+  .programs_section .program-card .icon svg {
+    width: 30px; height: 30px;
+    stroke: #fe4801;
+  }
+  .programs_section .program-card h5 { font-weight: 700; color: #022f4a; margin-bottom: 10px; }
+  .programs_section .program-card p { color: #666; font-size: 0.9rem; }
+</style>
+@endpush
 
-          <!-- Right Side Image -->
-          <div class="col-lg-6 col-md-12 text-center mt-4 mt-lg-0">
-            <div class="img-box">
-              <img src="{{asset('assets/images/w-3.jpg')}}" alt="1Edge Technologies" class="img-fluid">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- end slider section -->
-  </div>
-  <!-- end hero_area -->
-
-  <!-- quick enquiry / demo request section -->
-  <section class="find_section">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 col-md-10">
-          <div class="text-center" style="background: #fff; padding: 50px 40px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-            <h2 style="font-size: 2rem; font-weight: 700; color: #022f4a; margin-bottom: 15px;">Why Choose 1Edge?</h2>
-            <p style="font-size: 1.1rem; color: #666; margin: 0;">We combine innovation with reliability</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- end quick enquiry section -->
-
-  <!-- feature section -->
-  <section class="feature_section layout_padding2">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/money.png" alt="Affordable Plans">
-            </div>
-            <div class="detail-box">
-              <h5>Fast & Efficient</h5>
-              <p>Lightning-fast solutions that scale with your business</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/clock.png" alt="Quick Setup">
-            </div>
-            <div class="detail-box">
-              <h5>Secure & Reliable</h5>
-              <p>Enterprise-grade security for your peace of mind</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/man.png" alt="Dedicated Support">
-            </div>
-            <div class="detail-box">
-              <h5>Innovation First</h5>
-              <p>Cutting-edge technology to keep you ahead</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- end feature section -->
-
-  <!-- stats section -->
-  <section class="school_stats">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3 col-6">
-          <div class="stat-box">
-            <h3>500+</h3>
-            <p>Schools Using 1Edge</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-6">
-          <div class="stat-box">
-            <h3>2 Lakh+</h3>
-            <p>Students Managed</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-6">
-          <div class="stat-box">
-            <h3>9+</h3>
-            <p>Powerful Modules</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-6">
-          <div class="stat-box">
-            <h3>98%</h3>
-            <p>Customer Satisfaction</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- end stats section -->
-
-  <!-- why section -->
-  <section class="why_section layout_padding">
+@section('content')
+<div class="hero_area">
+  <!-- slider / hero section -->
+  <section class="slider_section">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-md-6">
+        <!-- Left Side Content -->
+        <div class="col-lg-6 col-md-12">
           <div class="detail-box">
-            <div class="heading_container">
-              <h2>Why Schools Choose 1Edge?</h2>
-            </div>
-            <p>
-              1Edge School System is built for modern schools that want to deliver excellence.
-              Our platform integrates academics, administration, communication, and analytics
-              into a single, easy-to-use solution trusted by 500+ schools across the region.
-            </p>
-            <ul style="list-style:none; padding:0; margin-top:15px;">
-              <li style="padding:6px 0 6px 28px; position:relative; color:#444;">
-                <span style="position:absolute;left:0;color:#fe4801;font-weight:bold;">✔</span>
-                Complete Student Lifecycle Management
-              </li>
-              <li style="padding:6px 0 6px 28px; position:relative; color:#444;">
-                <span style="position:absolute;left:0;color:#fe4801;font-weight:bold;">✔</span>
-                Real-Time Parent Communication App
-              </li>
-              <li style="padding:6px 0 6px 28px; position:relative; color:#444;">
-                <span style="position:absolute;left:0;color:#fe4801;font-weight:bold;">✔</span>
-                Automated Attendance &amp; Timetable
-              </li>
-              <li style="padding:6px 0 6px 28px; position:relative; color:#444;">
-                <span style="position:absolute;left:0;color:#fe4801;font-weight:bold;">✔</span>
-                Online Exams with Auto-Grading
-              </li>
-              <li style="padding:6px 0 6px 28px; position:relative; color:#444;">
-                <span style="position:absolute;left:0;color:#fe4801;font-weight:bold;">✔</span>
-                Secure Fee Collection &amp; Digital Receipts
-              </li>
-              <li style="padding:6px 0 6px 28px; position:relative; color:#444;">
-                <span style="position:absolute;left:0;color:#fe4801;font-weight:bold;">✔</span>
-                Powerful Analytics Dashboard for Principals
-              </li>
-            </ul>
-            <div style="margin-top:20px;">
-              <a href="about.html" style="display:inline-block;padding:10px 28px;background:#022f4a;color:#fff;border-radius:4px;font-weight:600;text-decoration:none;margin-right:10px;transition:background 0.3s;">Learn More</a>
-              <a href="contact.html" style="display:inline-block;padding:10px 28px;background:#fe4801;color:#fff;border-radius:4px;font-weight:600;text-decoration:none;transition:background 0.3s;">Get Free Demo</a>
+            <h1>Transform Your Business with 1Edge Technologies</h1>
+            <p>We deliver innovative IT solutions and cutting-edge products that empower businesses to thrive in the digital age.</p>
+            <div>
+              <a href="{{ url('/contact') }}" class="btn btn-primary">Explore Products</a>
+              <a href="{{ url('/service') }}" class="btn btn-outline-primary">Our Services</a>
             </div>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="img-container">
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="img-box">
-                  <img src="images/w-1.jpg" alt="Classroom">
-                  <a href=""><img src="images/link.png" alt=""></a>
-                </div>
+
+        <!-- Right Side Image -->
+        <div class="col-lg-6 col-md-12 text-center mt-4 mt-lg-0">
+          <div class="img-box">
+            <img src="{{asset('assets/images/w-3.jpg')}}" alt="1Edge Technologies" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end slider section -->
+</div>
+<!-- end hero_area -->
+
+<!-- quick enquiry / demo request section -->
+<section class="find_section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10">
+        <div class="text-center" style="background: #fff; padding: 50px 40px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+          <h2 style="font-size: 2rem; font-weight: 700; color: #022f4a; margin-bottom: 15px;">Why Choose 1Edge?</h2>
+          <p style="font-size: 1.1rem; color: #666; margin: 0;">We combine innovation with reliability</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end quick enquiry section -->
+
+<!-- feature section -->
+<section class="feature_section layout_padding2">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="box">
+          <div class="img-box">
+            <img src="{{asset('assets/images/money.png')}}" alt="Affordable Plans">
+          </div>
+          <div class="detail-box">
+            <h5>Fast & Efficient</h5>
+            <p>Lightning-fast solutions that scale with your business</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="box">
+          <div class="img-box">
+            <img src="{{asset('assets/images/clock.png')}}" alt="Quick Setup">
+          </div>
+          <div class="detail-box">
+            <h5>Secure & Reliable</h5>
+            <p>Enterprise-grade security for your peace of mind</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="box">
+          <div class="img-box">
+            <img src="{{asset('assets/images/man.png')}}" alt="Dedicated Support">
+          </div>
+          <div class="detail-box">
+            <h5>Innovation First</h5>
+            <p>Cutting-edge technology to keep you ahead</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end feature section -->
+
+<!-- stats section -->
+<section class="school_stats">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-6">
+        <div class="stat-box">
+          <h3>500+</h3>
+          <p>Schools Using 1Edge</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="stat-box">
+          <h3>2 Lakh+</h3>
+          <p>Students Managed</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="stat-box">
+          <h3>9+</h3>
+          <p>Powerful Modules</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="stat-box">
+          <h3>98%</h3>
+          <p>Customer Satisfaction</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end stats section -->
+
+<!-- why section -->
+<section class="why_section layout_padding">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <div class="detail-box">
+          <div class="heading_container">
+            <h2>Why Schools Choose 1Edge?</h2>
+          </div>
+          <p>
+            1Edge School System is built for modern schools that want to deliver excellence.
+            Our platform integrates academics, administration, communication, and analytics
+            into a single, easy-to-use solution trusted by 500+ schools across the region.
+          </p>
+          <ul style="list-style:none; padding:0; margin-top:15px;">
+            <li style="padding:6px 0 6px 28px; position:relative; color:#444;">
+              <span style="position:absolute;left:0;color:#fe4801;font-weight:bold;">✔</span>
+              Complete Student Lifecycle Management
+            </li>
+            <li style="padding:6px 0 6px 28px; position:relative; color:#444;">
+              <span style="position:absolute;left:0;color:#fe4801;font-weight:bold;">✔</span>
+              Real-Time Parent Communication App
+            </li>
+            <li style="padding:6px 0 6px 28px; position:relative; color:#444;">
+              <span style="position:absolute;left:0;color:#fe4801;font-weight:bold;">✔</span>
+              Automated Attendance &amp; Timetable
+            </li>
+            <li style="padding:6px 0 6px 28px; position:relative; color:#444;">
+              <span style="position:absolute;left:0;color:#fe4801;font-weight:bold;">✔</span>
+              Online Exams with Auto-Grading
+            </li>
+            <li style="padding:6px 0 6px 28px; position:relative; color:#444;">
+              <span style="position:absolute;left:0;color:#fe4801;font-weight:bold;">✔</span>
+              Secure Fee Collection &amp; Digital Receipts
+            </li>
+            <li style="padding:6px 0 6px 28px; position:relative; color:#444;">
+              <span style="position:absolute;left:0;color:#fe4801;font-weight:bold;">✔</span>
+              Powerful Analytics Dashboard for Principals
+            </li>
+          </ul>
+          <div style="margin-top:20px;">
+            <a href="{{ url('/about') }}" style="display:inline-block;padding:10px 28px;background:#022f4a;color:#fff;border-radius:4px;font-weight:600;text-decoration:none;margin-right:10px;transition:background 0.3s;">Learn More</a>
+            <a href="{{ url('/contact') }}" style="display:inline-block;padding:10px 28px;background:#fe4801;color:#fff;border-radius:4px;font-weight:600;text-decoration:none;transition:background 0.3s;">Get Free Demo</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="img-container">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="img-box">
+                <img src="{{asset('assets/images/w-1.jpg')}}" alt="Classroom">
+                <a href=""><img src="{{asset('assets/images/link.png')}}" alt=""></a>
               </div>
-              <div class="col-sm-6">
-                <div class="img-box">
-                  <img src="images/w-2.jpg" alt="Library">
-                  <a href=""><img src="images/link.png" alt=""></a>
-                </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="img-box">
+                <img src="{{asset('assets/images/w-2.jpg')}}" alt="Library">
+                <a href=""><img src="{{asset('assets/images/link.png')}}" alt=""></a>
               </div>
-              <div class="col-sm-6">
-                <div class="img-box">
-                  <img src="images/w-3.jpg" alt="Sports">
-                  <a href=""><img src="images/link.png" alt=""></a>
-                </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="img-box">
+                <img src="{{asset('assets/images/w-3.jpg')}}" alt="Sports">
+                <a href=""><img src="{{asset('assets/images/link.png')}}" alt=""></a>
               </div>
-              <div class="col-sm-6">
-                <div class="img-box">
-                  <img src="images/w-4.jpg" alt="Lab">
-                  <a href=""><img src="images/link.png" alt=""></a>
-                </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="img-box">
+                <img src="{{asset('assets/images/w-4.jpg')}}" alt="Lab">
+                <a href=""><img src="{{asset('assets/images/link.png')}}" alt=""></a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  <!-- end why section -->
+  </div>
+</section>
+<!-- end why section -->
 
-  <!-- service section -->
-  <!-- <section class="service_section layout_padding-bottom">
-    <div class="container">
-      <div class="heading_container">
-        <h2>Our Key Features</h2>
-      </div>
-      <p>
-        1Edge provides a complete suite of tools designed to simplify school operations,
-        enhance learning outcomes, and keep every stakeholder connected and informed.
-      </p> -->
-
-      <!-- Feature 1: Student Management -->
-      <!-- <div class="box">
-        <div class="img-box">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-          </svg>
-        </div>
-        <div class="detail-box">
+<!-- programs section -->
+<section class="programs_section">
+  <div class="container">
+    <div class="sec-title">
+      <h2>Modules for Every School Need</h2>
+      <p>From admissions to analytics — 1Edge covers every aspect of school management in one platform.</p>
+    </div>
+    <div class="row">
+      <div class="col-md-4 d-flex">
+        <div class="program-card">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
           <h5>Student Management</h5>
-          <p>
-            Maintain complete student profiles including academic records, attendance history,
-            health information, and co-curricular achievements — all in one secure place.
-          </p>
-          <div><a href="product.html">Read More</a></div>
+          <p>Complete student profiles, academic records, and performance tracking in one place.</p>
         </div>
-      </div> -->
-
-      <!-- Feature 2: Online Examinations -->
-      <!-- <div class="box">
-        <div class="img-box">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-            <polyline points="14 2 14 8 20 8"></polyline>
-            <line x1="16" y1="13" x2="8" y2="13"></line>
-            <line x1="16" y1="17" x2="8" y2="17"></line>
-            <polyline points="10 9 9 9 8 9"></polyline>
-          </svg>
-        </div>
-        <div class="detail-box">
-          <h5>Online Examinations</h5>
-          <p>
-            Conduct secure online tests and exams with auto-grading, instant result publishing,
-            and detailed performance analytics for teachers and parents.
-          </p>
-          <div><a href="product.html">Read More</a></div>
-        </div>
-      </div> -->
-
-      <!-- Feature 3: Parent Communication -->
-      <!-- <div class="box">
-        <div class="img-box">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-          </svg>
-        </div>
-        <div class="detail-box">
-          <h5>Parent Communication</h5>
-          <p>
-            Send instant notifications, circulars, and progress reports directly to parents
-            via SMS, email, or the 1Edge mobile app — keeping families always in the loop.
-          </p>
-          <div><a href="service.html">Read More</a></div>
-        </div>
-      </div> -->
-
-      <!-- Feature 4: Fee Management -->
-      <!-- <div class="box">
-        <div class="img-box">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-            <line x1="1" y1="10" x2="23" y2="10"></line>
-          </svg>
-        </div>
-        <div class="detail-box">
+      </div>
+      <div class="col-md-4 d-flex">
+        <div class="program-card">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+              <line x1="1" y1="10" x2="23" y2="10"></line>
+            </svg>
+          </div>
           <h5>Fee Management</h5>
-          <p>
-            Streamline fee collection with online payment gateways, automated reminders,
-            receipt generation, and real-time financial reporting for school administrators.
-          </p>
-          <div><a href="service.html">Read More</a></div>
+          <p>Automated fee collection, receipts, and financial reporting made simple.</p>
         </div>
       </div>
-
-    </div>
-  </section> -->
-  <!-- end service section -->
-
-  <!-- programs section -->
-  <section class="programs_section">
-    <div class="container">
-      <div class="sec-title">
-        <h2>Modules for Every School Need</h2>
-        <p>From admissions to analytics — 1Edge covers every aspect of school management in one platform.</p>
-      </div>
-      <div class="row">
-        <div class="col-md-4 d-flex">
-          <div class="program-card">
-            <div class="icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-              </svg>
-            </div>
-            <h5>Student Management</h5>
-            <p>Complete student profiles, academic records, health data, and co-curricular achievements in one secure database.</p>
+      <div class="col-md-4 d-flex">
+        <div class="program-card">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
           </div>
-        </div>
-        <div class="col-md-4 d-flex">
-          <div class="program-card">
-            <div class="icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="16" y1="2" x2="16" y2="6"></line>
-                <line x1="8" y1="2" x2="8" y2="6"></line>
-                <line x1="3" y1="10" x2="21" y2="10"></line>
-                <polyline points="9 16 11 18 15 14"></polyline>
-              </svg>
-            </div>
-            <h5>Attendance &amp; Timetable</h5>
-            <p>Digital attendance with instant parent alerts. Auto-generate conflict-free timetables for all classes and teachers.</p>
-          </div>
-        </div>
-        <div class="col-md-4 d-flex">
-          <div class="program-card">
-            <div class="icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-                <line x1="1" y1="10" x2="23" y2="10"></line>
-              </svg>
-            </div>
-            <h5>Fee Management</h5>
-            <p>Online payments, automated reminders, digital receipts, and real-time financial reporting for administrators.</p>
-          </div>
-        </div>
-        <div class="col-md-4 d-flex">
-          <div class="program-card">
-            <div class="icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="16" y1="13" x2="8" y2="13"></line>
-                <line x1="16" y1="17" x2="8" y2="17"></line>
-              </svg>
-            </div>
-            <h5>Online Exams &amp; Results</h5>
-            <p>Conduct secure online tests with auto-grading, instant result publishing, and detailed performance analytics.</p>
-          </div>
-        </div>
-        <div class="col-md-4 d-flex">
-          <div class="program-card">
-            <div class="icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-              </svg>
-            </div>
-            <h5>Parent Communication</h5>
-            <p>Send notifications, circulars, and progress reports via SMS, email, or the 1Edge mobile app instantly.</p>
-          </div>
-        </div>
-        <div class="col-md-4 d-flex">
-          <div class="program-card">
-            <div class="icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="20" x2="18" y2="10"></line>
-                <line x1="12" y1="20" x2="12" y2="4"></line>
-                <line x1="6" y1="20" x2="6" y2="14"></line>
-              </svg>
-            </div>
-            <h5>Analytics &amp; Reports</h5>
-            <p>Real-time dashboards for principals. Track school performance, attendance trends, and academic outcomes at a glance.</p>
-          </div>
-        </div>
-      </div>
-      <div class="text-center mt-4">
-        <a href="product.html" style="display:inline-block;padding:12px 35px;background:#022f4a;color:#fff;border-radius:4px;font-weight:700;text-decoration:none;transition:background 0.3s;">View All Modules</a>
-      </div>
-    </div>
-  </section>
-  <!-- end programs section -->
-
-  <!-- CTA Banner -->
-  <section class="cta_banner">
-    <div class="container">
-      <h2>Ready to Transform Your School?</h2>
-      <p>Join 500+ schools already using 1Edge to deliver better education outcomes. Get started with a free 14-day trial.</p>
-      <a href="contact.html" class="btn-white">Book Free Demo</a>
-      <a href="product.html" class="btn-outline">Explore Features</a>
-    </div>
-  </section>
-  <!-- end CTA Banner -->
-
-  <!-- testimonials / client section -->
-  <section class="client_section layout_padding">
-    <div class="container">
-      <div class="heading_container">
-        <h2>What Parents &amp; Teachers Say</h2>
-      </div>
-      <div id="carouselExample2Indicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExample2Indicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExample2Indicators" data-slide-to="1"></li>
-          <li data-target="#carouselExample2Indicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="box">
-              <div class="img-box"><img src="images/client.png" alt="Parent"></div>
-              <div class="detail-box">
-                <h6>Priya Mehta — Parent</h6>
-                <p>
-                  "1Edge has completely changed how I stay connected with my child's school.
-                  I get instant updates on attendance, homework, and exam results right on my phone.
-                  It's a game-changer for busy parents like me."
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="box">
-              <div class="img-box"><img src="images/client.png" alt="Teacher"></div>
-              <div class="detail-box">
-                <h6>Mr. Rajesh Kumar — Class Teacher</h6>
-                <p>
-                  "Managing attendance, lesson plans, and student reports used to take hours.
-                  With 1Edge, everything is automated and I can focus entirely on teaching.
-                  The platform is intuitive and the support team is excellent."
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="box">
-              <div class="img-box"><img src="images/client.png" alt="Principal"></div>
-              <div class="detail-box">
-                <h6>Mrs. Sunita Rao — School Principal</h6>
-                <p>
-                  "Since adopting 1Edge, our administrative workload has dropped by 60%.
-                  The analytics dashboard gives me a real-time view of school performance
-                  and helps us make better decisions for our students."
-                </p>
-              </div>
-            </div>
-          </div>
+          <h5>Parent Communication</h5>
+          <p>Instant notifications and updates to keep parents informed and engaged.</p>
         </div>
       </div>
     </div>
-  </section>
-  <!-- end testimonials section -->
-
-  <!-- pricing / plans section -->
-  <section class="rate_section layout_padding">
-    <div class="container">
-      <div class="heading_container">
-        <h2>Simple &amp; Transparent Pricing</h2>
-      </div>
-      <p style="text-align:center; color:#555; max-width:560px; margin:0 auto 10px;">
-        Choose the plan that fits your school size. No hidden charges, no long-term lock-in.
-      </p>
-      <div class="rate_container">
-        <div class="box">
-          <div class="detail-box">
-            <div class="price">
-              <h3>&#8377;<span>999</span> /mo</h3>
-              <h6>Starter</h6>
-            </div>
-            <p>Up to 200 students. Attendance, timetable, and fee management included.</p>
-          </div>
-          <div class="btn-box">
-            <a href="contact.html">Get Started</a>
-          </div>
-        </div>
-        <div class="box">
-          <div class="detail-box">
-            <div class="price">
-              <h3>&#8377;<span>1,999</span> /mo</h3>
-              <h6>Growth <span style="background:#fff;color:#fe4801;font-size:0.65rem;padding:2px 8px;border-radius:20px;margin-left:6px;font-weight:700;">Popular</span></h6>
-            </div>
-            <p>Up to 600 students. Exams, parent app, reports, SMS alerts &amp; library module.</p>
-          </div>
-          <div class="btn-box">
-            <a href="contact.html">Get Started</a>
-          </div>
-        </div>
-        <div class="box">
-          <div class="detail-box">
-            <div class="price">
-              <h3>&#8377;<span>3,499</span> /mo</h3>
-              <h6>Premium</h6>
-            </div>
-            <p>Unlimited students. Full suite with HR module, analytics, custom branding &amp; priority support.</p>
-          </div>
-          <div class="btn-box">
-            <a href="contact.html">Get Started</a>
-          </div>
-        </div>
-      </div>
-      <p style="text-align:center; margin-top:25px; color:#888; font-size:0.9rem;">
-        All plans include a <strong>14-day free trial</strong>. No credit card required.
-      </p>
-    </div>
-  </section>
-  <!-- end pricing section -->
-
-  <!-- contact section -->
-  <section class="contact_section layout_padding">
-    <div class="container">
-      <div class="heading_container">
-        <h2>Book a Free Demo</h2>
-      </div>
-      <p style="color:#cde; text-align:center; margin-bottom:10px;">
-        Fill in your details and our team will reach out within 24 hours to schedule a personalised demo for your school.
-      </p>
-      <div class="">
-        <div class="row">
-          <div class="col-md-6 mx-auto">
-            <form action="">
-              <div class="contact_form-container">
-                <div>
-                  <div>
-                    <input type="text" placeholder="Your Name (Principal / Admin)">
-                  </div>
-                  <div>
-                    <input type="text" placeholder="School Name">
-                  </div>
-                  <div>
-                    <input type="email" placeholder="Email Address">
-                  </div>
-                  <div>
-                    <input type="text" placeholder="Phone Number">
-                  </div>
-                  <div>
-                    <input type="text" placeholder="City / State" class="message_input">
-                  </div>
-                  <div class="mt-5 d-flex justify-content-center">
-                    <button type="submit">Book Free Demo →</button>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- end contact section -->
-
-  <!-- info / footer top section -->
-  <section class="info_section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="footer-logo-box">
-            <img src="{{ asset('assets/images/1edgeLogo-06.png') }}" alt="1Edge Logo" class="footer-logo">
-          </div>
-          <p>Innovative IT solutions for modern businesses</p>
-          
-        </div>
-        <div class="col-lg-2">
-          <h6>Products</h6>
-          <ul>
-            <li><a href="index.html">1School</a></li>
-            <li><a href="about.html">1Statiom</a></li>
-            <li><a href="product.html">Hospital Managment</a></li>
-            
-          </ul>
-        </div>
-        <div class="col-lg-2">
-          <h6>Services</h6>
-          <ul>
-            <li><a href="">Website Development</a></li>
-            <li><a href="">Web App Development</a></li>
-            <li><a href="">App Development</a></li>
-            
-          </ul>
-        </div>
-        
-        <div class="col-lg-2">
-          <h6>Contact Us</h6>
-          <div class="info_link-box">
-            <a href="">
-              <img src="images/envelope.png" alt="">
-              <span>info@1edgeschool.com</span>
-            </a>
-            <a href="">
-              <img src="images/call.png" alt="">
-              <span>+91 98765 43210</span>
-            </a>
-            <a href="">
-              <img src="images/location.png" alt="">
-              <span>123 School Road, City</span>
-            </a>
-          </div>
-          <div class="info_social">
-            <div><a href=""><img src="images/fb.png" alt="Facebook"></a></div>
-            <div><a href=""><img src="images/twitter.png" alt="Twitter"></a></div>
-            <div><a href=""><img src="images/linkedin.png" alt="LinkedIn"></a></div>
-            <div><a href=""><img src="images/insta.png" alt="Instagram"></a></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- end info section -->
-
-  <!-- footer section -->
-  <section class="container-fluid footer_section">
-    <p>
-      &copy; <span id="displayYear"></span> All Rights Reserved By
-      <a href="#">1Edge Technologies</a>
-    </p>
-  </section>
-  <!-- end footer section -->
-
-  <script type="text/javascript" src="{{asset('assets/js/jquery-3.4.1.min.js')}}}}"></script>
-  <script type="text/javascript" src="{{asset('assets/js/bootstrap.js')}}}}"></script>
-  <script type="text/javascript" src="{{asset('assets/js/custom.js')}}}}"></script>
-
-</body>
-</html>
+  </div>
+</section>
+<!-- end programs section -->
+@endsection

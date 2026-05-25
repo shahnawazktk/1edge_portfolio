@@ -29,31 +29,149 @@
       background: linear-gradient(135deg, #022f4a 0%, #0f3a53 100%);
     }
 
-    /* Slider with overlay on background image */
+    /* Hero/Slider Section */
     .slider_section {
-      background-image: url(images/slider-bg.jpg);
-      background-size: cover;
-      background-position: center;
-      position: relative;
+      padding: 80px 0;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      background: transparent;
     }
-    .slider_section::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(2, 47, 74, 0.72);
-      z-index: 0;
+    
+    .slider_section .detail-box h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 20px;
     }
-    .slider_section .carousel,
-    .slider_section .carousel-inner,
-    .slider_section .carousel-item,
-    .slider_section .container,
-    .slider_section .detail-box,
-    .slider_section ol.carousel-indicators,
-    .slider_section .carousel-control-prev,
-    .slider_section .carousel-control-next {
-      position: relative;
-      z-index: 1;
+    
+    .slider_section .detail-box p {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.6;
+      margin-bottom: 30px;
     }
+    
+    .slider_section .btn {
+      padding: 12px 32px;
+      font-weight: 600;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s;
+      margin-right: 15px;
+      margin-bottom: 10px;
+    }
+    
+    .slider_section .btn-primary {
+      background: #fe4801;
+      color: #fff;
+      border: 2px solid #fe4801;
+    }
+    
+    .slider_section .btn-primary:hover {
+      background: #e03d00;
+      border-color: #e03d00;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(254, 72, 1, 0.3);
+    }
+    
+    .slider_section .btn-outline-primary {
+      background: transparent;
+      color: #fff;
+      border: 2px solid #fff;
+    }
+    
+    .slider_section .btn-outline-primary:hover {
+      background: #fff;
+      color: #022f4a;
+    }
+    
+    .slider_section .img-box img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 991px) {
+      .slider_section {
+        padding: 60px 0;
+      }
+      
+      .slider_section .detail-box h1 {
+        font-size: 2.2rem;
+      }
+      
+      .slider_section .detail-box p {
+        font-size: 1rem;
+      }
+    }
+    
+    @media (max-width: 767px) {
+      .slider_section {
+        padding: 40px 0;
+        min-height: auto;
+      }
+      
+      .slider_section .detail-box {
+        text-align: center;
+      }
+      
+      .slider_section .detail-box h1 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+      }
+      
+      .slider_section .detail-box p {
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+      }
+      
+      .slider_section .btn {
+        padding: 10px 24px;
+        font-size: 0.9rem;
+        margin-right: 8px;
+        margin-bottom: 10px;
+      }
+      
+      .slider_section .img-box {
+        margin-top: 30px;
+      }
+    }
+    
+    @media (max-width: 575px) {
+      .slider_section .detail-box h1 {
+        font-size: 1.5rem;
+      }
+      
+      .slider_section .btn {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 12px;
+      }
+    }
+    /* Navbar Logo */
+.navbar-brand {
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.site-logo {
+    max-height: 60px;   /* Logo height */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .site-logo {
+        max-height: 45px;
+    }
+}
 
     /* Stats section */
     .school_stats { background-color: #f8f9fa; padding: 60px 0; }
@@ -148,8 +266,10 @@
     <header class="header_section">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="navbar-brand" href="index.html">
-            <span>1Edge</span>
+          <a class="navbar-brand" href="{{ url('/') }}">
+              <img src="{{ asset('assets/images/1edgeLogo-06.png') }}" 
+                  alt="1Edge Logo" 
+                  class="site-logo">
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -186,27 +306,27 @@
 
     <!-- slider / hero section -->
     <section class="slider_section">
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="container">
-              <div class="detail-box">
-                <h1>Transform Your Business with 1Edge Technologies</h1>
-                <p>
-                  We deliver innovative IT solutions and cutting-edge products that empower businesses to thrive in the digital age.
-                </p>
-                <div>
-                  <a href="contact.html">Explore Products</a>
-                </div>
-                <div>
-                  <a href="contact.html">Our Services</a>
-                </div>
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Left Side Content -->
+          <div class="col-lg-6 col-md-12">
+            <div class="detail-box">
+              <h1>Transform Your Business with 1Edge Technologies</h1>
+              <p>We deliver innovative IT solutions and cutting-edge products that empower businesses to thrive in the digital age.</p>
+              <div>
+                <a href="contact.html" class="btn btn-primary">Explore Products</a>
+                <a href="contact.html" class="btn btn-outline-primary">Our Services</a>
               </div>
             </div>
           </div>
+
+          <!-- Right Side Image -->
+          <div class="col-lg-6 col-md-12 text-center mt-4 mt-lg-0">
+            <div class="img-box">
+              <img src="{{asset('assets/images/w-3.jpg')}}" alt="1Edge Technologies" class="img-fluid">
+            </div>
+          </div>
         </div>
-        
       </div>
     </section>
     <!-- end slider section -->

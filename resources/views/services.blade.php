@@ -140,7 +140,7 @@
               <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
             </svg>
           </div>
-          <h5>Student Management</h5>
+          <h5>1School</h5>
           <p>
             Maintain complete student profiles — academic records, attendance history, health data,
             and co-curricular achievements — all in one secure, searchable database.
@@ -162,7 +162,7 @@
               <polyline points="9 16 11 18 15 14"></polyline>
             </svg>
           </div>
-          <h5>Attendance Tracking</h5>
+          <h5>1Station</h5>
           <p>
             Mark and monitor daily attendance digitally. Automated SMS alerts notify parents
             instantly when a student is absent, reducing absenteeism and improving accountability.
@@ -184,7 +184,7 @@
               <polyline points="10 9 9 9 8 9"></polyline>
             </svg>
           </div>
-          <h5>Online Examinations</h5>
+          <h5>Hospital Managment</h5>
           <p>
             Conduct secure online tests with auto-grading, instant result publishing, and
             detailed performance analytics. Supports MCQs, short answers, and timed assessments.
@@ -192,121 +192,6 @@
           <a href="{{ url('/product') }}" class="read-more">Learn More →</a>
         </div>
       </div>
-
-      <!-- 4. Fee Management -->
-      <div class="col-md-6 col-lg-4 d-flex">
-        <div class="service-card">
-          <div class="icon-wrap">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-              <line x1="1" y1="10" x2="23" y2="10"></line>
-            </svg>
-          </div>
-          <h5>Fee Management</h5>
-          <p>
-            Streamline fee collection with online payment gateways, automated reminders,
-            digital receipts, and real-time financial reporting for school administrators.
-          </p>
-          <a href="{{ url('/product') }}" class="read-more">Learn More →</a>
-        </div>
-      </div>
-
-      <!-- 5. Parent Communication -->
-      <div class="col-md-6 col-lg-4 d-flex">
-        <div class="service-card">
-          <div class="icon-wrap">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-            </svg>
-          </div>
-          <h5>Parent Communication</h5>
-          <p>
-            Send instant notifications, circulars, and progress reports directly to parents
-            via SMS, email, or the 1Edge mobile app — keeping families always in the loop.
-          </p>
-          <a href="{{ url('/product') }}" class="read-more">Learn More →</a>
-        </div>
-      </div>
-
-      <!-- 6. Timetable Management -->
-      <div class="col-md-6 col-lg-4 d-flex">
-        <div class="service-card">
-          <div class="icon-wrap">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 6 12 12 16 14"></polyline>
-            </svg>
-          </div>
-          <h5>Timetable Management</h5>
-          <p>
-            Auto-generate conflict-free class schedules for all grades and teachers.
-            Changes are instantly reflected across the student and teacher portals.
-          </p>
-          <a href="{{ url('/product') }}" class="read-more">Learn More →</a>
-        </div>
-      </div>
-
-      <!-- 7. Teacher Portal -->
-      <div class="col-md-6 col-lg-4 d-flex">
-        <div class="service-card">
-          <div class="icon-wrap">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-            </svg>
-          </div>
-          <h5>Teacher Portal</h5>
-          <p>
-            Teachers can manage lesson plans, upload study materials, record grades,
-            and communicate with parents — all from a single, easy-to-use dashboard.
-          </p>
-          <a href="{{ url('/product') }}" class="read-more">Learn More →</a>
-        </div>
-      </div>
-
-      <!-- 8. Analytics & Reports -->
-      <div class="col-md-6 col-lg-4 d-flex">
-        <div class="service-card">
-          <div class="icon-wrap">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <line x1="18" y1="20" x2="18" y2="10"></line>
-              <line x1="12" y1="20" x2="12" y2="4"></line>
-              <line x1="6" y1="20" x2="6" y2="14"></line>
-            </svg>
-          </div>
-          <h5>Analytics &amp; Reports</h5>
-          <p>
-            Real-time dashboards give principals and administrators a bird's-eye view of
-            school performance, attendance trends, fee collection, and academic outcomes.
-          </p>
-          <a href="{{ url('/product') }}" class="read-more">Learn More →</a>
-        </div>
-      </div>
-
-      <!-- 9. Library Management -->
-      <div class="col-md-6 col-lg-4 d-flex">
-        <div class="service-card">
-          <div class="icon-wrap">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-            </svg>
-          </div>
-          <h5>Library Management</h5>
-          <p>
-            Digitize your school library — track book inventory, issue and return records,
-            overdue alerts, and let students search the catalog from their portal.
-          </p>
-          <a href="{{ url('/product') }}" class="read-more">Learn More →</a>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>

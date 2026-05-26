@@ -720,8 +720,8 @@ a:focus {
   @include second-font();
 
   .container {
-    border-top: 1px solid rgba($color: $white, $alpha: 0.6);
-    border-bottom: 1px solid $white;
+    border-top: none;
+    border-bottom: none;
   }
 
   .col-lg-4,

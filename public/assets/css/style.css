@@ -782,8 +782,8 @@ a:focus {
 }
 
 .info_section .container {
-  border-top: 1px solid rgba(255, 255, 255, 0.6);
-  border-bottom: 1px solid #ffffff;
+  border-top: none;
+  border-bottom: none;
 }
 
 .info_section .col-lg-4,

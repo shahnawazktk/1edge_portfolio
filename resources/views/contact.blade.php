@@ -221,7 +221,7 @@
             </div>
             <div class="details">
               <h5>Call Us</h5>
-              <p><a href="tel:+923001234567">+92 300 1234567</a></p>
+              <p><a href="tel:03499088073">03499088073</a></p>
             </div>
           </div>
 

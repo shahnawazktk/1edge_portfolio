@@ -426,9 +426,9 @@
       <div class="col-md-3">
         <h6>Contact Info</h6>
         <div class="info_link-box">
-          <a href="tel:+923001234567">
+          <a href="tel:03499088073">
             <img src="{{ asset('assets/images/call.png') }}" alt="Phone">
-            <span>+92 300 1234567</span>
+            <span>03499088073</span>
           </a>
           <a href="mailto:info@1edge.com">
             <img src="{{ asset('assets/images/envelope.png') }}" alt="Email">

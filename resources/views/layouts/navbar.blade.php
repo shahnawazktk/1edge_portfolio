@@ -7,17 +7,19 @@
   }
 
   .site-logo {
-      max-height: 60px;   /* Logo height */
+      max-height: 40px;   /* Logo height */
       width: auto;
       object-fit: contain;
+      margin-left: 80px; /* shift logo right */
   }
 
   /* Mobile responsive */
   @media (max-width: 768px) {
       .site-logo {
-          max-height: 45px;
+          max-height: 30px;
       }
   }
+.custom_nav-container { background-color: #022f4a; }
 </style>
 
 <!-- header section -->

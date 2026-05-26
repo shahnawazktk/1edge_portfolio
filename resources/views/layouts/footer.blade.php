@@ -417,11 +417,10 @@
       <div class="col-md-3">
         <h6>Our Services</h6>
         <ul>
-          <li><a href="">Student Management</a></li>
-          <li><a href="">Fee Management</a></li>
-          <li><a href="">Attendance System</a></li>
-          <li><a href="">Online Examinations</a></li>
-          <li><a href="">Parent Communication</a></li>
+          <li><a href="">1School</a></li>
+          <li><a href="">1Station</a></li>
+          <li><a href="">Hospital Management</a></li>
+          {{-- <li><a href="">1Cafe</a></li> --}}
         </ul>
       </div>
       <div class="col-md-3">

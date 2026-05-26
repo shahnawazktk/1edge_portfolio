@@ -441,7 +441,7 @@
               <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
             </svg>
           </div>
-          <h5>Student Management</h5>
+          <h5>1School</h5>
           <p>Complete student profiles, academic records, and performance tracking in one place.</p>
         </div>
       </div>
@@ -453,7 +453,7 @@
               <line x1="1" y1="10" x2="23" y2="10"></line>
             </svg>
           </div>
-          <h5>Fee Management</h5>
+          <h5>1Station</h5>
           <p>Automated fee collection, receipts, and financial reporting made simple.</p>
         </div>
       </div>
@@ -464,7 +464,7 @@
               <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
             </svg>
           </div>
-          <h5>Parent Communication</h5>
+          <h5>Hospital Managment</h5>
           <p>Instant notifications and updates to keep parents informed and engaged.</p>
         </div>
       </div>

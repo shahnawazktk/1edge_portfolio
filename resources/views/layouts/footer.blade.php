@@ -98,8 +98,8 @@
   }
   
   .info_social div {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     display: flex;
@@ -122,8 +122,9 @@
   }
   
   .info_social div img {
-    width: 18px;
-    height: 18px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     filter: brightness(0) invert(1);
   }
   

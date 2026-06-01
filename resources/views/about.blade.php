@@ -236,7 +236,7 @@
 <!-- page banner -->
 <section class="page_banner">
   <div class="container">
-    <h1>About <span style="color:#fe4801;">1Edge School </span></h1>
+    <h1>About <span style="color:#fe4801;">1Edge Business </span></h1>
     <p>Empowering students, teachers, and parents through smart education technology</p>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">

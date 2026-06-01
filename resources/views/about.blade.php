@@ -16,11 +16,16 @@
   .page_banner .breadcrumb-item + .breadcrumb-item::before { color: #aaa; }
   /* About Intro */
   .about_intro { padding: 70px 0; }
+  .about_intro .heading_container { text-align: center; margin-bottom: 50px; }
+  .about_intro .heading_container h2 { font-size: 2rem; font-weight: 700; color: #022f4a; margin-bottom: 15px; }
+  .about_intro .heading_container h2 span { color: #fe4801; }
+  .about_intro .detail-box { text-align: center; }
   .about_intro .detail-box h2 { font-size: 2rem; font-weight: 700; color: #022f4a; margin-bottom: 15px; }
   .about_intro .detail-box h2 span { color: #fe4801; }
   .about_intro .detail-box p { color: #555; line-height: 1.8; margin-bottom: 15px; }
   .about_intro .detail-box a { display: inline-block; background: #fe4801; color: #fff; padding: 10px 28px; border-radius: 4px; text-decoration: none; font-weight: 600; transition: background 0.3s; }
   .about_intro .detail-box a:hover { background: #022f4a; }
+  .about_intro .img-box { text-align: center; }
   .about_intro .img-grid img { width: 100%; border-radius: 8px; object-fit: cover; height: 200px; margin-bottom: 15px; }
   /* Mission & Vision */
   .mission_section { background: #f8f9fa; padding: 70px 0; }
@@ -159,6 +164,7 @@
     .page_banner .breadcrumb { font-size: 0.85rem; }
     
     .about_intro { padding: 45px 0; }
+    .about_intro .detail-box { text-align: center; margin-bottom: 30px; }
     .about_intro .detail-box h2 { font-size: 1.4rem; }
     .about_intro .detail-box p { font-size: 0.9rem; }
     .about_intro .detail-box a { padding: 9px 24px; font-size: 0.9rem; }
@@ -245,12 +251,14 @@
 <!-- about intro section -->
 <section class="about_intro layout_padding">
   <div class="container">
+    <div class="heading_container">
+      <h2>Who We <span>Are</span></h2>
+    </div>
     <div class="row align-items-center">
       <div class="col-md-6">
         <div class="detail-box">
-          <h2>Who We <span>Are</span></h2>
           <p>
-            1Edge School  is a next-generation school management platform designed to
+            1Edge School is a next-generation school management platform designed to
             transform the way schools operate. Founded with a vision to bridge the gap between
             education and technology, we serve hundreds of schools across the region.
           </p>
@@ -259,14 +267,17 @@
             single unified system — making communication seamless, administration effortless,
             and learning more impactful than ever before.
           </p>
+          <p>
+            With powerful features like automated attendance tracking, real-time parent communication,
+            online examination systems, and comprehensive analytics, we empower schools to focus on
+            what truly matters — delivering quality education and nurturing future leaders.
+          </p>
           <a href="{{ url('/contact') }}">Get In Touch</a>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="img-grid row">
-          <div class="col-6">
-            <img src="{{ asset('assets/images/w-1.jpg') }}" alt="Students in Classroom">
-          </div>
+        <div class="img-box">
+          <img src="{{ asset('assets/images/w-1.jpg') }}" alt="1Edge School Management System" style="width: 100%; border-radius: 10px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);">
         </div>
       </div>
     </div>

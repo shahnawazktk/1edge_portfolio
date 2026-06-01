@@ -182,6 +182,31 @@
     box-shadow: 0 5px 15px rgba(254, 72, 1, 0.2);
   }
 
+  .btn_submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .btn-loading {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .invalid-feedback {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.875rem;
+  }
+
+  .is-invalid {
+    border-color: #dc3545 !important;
+  }
+
+  .alert {
+    border-radius: 6px;
+    margin-bottom: 20px;
+  }
+
   /* ===== RESPONSIVE DESIGN ===== */
   
   /* Tablets (768px - 991px) */
@@ -369,54 +394,83 @@
           <h3>Send Us A Message</h3>
           
           @if(session('success'))
-            <div class="alert alert-success">
-              {{ session('success') }}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>Success!</strong> {{ session('success') }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
           @endif
 
-          <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you for contacting 1Edge! Our representative will call you shortly.'); this.reset();">
+          @if(session('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>Error!</strong> {{ session('error') }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          @endif
+
+          @if($errors->any())
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>Please fix the following errors:</strong>
+              <ul class="mb-0 mt-2">
+                @foreach($errors->all() as $error)
+                  <li>{{ $error }}</li>
+                @endforeach
+              </ul>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          @endif
+
+          <form action="{{ route('contact.submit') }}" method="POST" id="contactForm">
             @csrf
             <div class="row">
-              <div class="col-md-6 form-group">
+              <div class="col-md-6 form-group mb-3">
                 <label for="name">Full Name *</label>
-                <input type="text" class="form-control" id="name" name="name" required placeholder="Enter your name">
+                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" required placeholder="Enter your name">
+                @error('name')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
               </div>
-              <div class="col-md-6 form-group">
+              <div class="col-md-6 form-group mb-3">
                 <label for="email">Email Address *</label>
-                <input type="email" class="form-control" id="email" name="email" required placeholder="Enter your email">
+                <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" required placeholder="Enter your email">
+                @error('email')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
               </div>
             </div>
 
-            <!-- <div class="row mt-3">
-              <div class="col-md-6 form-group">
+            <div class="row">
+              <div class="col-md-6 form-group mb-3">
                 <label for="phone">Phone Number *</label>
-                <input type="text" class="form-control" id="phone" name="phone" required placeholder="Enter your phone number">
+                <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" value="{{ old('phone') }}" required placeholder="Enter your phone number">
+                @error('phone')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
               </div>
-              <div class="col-md-6 form-group">
-                <label for="school_name">School Name</label>
-                <input type="text" class="form-control" id="school_name" name="school_name" placeholder="Enter school name">
+              <div class="col-md-6 form-group mb-3">
+                <label for="subject">Subject</label>
+                <input type="text" class="form-control @error('subject') is-invalid @enderror" id="subject" name="subject" value="{{ old('subject') }}" placeholder="Enter subject">
+                @error('subject')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
               </div>
             </div>
 
-            <div class="form-group mt-3">
-              <label for="purpose">Purpose of Inquiry *</label>
-              <select class="form-control" id="purpose" name="purpose" required>
-                <option value="" disabled selected>Select an option</option>
-                <option value="demo">Book a Free Live Demo</option>
-                <option value="pricing">Get Pricing & Plans Info</option>
-                <option value="custom">Request Custom Modules</option>
-                <option value="support">Technical Support</option>
-                <option value="other">Other Inquiry</option>
-              </select>
-            </div> -->
-
-            <div class="form-group mt-3">
+            <div class="form-group mb-3">
               <label for="message">Your Message *</label>
-              <textarea class="form-control" id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
+              <textarea class="form-control @error('message') is-invalid @enderror" id="message" name="message" rows="5" required placeholder="Write your message here...">{{ old('message') }}</textarea>
+              @error('message')
+                <div class="invalid-feedback">{{ $message }}</div>
+              @enderror
             </div>
 
             <div class="mt-4">
-              <button type="submit" class="btn_submit">Send Message</button>
+              <button type="submit" class="btn_submit">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-loading d-none">
+                  <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                  Sending...
+                </span>
+              </button>
             </div>
           </form>
         </div>
@@ -426,3 +480,30 @@
 </section>
 <!-- end contact section -->
 @endsection
+
+@push('scripts')
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const contactForm = document.getElementById('contactForm');
+  const submitBtn = contactForm.querySelector('.btn_submit');
+  const btnText = submitBtn.querySelector('.btn-text');
+  const btnLoading = submitBtn.querySelector('.btn-loading');
+
+  contactForm.addEventListener('submit', function(e) {
+    // Show loading state
+    submitBtn.disabled = true;
+    btnText.classList.add('d-none');
+    btnLoading.classList.remove('d-none');
+  });
+
+  // Auto-hide alerts after 5 seconds
+  const alerts = document.querySelectorAll('.alert');
+  alerts.forEach(function(alert) {
+    setTimeout(function() {
+      const bsAlert = new bootstrap.Alert(alert);
+      bsAlert.close();
+    }, 5000);
+  });
+});
+</script>
+@endpush

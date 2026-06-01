@@ -8,6 +8,7 @@ Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/product', [HomeController::class, 'product'])->name('product');
 Route::get('/service', [HomeController::class, 'service'])->name('service');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::post('/contact', [HomeController::class, 'submitContact'])->name('contact.submit');
 
 
 

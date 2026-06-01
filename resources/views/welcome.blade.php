@@ -233,7 +233,7 @@
             <h1>Transform Your Business with 1Edge Technologies</h1>
             <p>We deliver innovative IT solutions and cutting-edge products that empower businesses to thrive in the digital age.</p>
             <div>
-              <a href="{{ url('/contact') }}" class="btn btn-primary">Explore Products</a>
+              <a href="{{ url('/product') }}" class="btn btn-primary">Explore Products</a>
               <a href="{{ url('/service') }}" class="btn btn-outline-primary">Our Services</a>
             </div>
           </div>

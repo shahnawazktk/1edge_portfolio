@@ -279,7 +279,7 @@
 <section class="modules_section">
   <div class="container">
     <div class="sec-heading">
-      <h2>All-in-One School Modules</h2>
+      <h2>Our Products</h2>
       <span class="line"></span>
       <p>Everything your school needs, built into a single platform. No extra tools required.</p>
     </div>

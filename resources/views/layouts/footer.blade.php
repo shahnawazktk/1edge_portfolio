@@ -80,7 +80,8 @@
   .info_link-box a img {
     width: 20px;
     height: 20px;
-    margin-right: 12px;
+    margin-right: 20px;
+    margin-bottom: 15px;
     filter: brightness(0) invert(1);
     opacity: 0.8;
   }
@@ -98,8 +99,9 @@
   }
   
   .info_social div {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     display: flex;
@@ -245,8 +247,8 @@
     }
     
     .info_social div {
-      width: 38px;
-      height: 38px;
+      width: 40px !important;
+      height: 40px !important;
     }
     
     .info_social div img {

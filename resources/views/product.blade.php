@@ -296,7 +296,7 @@
               <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
             </svg>
           </div>
-          <h5>Student Management</h5>
+          <h5>1 School</h5>
           <p>Complete student profiles with academic records, attendance history, health info, and co-curricular achievements in one secure place.</p>
         </div>
       </div>
@@ -312,7 +312,7 @@
               <line x1="3" y1="10" x2="21" y2="10"/>
             </svg>
           </div>
-          <h5>Attendance Tracking</h5>
+          <h5>1 Station</h5>
           <p>Mark and monitor daily attendance digitally. Auto-alerts to parents when a student is absent, with monthly reports at a click.</p>
         </div>
       </div>
@@ -328,13 +328,13 @@
               <line x1="16" y1="17" x2="8" y2="17"/>
             </svg>
           </div>
-          <h5>Exam &amp; Results</h5>
+          <h5>Hospital Managment</h5>
           <p>Schedule exams, conduct online tests, auto-grade answers, and publish results instantly with detailed performance analytics.</p>
         </div>
       </div>
 
       <!-- Fee Management -->
-      <div class="col-md-4">
+      <!-- <div class="col-md-4">
         <div class="module-card">
           <div class="mod-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -345,10 +345,10 @@
           <h5>Fee Management</h5>
           <p>Online fee collection, automated payment reminders, instant receipt generation, and real-time financial dashboards for admins.</p>
         </div>
-      </div>
+      </div> -->
 
       <!-- Timetable -->
-      <div class="col-md-4">
+      <!-- <div class="col-md-4">
         <div class="module-card">
           <div class="mod-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -359,10 +359,10 @@
           <h5>Timetable Scheduler</h5>
           <p>Auto-generate conflict-free timetables for classes and teachers. Share schedules instantly with staff, students, and parents.</p>
         </div>
-      </div>
+      </div> -->
 
       <!-- Parent Communication -->
-      <div class="col-md-4">
+      <!-- <div class="col-md-4">
         <div class="module-card">
           <div class="mod-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -372,10 +372,10 @@
           <h5>Parent Communication</h5>
           <p>Send circulars, homework updates, and progress reports via SMS, email, or the 1Edge parent app — keeping families always informed.</p>
         </div>
-      </div>
+      </div> -->
 
       <!-- Library -->
-      <div class="col-md-4">
+      <!-- <div class="col-md-4">
         <div class="module-card">
           <div class="mod-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -386,10 +386,10 @@
           <h5>Library Management</h5>
           <p>Track book inventory, issue and return records, overdue alerts, and student reading history — all digitally managed.</p>
         </div>
-      </div>
+      </div> -->
 
       <!-- HR & Staff -->
-      <div class="col-md-4">
+      <!-- <div class="col-md-4">
         <div class="module-card">
           <div class="mod-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -400,10 +400,10 @@
           <h5>Staff &amp; HR Module</h5>
           <p>Manage teacher profiles, payroll, leave applications, performance reviews, and staff attendance from one admin panel.</p>
         </div>
-      </div>
+      </div> -->
 
       <!-- Analytics -->
-      <div class="col-md-4">
+      <!-- <div class="col-md-4">
         <div class="module-card">
           <div class="mod-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -415,7 +415,7 @@
           <h5>Analytics &amp; Reports</h5>
           <p>Real-time dashboards for principals and admins. Track school performance, student progress, and financial health at a glance.</p>
         </div>
-      </div>
+      </div> -->
 
     </div><!-- end row -->
   </div>

@@ -230,7 +230,7 @@
 <!-- page banner -->
 <section class="page_banner">
   <div class="container">
-    <h1>About <span style="color:#fe4801;">1Edge School System</span></h1>
+    <h1>About <span style="color:#fe4801;">1Edge School </span></h1>
     <p>Empowering students, teachers, and parents through smart education technology</p>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
@@ -250,7 +250,7 @@
         <div class="detail-box">
           <h2>Who We <span>Are</span></h2>
           <p>
-            1Edge School System is a next-generation school management platform designed to
+            1Edge School  is a next-generation school management platform designed to
             transform the way schools operate. Founded with a vision to bridge the gap between
             education and technology, we serve hundreds of schools across the region.
           </p>
@@ -266,11 +266,6 @@
         <div class="img-grid row">
           <div class="col-6">
             <img src="{{ asset('assets/images/w-1.jpg') }}" alt="Students in Classroom">
-            <img src="{{ asset('assets/images/w-3.jpg') }}" alt="School Sports">
-          </div>
-          <div class="col-6">
-            <img src="{{ asset('assets/images/w-2.jpg') }}" alt="School Library">
-            <img src="{{ asset('assets/images/w-4.jpg') }}" alt="Science Lab">
           </div>
         </div>
       </div>
@@ -361,7 +356,7 @@
 <!-- end mission & vision section -->
 
 <!-- why choose us section -->
-<section class="why_section layout_padding">
+<!-- <section class="why_section layout_padding">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-md-6">
@@ -417,7 +412,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- end why choose us section -->
 
 <!-- our values section -->

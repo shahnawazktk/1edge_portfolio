@@ -319,7 +319,7 @@
         <div class="contact_info_box">
           <h3>Get In Touch</h3>
           <p>
-            Have questions about our smart school system, custom configurations, or pricing?
+            Have questions about our 1 Edge , custom configurations, or pricing?
             Fill out the form, or reach out directly via phone or email. Our team is here to support you.
           </p>
 
@@ -357,7 +357,7 @@
             </div>
             <div class="details">
               <h5>Our Location</h5>
-              <p>Karachi, Pakistan</p>
+              <p>Peshawar, Pakistan</p>
             </div>
           </div>
         </div>
@@ -387,7 +387,7 @@
               </div>
             </div>
 
-            <div class="row mt-3">
+            <!-- <div class="row mt-3">
               <div class="col-md-6 form-group">
                 <label for="phone">Phone Number *</label>
                 <input type="text" class="form-control" id="phone" name="phone" required placeholder="Enter your phone number">
@@ -408,7 +408,7 @@
                 <option value="support">Technical Support</option>
                 <option value="other">Other Inquiry</option>
               </select>
-            </div>
+            </div> -->
 
             <div class="form-group mt-3">
               <label for="message">Your Message *</label>

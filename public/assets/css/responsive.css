@@ -1,6 +1,21 @@
-@media (max-width: 1120px) {}
+/* ===== RESPONSIVE DESIGN - MOBILE FIRST ===== */
 
-@media (max-width: 992px) {
+/* Large Desktop (1200px and above) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+
+/* Desktop and Large Tablets (992px - 1199px) */
+@media (max-width: 1199px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/* Tablets and Medium Screens (768px - 991px) */
+@media (max-width: 991px) {
   .find_section form .col-lg-3 {
     margin-bottom: 20px;
   }
@@ -10,17 +25,36 @@
   }
 
   .custom_nav-container.navbar-expand-lg .navbar-nav .nav-item .nav-link {
-    margin: 10px 25px;
+    margin: 10px 15px;
+  }
+
+  /* Better spacing for tablet */
+  .feature_section .box {
+    margin-bottom: 30px;
+  }
+
+  .why_section .img-container {
+    margin-top: 40px;
+  }
+
+  /* Adjust heading sizes */
+  h1 {
+    font-size: 2.2rem !important;
+  }
+
+  h2 {
+    font-size: 1.8rem !important;
   }
 }
 
-@media (max-width: 768px) {
+/* Mobile Landscape and Small Tablets (576px - 767px) */
+@media (max-width: 767px) {
   .hero_area {
     height: auto;
   }
 
   .slider_section {
-    padding: 50px 0 100px 0;
+    padding: 40px 0 60px 0;
   }
 
   .find_section {
@@ -49,11 +83,45 @@
   .info_section .info_link-box a {
     justify-content: center;
   }
+
+  /* Feature boxes */
+  .feature_section .box {
+    margin-bottom: 25px;
+    padding: 25px 15px;
+  }
+
+  /* Why section images */
+  .why_section .img-box img:first-child {
+    height: 150px !important;
+  }
+
+  /* Stats section */
+  .school_stats .stat-box {
+    padding: 20px 15px;
+  }
+
+  .school_stats .stat-box h3 {
+    font-size: 2.2rem !important;
+  }
+
+  /* Adjust heading sizes */
+  h1 {
+    font-size: 1.9rem !important;
+  }
+
+  h2 {
+    font-size: 1.6rem !important;
+  }
+
+  h3 {
+    font-size: 1.3rem !important;
+  }
 }
 
-@media (max-width: 576px) {
+/* Mobile Portrait (up to 575px) */
+@media (max-width: 575px) {
   .heading_container h2 {
-    font-size: 2rem;
+    font-size: 1.5rem !important;
   }
 
   .slider_section .carousel-control-prev,
@@ -62,16 +130,20 @@
   }
 
   .find_section form {
-    padding: 30px 25px;
+    padding: 25px 20px;
   }
 
   .slider_section .detail-box h1 {
-    font-size: 3rem;
+    font-size: 1.8rem !important;
+  }
+
+  .slider_section .detail-box p {
+    font-size: 0.95rem !important;
   }
 
   .service_section .box {
     flex-direction: column;
-    margin-top: 45px;
+    margin-top: 30px;
     text-align: center;
   }
 
@@ -79,16 +151,124 @@
     margin: 0;
     margin-bottom: 15px;
   }
+
+  /* Feature section */
+  .feature_section {
+    padding: 50px 0 !important;
+  }
+
+  .feature_section .box {
+    padding: 20px 15px;
+  }
+
+  .feature_section .box h5 {
+    font-size: 1.1rem !important;
+  }
+
+  /* Stats */
+  .school_stats {
+    padding: 40px 0 !important;
+  }
+
+  .school_stats .stat-box h3 {
+    font-size: 2rem !important;
+  }
+
+  .school_stats .stat-box p {
+    font-size: 0.85rem !important;
+  }
+
+  /* Buttons */
+  .btn, .btn-primary, .btn-outline-primary {
+    font-size: 0.9rem !important;
+    padding: 10px 20px !important;
+  }
+
+  /* Page sections padding */
+  .layout_padding {
+    padding: 50px 0 !important;
+  }
+
+  .layout_padding2 {
+    padding: 40px 0 !important;
+  }
+
+  /* Adjust heading sizes */
+  h1 {
+    font-size: 1.7rem !important;
+  }
+
+  h2 {
+    font-size: 1.4rem !important;
+  }
+
+  h3 {
+    font-size: 1.2rem !important;
+  }
+
+  h4 {
+    font-size: 1.1rem !important;
+  }
+
+  h5 {
+    font-size: 1rem !important;
+  }
 }
 
-@media (max-width: 480px) {}
+/* Extra Small Mobile (up to 400px) */
+@media (max-width: 400px) {
+  .slider_section .detail-box h1 {
+    font-size: 1.5rem !important;
+  }
 
-@media (max-width: 420px) {}
+  .slider_section .detail-box p {
+    font-size: 0.9rem !important;
+  }
 
-@media (max-width: 360px) {}
+  .find_section form {
+    padding: 20px 15px;
+  }
 
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1170px;
+  .school_stats .stat-box {
+    padding: 15px 10px;
+  }
+
+  .school_stats .stat-box h3 {
+    font-size: 1.8rem !important;
+  }
+
+  .feature_section .box {
+    padding: 18px 12px;
+  }
+
+  /* Buttons full width on very small screens */
+  .btn, .btn-primary, .btn-outline-primary {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* Adjust heading sizes */
+  h1 {
+    font-size: 1.5rem !important;
+  }
+
+  h2 {
+    font-size: 1.3rem !important;
+  }
+
+  h3 {
+    font-size: 1.1rem !important;
+  }
+}
+
+/* Landscape orientation fixes */
+@media (max-height: 500px) and (orientation: landscape) {
+  .slider_section {
+    padding: 30px 0 !important;
+  }
+
+  .page_banner {
+    padding: 40px 0 30px !important;
   }
 }

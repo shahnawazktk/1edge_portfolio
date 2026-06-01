@@ -7,19 +7,91 @@
   }
 
   .site-logo {
-      max-height: 40px;   /* Logo height */
+      max-height: 40px;
       width: auto;
       object-fit: contain;
-      margin-left: 80px; /* shift logo right */
+      margin-left: 80px;
+  }
+
+  .custom_nav-container { 
+      background-color: #022f4a;
+      padding: 10px 0;
+  }
+
+  .custom_nav-container .navbar-toggler {
+      border-color: rgba(255, 255, 255, 0.3);
+      padding: 8px 12px;
+  }
+
+  .custom_nav-container .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+  .custom_nav-container .navbar-nav {
+      align-items: center;
+  }
+
+  .custom_nav-container .nav-link {
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 500;
+      padding: 10px 18px;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+  }
+
+  .custom_nav-container .nav-link:hover {
+      color: #fe4801;
+      background: rgba(254, 72, 1, 0.1);
+  }
+
+  .custom_nav-container .nav-item.active .nav-link {
+      color: #fe4801;
+      font-weight: 600;
+  }
+
+  /* Tablet responsive */
+  @media (max-width: 991px) {
+      .site-logo {
+          margin-left: 40px;
+          max-height: 35px;
+      }
+
+      .custom_nav-container .navbar-collapse {
+          background: #022f4a;
+          padding: 15px;
+          margin-top: 10px;
+          border-radius: 8px;
+      }
+
+      .custom_nav-container .nav-link {
+          padding: 12px 15px;
+          margin: 5px 0;
+      }
   }
 
   /* Mobile responsive */
   @media (max-width: 768px) {
       .site-logo {
-          max-height: 30px;
+          max-height: 32px;
+          margin-left: 15px;
+      }
+
+      .custom_nav-container {
+          padding: 8px 0;
+      }
+
+      .custom_nav-container .navbar-collapse {
+          margin-top: 15px;
       }
   }
-.custom_nav-container { background-color: #022f4a; }
+
+  /* Extra small mobile */
+  @media (max-width: 576px) {
+      .site-logo {
+          max-height: 28px;
+          margin-left: 10px;
+      }
+  }
 </style>
 
 <!-- header section -->

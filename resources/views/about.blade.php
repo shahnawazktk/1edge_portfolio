@@ -74,6 +74,155 @@
   .values_section .value-box .v-icon svg { width: 24px; height: 24px; stroke: #fff; fill: none; }
   .values_section .value-box h5 { font-weight: 700; color: #022f4a; margin-bottom: 5px; }
   .values_section .value-box p { color: #666; font-size: 0.9rem; margin: 0; }
+
+  /* ===== RESPONSIVE DESIGN ===== */
+  
+  /* Tablets (768px - 991px) */
+  @media (max-width: 991px) {
+    .page_banner h1 { font-size: 2.2rem; }
+    .page_banner p { font-size: 0.95rem; }
+    
+    .about_intro { padding: 60px 0; }
+    .about_intro .detail-box h2 { font-size: 1.8rem; }
+    
+    .mission_section { padding: 60px 0; }
+    .mission_section .heading_container h2 { font-size: 1.8rem; }
+    
+    .why_section .detail-box h2 { font-size: 1.8rem; }
+    
+    .team_section { padding: 60px 0; }
+    .team_section .heading_container h2 { font-size: 1.8rem; }
+    
+    .values_section { padding: 60px 0; }
+    .values_section .heading_container h2 { font-size: 1.8rem; }
+  }
+  
+  /* Mobile (576px - 767px) */
+  @media (max-width: 767px) {
+    .page_banner { padding: 50px 0 35px; }
+    .page_banner h1 { font-size: 2rem; }
+    .page_banner p { font-size: 0.9rem; padding: 0 15px; }
+    .page_banner .breadcrumb { font-size: 0.9rem; }
+    
+    .about_intro { padding: 50px 0; }
+    .about_intro .detail-box { text-align: center; margin-bottom: 30px; }
+    .about_intro .detail-box h2 { font-size: 1.6rem; }
+    .about_intro .detail-box p { font-size: 0.95rem; }
+    .about_intro .img-grid img { height: 180px; margin-bottom: 12px; }
+    
+    .stats_section { padding: 50px 0; }
+    .stats_section .stat-box { padding: 20px 15px; }
+    .stats_section .stat-box h3 { font-size: 2.4rem; }
+    .stats_section .stat-box p { font-size: 0.9rem; }
+    
+    .mission_section { padding: 50px 0; }
+    .mission_section .heading_container { margin-bottom: 35px; }
+    .mission_section .heading_container h2 { font-size: 1.6rem; }
+    .mission_section .card { padding: 30px 20px; }
+    .mission_section .card .icon { width: 60px; height: 60px; margin-bottom: 18px; }
+    .mission_section .card .icon svg { width: 28px; height: 28px; }
+    .mission_section .card h4 { font-size: 1.1rem; }
+    .mission_section .card p { font-size: 0.9rem; }
+    
+    .why_section { padding: 50px 0; }
+    .why_section .detail-box { text-align: center; margin-bottom: 30px; }
+    .why_section .detail-box h2 { font-size: 1.6rem; }
+    .why_section .detail-box p { font-size: 0.95rem; }
+    .why_section .detail-box ul { text-align: left; max-width: 400px; margin: 15px auto; }
+    .why_section .img-box img:first-child { height: 160px; }
+    
+    .values_section { padding: 50px 0; }
+    .values_section .heading_container { margin-bottom: 35px; }
+    .values_section .heading_container h2 { font-size: 1.6rem; }
+    .values_section .value-box { padding: 18px; gap: 15px; margin-bottom: 18px; }
+    .values_section .value-box .v-icon { min-width: 45px; height: 45px; }
+    .values_section .value-box .v-icon svg { width: 22px; height: 22px; }
+    .values_section .value-box h5 { font-size: 1.05rem; }
+    .values_section .value-box p { font-size: 0.88rem; }
+    
+    .team_section { padding: 50px 0; }
+    .team_section .heading_container { margin-bottom: 35px; }
+    .team_section .heading_container h2 { font-size: 1.6rem; }
+    .team_section .heading_container p { font-size: 0.9rem; }
+    .team_section .team-card { padding: 22px 15px; margin-bottom: 25px; }
+    .team_section .team-card img { width: 80px; height: 80px; }
+    .team_section .team-card h5 { font-size: 1.05rem; }
+    .team_section .team-card span { font-size: 0.82rem; }
+    .team_section .team-card p { font-size: 0.85rem; }
+  }
+  
+  /* Small Mobile (up to 575px) */
+  @media (max-width: 575px) {
+    .page_banner { padding: 45px 0 30px; }
+    .page_banner h1 { font-size: 1.7rem; }
+    .page_banner p { font-size: 0.85rem; }
+    .page_banner .breadcrumb { font-size: 0.85rem; }
+    
+    .about_intro { padding: 45px 0; }
+    .about_intro .detail-box h2 { font-size: 1.4rem; }
+    .about_intro .detail-box p { font-size: 0.9rem; }
+    .about_intro .detail-box a { padding: 9px 24px; font-size: 0.9rem; }
+    .about_intro .img-grid img { height: 160px; margin-bottom: 10px; }
+    
+    .stats_section { padding: 45px 0; }
+    .stats_section .stat-box { padding: 18px 12px; }
+    .stats_section .stat-box h3 { font-size: 2.2rem; }
+    .stats_section .stat-box p { font-size: 0.85rem; }
+    
+    .mission_section { padding: 45px 0; }
+    .mission_section .heading_container h2 { font-size: 1.4rem; }
+    .mission_section .card { padding: 28px 18px; }
+    .mission_section .card .icon { width: 55px; height: 55px; }
+    .mission_section .card .icon svg { width: 26px; height: 26px; }
+    .mission_section .card h4 { font-size: 1.05rem; }
+    .mission_section .card p { font-size: 0.88rem; }
+    
+    .why_section { padding: 45px 0; }
+    .why_section .detail-box h2 { font-size: 1.4rem; }
+    .why_section .detail-box p { font-size: 0.9rem; }
+    .why_section .detail-box ul li { font-size: 0.9rem; padding: 5px 0 5px 26px; }
+    .why_section .detail-box a { padding: 9px 24px; font-size: 0.9rem; }
+    .why_section .img-box img:first-child { height: 140px; }
+    
+    .values_section { padding: 45px 0; }
+    .values_section .heading_container h2 { font-size: 1.4rem; }
+    .values_section .value-box { padding: 16px; gap: 12px; }
+    .values_section .value-box .v-icon { min-width: 42px; height: 42px; }
+    .values_section .value-box .v-icon svg { width: 20px; height: 20px; }
+    .values_section .value-box h5 { font-size: 1rem; }
+    .values_section .value-box p { font-size: 0.85rem; }
+    
+    .team_section { padding: 45px 0; }
+    .team_section .heading_container h2 { font-size: 1.4rem; }
+    .team_section .heading_container p { font-size: 0.85rem; }
+    .team_section .team-card { padding: 20px 15px; }
+    .team_section .team-card img { width: 75px; height: 75px; }
+    .team_section .team-card h5 { font-size: 1rem; }
+    .team_section .team-card span { font-size: 0.8rem; }
+    .team_section .team-card p { font-size: 0.82rem; }
+  }
+  
+  /* Extra Small Mobile (up to 400px) */
+  @media (max-width: 400px) {
+    .page_banner h1 { font-size: 1.5rem; }
+    .page_banner p { font-size: 0.8rem; }
+    
+    .about_intro .detail-box h2 { font-size: 1.3rem; }
+    .about_intro .img-grid img { height: 140px; }
+    
+    .stats_section .stat-box h3 { font-size: 2rem; }
+    .stats_section .stat-box p { font-size: 0.8rem; }
+    
+    .mission_section .heading_container h2 { font-size: 1.3rem; }
+    .mission_section .card { padding: 25px 15px; }
+    
+    .why_section .detail-box h2 { font-size: 1.3rem; }
+    
+    .values_section .heading_container h2 { font-size: 1.3rem; }
+    
+    .team_section .heading_container h2 { font-size: 1.3rem; }
+    .team_section .team-card img { width: 70px; height: 70px; }
+  }
 </style>
 @endpush
 

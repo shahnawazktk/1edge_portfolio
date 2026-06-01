@@ -181,6 +181,116 @@
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(254, 72, 1, 0.2);
   }
+
+  /* ===== RESPONSIVE DESIGN ===== */
+  
+  /* Tablets (768px - 991px) */
+  @media (max-width: 991px) {
+    .page_banner h1 { font-size: 2.2rem; }
+    .page_banner p { font-size: 0.95rem; }
+    
+    .contact_section { padding: 60px 0; }
+    
+    .contact_info_box,
+    .contact_form_box { padding: 35px; }
+    
+    .contact_info_box h3,
+    .contact_form_box h3 { font-size: 1.6rem; }
+  }
+  
+  /* Mobile (576px - 767px) */
+  @media (max-width: 767px) {
+    .page_banner { padding: 60px 0 40px; }
+    .page_banner h1 { font-size: 2rem; }
+    .page_banner p { font-size: 0.9rem; }
+    
+    .contact_section { padding: 50px 0; }
+    
+    .contact_info_box,
+    .contact_form_box { 
+      padding: 30px 25px;
+      margin-bottom: 25px;
+    }
+    
+    .contact_info_box h3,
+    .contact_form_box h3 { 
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    
+    .contact_info_box p { font-size: 0.9rem; margin-bottom: 25px; }
+    
+    .info_item { margin-bottom: 20px; }
+    .info_item .icon_box { min-width: 45px; height: 45px; margin-right: 15px; }
+    .info_item .icon_box svg { width: 22px; height: 22px; }
+    .info_item .details h5 { font-size: 1rem; }
+    .info_item .details p { font-size: 0.9rem; }
+    
+    .form-group label { font-size: 0.88rem; }
+    .form-control { padding: 11px 14px; font-size: 0.9rem; }
+    
+    .btn_submit { padding: 11px 30px; font-size: 0.95rem; }
+  }
+  
+  /* Small Mobile (up to 575px) */
+  @media (max-width: 575px) {
+    .page_banner { padding: 50px 0 35px; }
+    .page_banner h1 { font-size: 1.8rem; }
+    .page_banner p { font-size: 0.85rem; }
+    .page_banner .breadcrumb { font-size: 0.85rem; }
+    
+    .contact_section { padding: 45px 0; }
+    
+    .contact_info_box,
+    .contact_form_box { 
+      padding: 25px 20px;
+      margin-bottom: 20px;
+    }
+    
+    .contact_info_box h3,
+    .contact_form_box h3 { 
+      font-size: 1.3rem;
+      margin-bottom: 18px;
+    }
+    
+    .contact_info_box h3::after,
+    .contact_form_box h3::after { width: 40px; height: 2px; }
+    
+    .contact_info_box p { font-size: 0.88rem; margin-bottom: 20px; }
+    
+    .info_item { margin-bottom: 18px; }
+    .info_item .icon_box { min-width: 42px; height: 42px; margin-right: 12px; }
+    .info_item .icon_box svg { width: 20px; height: 20px; }
+    .info_item .details h5 { font-size: 0.95rem; }
+    .info_item .details p { font-size: 0.85rem; }
+    
+    .form-group label { font-size: 0.85rem; margin-bottom: 6px; }
+    .form-control { padding: 10px 12px; font-size: 0.88rem; }
+    
+    .btn_submit { 
+      padding: 10px 28px; 
+      font-size: 0.9rem;
+      width: 100%;
+    }
+  }
+  
+  /* Extra Small Mobile (up to 400px) */
+  @media (max-width: 400px) {
+    .page_banner h1 { font-size: 1.6rem; }
+    .page_banner p { font-size: 0.8rem; }
+    
+    .contact_info_box,
+    .contact_form_box { padding: 22px 18px; }
+    
+    .contact_info_box h3,
+    .contact_form_box h3 { font-size: 1.2rem; }
+    
+    .info_item .icon_box { min-width: 40px; height: 40px; }
+    .info_item .details h5 { font-size: 0.9rem; }
+    .info_item .details p { font-size: 0.8rem; }
+    
+    .form-control { padding: 9px 11px; font-size: 0.85rem; }
+  }
 </style>
 @endpush
 

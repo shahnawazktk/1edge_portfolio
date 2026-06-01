@@ -349,21 +349,21 @@
       <div class="col-md-6">
         <div class="detail-box">
           <div class="heading_container">
-            <h2>Why Schools Choose 1Edge?</h2>
+            <h2>Why 1Edge School System?</h2>
           </div>
           <p>
-            1Edge School System is built for modern schools that want to deliver excellence.
+            1Edge School Management System is built for modern schools that want to deliver excellence.
             Our platform integrates academics, administration, communication, and analytics
             into a single, easy-to-use solution trusted by 500+ schools across the region.
           </p>
           <ul style="list-style:none; padding:0; margin-top:15px;">
             <li style="padding:6px 0 6px 28px; position:relative; color:#444;">
               <span style="position:absolute;left:0;color:#fe4801;font-weight:bold;">✔</span>
-              Complete Student Lifecycle Management
+              Complete School Management
             </li>
             <li style="padding:6px 0 6px 28px; position:relative; color:#444;">
               <span style="position:absolute;left:0;color:#fe4801;font-weight:bold;">✔</span>
-              Real-Time Parent Communication App
+              Real-Time Communication
             </li>
             <li style="padding:6px 0 6px 28px; position:relative; color:#444;">
               <span style="position:absolute;left:0;color:#fe4801;font-weight:bold;">✔</span>
@@ -379,7 +379,7 @@
             </li>
             <li style="padding:6px 0 6px 28px; position:relative; color:#444;">
               <span style="position:absolute;left:0;color:#fe4801;font-weight:bold;">✔</span>
-              Powerful Analytics Dashboard for Principals
+              Powerful Analytics Dashboard
             </li>
           </ul>
           <div style="margin-top:20px;">

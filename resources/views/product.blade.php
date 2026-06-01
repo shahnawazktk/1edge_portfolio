@@ -145,6 +145,119 @@
   .testi-card .testi-author h6 { margin: 0; font-weight: 700; color: #022f4a; }
   .testi-card .testi-author small { color: #888; }
   .stars { color: #fe4801; font-size: 1rem; margin-bottom: 12px; }
+
+  /* ===== RESPONSIVE DESIGN ===== */
+  
+  /* Tablets (768px - 991px) */
+  @media (max-width: 991px) {
+    .product_hero h1 { font-size: 2.3rem; }
+    .product_hero p { font-size: 1rem; }
+    
+    .sec-heading h2 { font-size: 1.8rem; }
+    
+    .module-card { padding: 30px 20px; }
+    
+    .price-card { padding: 35px 25px; }
+  }
+  
+  /* Mobile (576px - 767px) */
+  @media (max-width: 767px) {
+    .product_hero { padding: 60px 0 40px; }
+    .product_hero h1 { font-size: 2rem; }
+    .product_hero p { font-size: 0.95rem; padding: 0 15px; }
+    .product_hero .btn-demo { padding: 11px 28px; font-size: 0.95rem; }
+    
+    .modules_section { padding: 60px 0; }
+    .sec-heading { margin-bottom: 40px; }
+    .sec-heading h2 { font-size: 1.6rem; }
+    .sec-heading p { font-size: 0.9rem; }
+    
+    .module-card { padding: 28px 20px; margin-bottom: 25px; }
+    .module-card .mod-icon { width: 60px; height: 60px; margin-bottom: 15px; }
+    .module-card .mod-icon svg { width: 28px; height: 28px; }
+    .module-card h5 { font-size: 1.05rem; }
+    .module-card p { font-size: 0.9rem; }
+    
+    .how_section { padding: 60px 0; }
+    .step-box { padding: 15px; }
+    .step-box .step-num { width: 50px; height: 50px; font-size: 1.3rem; margin-bottom: 15px; }
+    .step-box h5 { font-size: 1.05rem; }
+    
+    .pricing_section { padding: 60px 0; }
+    .price-card { padding: 30px 20px; margin-bottom: 25px; }
+    .price-card h4 { font-size: 1.3rem; }
+    .price-card .price-amount { font-size: 2.2rem; }
+    
+    .demo_section { padding: 60px 0; }
+    .demo_section h2 { font-size: 1.8rem; }
+    .demo_section p { font-size: 1rem; }
+    
+    .testimonial_section { padding: 60px 0; }
+    .testi-card { padding: 25px 20px; }
+  }
+  
+  /* Small Mobile (up to 575px) */
+  @media (max-width: 575px) {
+    .product_hero { padding: 50px 0 35px; }
+    .product_hero h1 { font-size: 1.7rem; }
+    .product_hero p { font-size: 0.9rem; }
+    .product_hero .btn-demo { padding: 10px 24px; font-size: 0.9rem; }
+    
+    .modules_section { padding: 50px 0; }
+    .sec-heading h2 { font-size: 1.4rem; }
+    .sec-heading p { font-size: 0.85rem; }
+    .sec-heading span.line { width: 50px; height: 2px; }
+    
+    .module-card { padding: 25px 18px; }
+    .module-card .mod-icon { width: 55px; height: 55px; }
+    .module-card .mod-icon svg { width: 26px; height: 26px; }
+    .module-card h5 { font-size: 1rem; }
+    .module-card p { font-size: 0.88rem; }
+    
+    .how_section { padding: 50px 0; }
+    .step-box .step-num { width: 45px; height: 45px; font-size: 1.2rem; }
+    .step-box h5 { font-size: 1rem; }
+    .step-box p { font-size: 0.88rem; }
+    
+    .pricing_section { padding: 50px 0; }
+    .price-card { padding: 28px 18px; }
+    .price-card h4 { font-size: 1.2rem; }
+    .price-card .price-amount { font-size: 2rem; }
+    .price-card ul li { font-size: 0.88rem; padding: 6px 0; }
+    .price-card .btn-plan { padding: 11px; font-size: 0.95rem; }
+    
+    .demo_section { padding: 50px 0; }
+    .demo_section h2 { font-size: 1.6rem; }
+    .demo_section p { font-size: 0.95rem; }
+    .demo_section .btn-white,
+    .demo_section .btn-outline-white { 
+      padding: 11px 28px; 
+      font-size: 0.9rem;
+      display: block;
+      margin: 0 0 12px 0;
+    }
+    
+    .testimonial_section { padding: 50px 0; }
+    .testi-card { padding: 22px 18px; }
+    .testi-card p { font-size: 0.9rem; }
+    .testi-card .testi-author img { width: 42px; height: 42px; }
+    .testi-card .testi-author h6 { font-size: 0.95rem; }
+    .testi-card .testi-author small { font-size: 0.8rem; }
+  }
+  
+  /* Extra Small Mobile (up to 400px) */
+  @media (max-width: 400px) {
+    .product_hero h1 { font-size: 1.5rem; }
+    .product_hero p { font-size: 0.85rem; }
+    
+    .sec-heading h2 { font-size: 1.3rem; }
+    
+    .module-card { padding: 22px 15px; }
+    
+    .price-card .price-amount { font-size: 1.8rem; }
+    
+    .demo_section h2 { font-size: 1.4rem; }
+  }
 </style>
 @endpush
 

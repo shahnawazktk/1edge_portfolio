@@ -101,6 +101,98 @@
     display: inline-block;
   }
   .cta_section .btn-cta:hover { background: #022f4a; color: #fff; }
+
+  /* ===== RESPONSIVE DESIGN ===== */
+  
+  /* Tablets (768px - 991px) */
+  @media (max-width: 991px) {
+    .page_banner h1 { font-size: 2.1rem; }
+    .page_banner p { font-size: 1rem; }
+    
+    .services_grid { padding: 60px 0; }
+    .service-card { padding: 30px 20px; }
+    
+    .how_section { padding: 60px 0; }
+    
+    .cta_section { padding: 50px 0; }
+    .cta_section h2 { font-size: 1.8rem; }
+  }
+  
+  /* Mobile (576px - 767px) */
+  @media (max-width: 767px) {
+    .page_banner { padding: 60px 0 40px; }
+    .page_banner h1 { font-size: 1.9rem; }
+    .page_banner p { font-size: 0.95rem; padding: 0 15px; }
+    
+    .services_grid { padding: 50px 0; }
+    .heading_container h2 { font-size: 1.6rem; }
+    .heading_container p { font-size: 0.9rem; }
+    
+    .service-card { padding: 28px 20px; margin-bottom: 25px; }
+    .service-card .icon-wrap { width: 60px; height: 60px; margin-bottom: 18px; }
+    .service-card .icon-wrap svg { width: 30px; height: 30px; }
+    .service-card h5 { font-size: 1.05rem; }
+    .service-card p { font-size: 0.9rem; }
+    
+    .how_section { padding: 50px 0; }
+    .step-box { padding: 15px; }
+    .step-box .step-num { width: 50px; height: 50px; font-size: 1.3rem; margin-bottom: 15px; }
+    .step-box h6 { font-size: 1.05rem; }
+    .step-box p { font-size: 0.88rem; }
+    
+    .cta_section { padding: 50px 0; }
+    .cta_section h2 { font-size: 1.7rem; }
+    .cta_section p { font-size: 0.95rem; }
+    .cta_section .btn-cta { padding: 11px 30px; font-size: 0.95rem; }
+  }
+  
+  /* Small Mobile (up to 575px) */
+  @media (max-width: 575px) {
+    .page_banner { padding: 50px 0 35px; }
+    .page_banner h1 { font-size: 1.7rem; }
+    .page_banner p { font-size: 0.9rem; }
+    
+    .services_grid { padding: 45px 0; }
+    .heading_container { margin-bottom: 35px; }
+    .heading_container h2 { font-size: 1.4rem; }
+    .heading_container p { font-size: 0.85rem; }
+    
+    .service-card { padding: 25px 18px; }
+    .service-card .icon-wrap { width: 55px; height: 55px; }
+    .service-card .icon-wrap svg { width: 28px; height: 28px; }
+    .service-card h5 { font-size: 1rem; }
+    .service-card p { font-size: 0.88rem; }
+    .service-card .read-more { font-size: 0.88rem; margin-top: 12px; }
+    
+    .how_section { padding: 45px 0; }
+    .step-box .step-num { width: 45px; height: 45px; font-size: 1.2rem; }
+    .step-box h6 { font-size: 1rem; }
+    .step-box p { font-size: 0.85rem; }
+    
+    .cta_section { padding: 45px 0; }
+    .cta_section h2 { font-size: 1.5rem; }
+    .cta_section p { font-size: 0.9rem; padding: 0 15px; }
+    .cta_section .btn-cta { 
+      padding: 10px 28px; 
+      font-size: 0.9rem;
+      display: block;
+      max-width: 250px;
+      margin: 0 auto;
+    }
+  }
+  
+  /* Extra Small Mobile (up to 400px) */
+  @media (max-width: 400px) {
+    .page_banner h1 { font-size: 1.5rem; }
+    .page_banner p { font-size: 0.85rem; }
+    
+    .heading_container h2 { font-size: 1.3rem; }
+    
+    .service-card { padding: 22px 15px; }
+    
+    .cta_section h2 { font-size: 1.4rem; }
+    .cta_section p { font-size: 0.85rem; }
+  }
 </style>
 @endpush
 

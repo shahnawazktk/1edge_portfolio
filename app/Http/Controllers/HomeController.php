@@ -14,7 +14,48 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $footerData = $this->getFooterData();
+        return view('welcome', compact('footerData'));
+    }
+    
+    /**
+     * Get footer data for all pages.
+     *
+     * @return array
+     */
+    private function getFooterData()
+    {
+        return [
+            'company' => [
+                'name' => '1Edge Technologies',
+                'logo' => 'assets/images/1edgeLogo-06.png',
+                'description' => 'Innovative IT solutions for modern businesses',
+                'copyright_year' => date('Y'),
+            ],
+            'contact' => [
+                'phone' => '03499088073',
+                'email' => 'info@1edge.com',
+                'address' => 'Peshawar, Pakistan',
+            ],
+            'social_media' => [
+                ['name' => 'Facebook', 'icon' => 'assets/images/fb.png', 'url' => 'https://facebook.com/1edge'],
+                ['name' => 'Twitter', 'icon' => 'assets/images/twitter.png', 'url' => 'https://twitter.com/1edge'],
+                ['name' => 'LinkedIn', 'icon' => 'assets/images/linkedin.png', 'url' => 'https://linkedin.com/company/1edge'],
+                ['name' => 'Instagram', 'icon' => 'assets/images/insta.png', 'url' => 'https://instagram.com/1edge'],
+            ],
+            'quick_links' => [
+                ['name' => 'Home', 'url' => '/'],
+                ['name' => 'About Us', 'url' => '/about'],
+                ['name' => 'Products', 'url' => '/product'],
+                ['name' => 'Services', 'url' => '/service'],
+                ['name' => 'Contact Us', 'url' => '/contact'],
+            ],
+            'services' => [
+                ['name' => '1School', 'url' => '/services/1school'],
+                ['name' => '1Station', 'url' => '/services/1station'],
+                ['name' => 'Hospital Management', 'url' => '/services/hospital-management'],
+            ],
+        ];
     }
 
     /**
@@ -24,7 +65,8 @@ class HomeController extends Controller
      */
     public function about()
     {
-        return view('about');
+        $footerData = $this->getFooterData();
+        return view('about', compact('footerData'));
     }
 
     /**
@@ -34,7 +76,8 @@ class HomeController extends Controller
      */
     public function product()
     {
-        return view('product');
+        $footerData = $this->getFooterData();
+        return view('product', compact('footerData'));
     }
 
     /**
@@ -44,7 +87,8 @@ class HomeController extends Controller
      */
     public function service()
     {
-        return view('services');
+        $footerData = $this->getFooterData();
+        return view('services', compact('footerData'));
     }
 
     /**
@@ -54,7 +98,8 @@ class HomeController extends Controller
      */
     public function contact()
     {
-        return view('contact');
+        $footerData = $this->getFooterData();
+        return view('contact', compact('footerData'));
     }
 
     /**

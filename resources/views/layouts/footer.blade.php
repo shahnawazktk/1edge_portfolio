@@ -377,68 +377,62 @@
     <div class="row">
       <div class="col-md-3">
         <div class="footer-logo-box">
-          <img src="{{ asset('assets/images/1edgeLogo-06.png') }}" alt="1Edge Logo" class="footer-logo">
+          <img src="{{ asset($footerData['company']['logo'] ?? 'assets/images/1edgeLogo-06.png') }}" 
+               alt="{{ $footerData['company']['name'] ?? '1Edge' }} Logo" 
+               class="footer-logo">
         </div>
         <p>
-          Empowering schools with smart technology solutions for better education management.
+          {{ $footerData['company']['description'] ?? 'Innovative IT solutions for modern businesses' }}
         </p>
         <div class="info_social">
+          @foreach($footerData['social_media'] ?? [] as $social)
           <div>
-            <a href="">
-              <img src="{{ asset('assets/images/fb.png') }}" alt="Facebook">
+            <a href="{{ $social['url'] ?? '#' }}" target="_blank" rel="noopener noreferrer">
+              <img src="{{ asset($social['icon']) }}" alt="{{ $social['name'] }}">
             </a>
           </div>
-          <div>
-            <a href="">
-              <img src="{{ asset('assets/images/twitter.png') }}" alt="Twitter">
-            </a>
-          </div>
-          <div>
-            <a href="">
-              <img src="{{ asset('assets/images/linkedin.png') }}" alt="LinkedIn">
-            </a>
-          </div>
-          <div>
-            <a href="">
-              <img src="{{ asset('assets/images/insta.png') }}" alt="Instagram">
-            </a>
-          </div>
+          @endforeach
         </div>
       </div>
       <div class="col-md-3">
         <h6>Quick Links</h6>
         <ul>
-          <li><a href="{{ url('/') }}">Home</a></li>
-          <li><a href="{{ url('/about') }}">About Us</a></li>
-          <li><a href="{{ url('/product') }}">Products</a></li>
-          <li><a href="{{ url('/service') }}">Services</a></li>
-          <li><a href="{{ url('/contact') }}">Contact Us</a></li>
+          @foreach($footerData['quick_links'] ?? [] as $link)
+          <li><a href="{{ url($link['url']) }}">{{ $link['name'] }}</a></li>
+          @endforeach
         </ul>
       </div>
       <div class="col-md-3">
         <h6>Our Services</h6>
         <ul>
-          <li><a href="">1School</a></li>
-          <li><a href="">1Station</a></li>
-          <li><a href="">Hospital Management</a></li>
-          {{-- <li><a href="">1Cafe</a></li> --}}
+          @foreach($footerData['services'] ?? [] as $service)
+          <li><a href="{{ url($service['url']) }}">{{ $service['name'] }}</a></li>
+          @endforeach
         </ul>
       </div>
       <div class="col-md-3">
         <h6>Contact Info</h6>
         <div class="info_link-box">
-          <a href="tel:03499088073">
+          @if(isset($footerData['contact']['phone']))
+          <a href="tel:{{ $footerData['contact']['phone'] }}">
             <img src="{{ asset('assets/images/call.png') }}" alt="Phone">
-            <span>03499088073</span>
+            <span>{{ $footerData['contact']['phone'] }}</span>
           </a>
-          <a href="mailto:info@1edge.com">
+          @endif
+          
+          @if(isset($footerData['contact']['email']))
+          <a href="mailto:{{ $footerData['contact']['email'] }}">
             <img src="{{ asset('assets/images/envelope.png') }}" alt="Email">
-            <span>info@1edge.com</span>
+            <span>{{ $footerData['contact']['email'] }}</span>
           </a>
-          <a href="">
+          @endif
+          
+          @if(isset($footerData['contact']['address']))
+          <a href="#">
             <img src="{{ asset('assets/images/location.png') }}" alt="Location">
-            <span>Karachi, Pakistan</span>
+            <span>{{ $footerData['contact']['address'] }}</span>
           </a>
+          @endif
         </div>
       </div>
     </div>
@@ -450,8 +444,8 @@
 <section class="footer_section">
   <div class="container">
     <p>
-      &copy; {{ date('Y') }} All Rights Reserved By
-      <a href="{{ url('/') }}">1Edge Technologies</a>
+      &copy; {{ $footerData['company']['copyright_year'] ?? date('Y') }} All Rights Reserved By
+      <a href="{{ url('/') }}">{{ $footerData['company']['name'] ?? '1Edge Technologies' }}</a>
     </p>
   </div>
 </section>

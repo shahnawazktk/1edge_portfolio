@@ -5,9 +5,9 @@
 
 @push('styles')
 <style>
-  .hero_area { background: linear-gradient(135deg, #022f4a 0%, #0f3a53 100%); }
+  .hero_area { background: linear-gradient(135deg, #044964 0%, #025370 100%); }
   /* Page Banner */
-  .page_banner { background: linear-gradient(135deg, #022f4a 0%, #0f3a53 100%); padding: 60px 0 40px; text-align: center; color: #fff; }
+  .page_banner { background: linear-gradient(135deg, #044964 0%, #025370 100%); padding: 60px 0 40px; text-align: center; color: #fff; }
   .page_banner h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; }
   .page_banner p { font-size: 1rem; opacity: 0.85; }
   .page_banner .breadcrumb { background: transparent; justify-content: center; padding: 0; margin-top: 10px; }
@@ -277,7 +277,7 @@
       </div>
       <div class="col-md-6">
         <div class="img-box">
-          <img src="{{ asset('assets/images/w-1.jpg') }}" alt="1Edge School Management System" style="width: 100%; border-radius: 10px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);">
+          <img src="{{ asset('assets/images/about_01.jfif') }}" alt="1Edge School Management System" style="width: 100%; border-radius: 10px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);">
         </div>
       </div>
     </div>

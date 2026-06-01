@@ -6,7 +6,7 @@
 <style>
   /* ---- 1Edge School overrides ---- */
   .hero_area {
-    background: linear-gradient(135deg, #022f4a 0%, #0f3a53 100%);
+    background: linear-gradient(135deg, #044964 0%, #025370 100%);
   }
 
   /* Hero/Slider Section */
@@ -242,7 +242,7 @@
         <!-- Right Side Image -->
         <div class="col-lg-6 col-md-12 text-center mt-4 mt-lg-0">
           <div class="img-box">
-            <img src="{{asset('assets/images/w-3.jpg')}}" alt="1Edge Technologies" class="img-fluid">
+            <img src="{{asset('assets/images/working_01.jpg')}}" alt="1Edge Technologies" class="img-fluid">
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@
   
   /* Info Section (Footer Top) */
   .info_section {
-    background: #022f4a;
+    background: #044964;
     color: #fff;
     padding: 60px 0 40px;
   }

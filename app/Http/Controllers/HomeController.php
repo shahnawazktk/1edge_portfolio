@@ -88,7 +88,48 @@ class HomeController extends Controller
     public function service()
     {
         $footerData = $this->getFooterData();
-        return view('services', compact('footerData'));
+
+        $services = [
+            [
+                'title'       => 'Website Development',
+                'description' => 'Custom websites that are fast, responsive, and optimized for conversions.',
+                'icon'        => 'users',
+            ],
+            [
+                'title'       => 'Web App Development',
+                'description' => 'Scalable web applications built with modern frameworks and best practices.',
+                'icon'        => 'monitor',
+            ],
+            [
+                'title'       => 'Mobile App Development',
+                'description' => 'Native and cross-platform mobile apps for iOS and Android.',
+                'icon'        => 'smartphone',
+            ],
+            [
+                'title'       => 'UI/UX Design',
+                'description' => 'User-centered design that delivers intuitive and engaging digital experiences.',
+                'icon'        => 'pen-tool',
+            ],
+            [
+                'title'       => 'Database Solutions',
+                'description' => 'Robust database design, optimization, and management services.',
+                'icon'        => 'database',
+            ],
+            [
+                'title'       => 'Cloud Services',
+                'description' => 'Cloud migration, deployment, and infrastructure management.',
+                'icon'        => 'cloud',
+            ],
+        ];
+
+        $steps = [
+            ['num' => 1, 'title' => 'Consult',        'desc' => 'Share your requirements and goals with our expert team.'],
+            ['num' => 2, 'title' => 'Plan & Design',  'desc' => 'We craft a tailored solution blueprint and design prototype.'],
+            ['num' => 3, 'title' => 'Build & Test',   'desc' => 'Our developers build and rigorously test your product.'],
+            ['num' => 4, 'title' => 'Launch & Support','desc' => 'We deploy your solution and provide ongoing support.'],
+        ];
+
+        return view('services', compact('footerData', 'services', 'steps'));
     }
 
     /**

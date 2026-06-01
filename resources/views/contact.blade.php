@@ -5,11 +5,11 @@
 
 @push('styles')
 <style>
-  .hero_area { background: linear-gradient(135deg, #022f4a 0%, #0f3a53 100%); }
+  .hero_area { background: linear-gradient(135deg, #044964 0%, #025370 100%); }
   
   /* Page Banner */
   .page_banner {
-    background: linear-gradient(135deg, #022f4a 0%, #0f3a53 100%);
+    background: linear-gradient(135deg, #044964 0%, #025370 100%);
     padding: 80px 0 60px;
     text-align: center;
     color: #fff;

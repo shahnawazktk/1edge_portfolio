@@ -379,7 +379,7 @@
     <div class="row">
       <div class="col-md-3">
         <div class="footer-logo-box">
-          <img src="{{ asset($footerData['company']['logo'] ?? 'assets/images/1edgeLogo-06.png') }}" 
+          <img src="{{ asset($footerData['company']['logo'] ?? 'assets/images/1edgeLogo T-06.png') }}" 
                alt="{{ $footerData['company']['name'] ?? '1Edge' }} Logo" 
                class="footer-logo">
         </div>
@@ -447,7 +447,7 @@
   <div class="container">
     <p>
       &copy; {{ $footerData['company']['copyright_year'] ?? date('Y') }} All Rights Reserved By
-      <a href="{{ url('/') }}">{{ $footerData['company']['name'] ?? '1Edge Technologies' }}</a>
+      <a href="{{ url('/') }}">{{ $footerData['company']['name'] ?? '1Edge Innovation' }}</a>
     </p>
   </div>
 </section>

@@ -161,35 +161,4 @@ $icons = [
   </div>
 </section>
 
-{{-- How It Works --}}
-<section class="how_section">
-  <div class="container">
-    <div class="heading_container text-center mb-5">
-      <h2>How It Works</h2>
-      <p style="color:#555; max-width:550px; margin:10px auto 0;">
-        Getting started with 1Edge is simple. We take you from idea to launch in four clear steps.
-      </p>
-    </div>
-    <div class="row justify-content-center">
-      @foreach($steps as $step)
-      <div class="col-6 col-md-3">
-        <div class="step-box">
-          <div class="step-num">{{ $step['num'] }}</div>
-          <h6>{{ $step['title'] }}</h6>
-          <p>{{ $step['desc'] }}</p>
-        </div>
-      </div>
-      @endforeach
-    </div>
-  </div>
-</section>
-
-{{-- CTA --}}
-<section class="cta_section">
-  <div class="container">
-    <h2>Ready to Build Something Great?</h2>
-    <p>Let's turn your idea into a powerful digital product. Talk to our team today.</p>
-    <a href="{{ route('contact') }}" class="btn-cta">Get a Free Consultation</a>
-  </div>
-</section>
 @endsection

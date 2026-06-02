@@ -33,13 +33,12 @@ class HomeController extends Controller
                 'copyright_year' => date('Y'),
             ],
             'contact' => [
-                'phone' => '03499088073',
-                'email' => 'info@1edge.com',
-                'address' => 'Peshawar, Pakistan',
+                'phone' => '0302 9419892',
+                'email' => 'info@1edge.online',
+                'address' => 'KP IT Park, Peshawar, Pakistan',
             ],
             'social_media' => [
                 ['name' => 'Facebook', 'icon' => 'assets/images/fb.png', 'url' => 'https://facebook.com/1edge'],
-                ['name' => 'Twitter', 'icon' => 'assets/images/twitter.png', 'url' => 'https://twitter.com/1edge'],
                 ['name' => 'LinkedIn', 'icon' => 'assets/images/linkedin.png', 'url' => 'https://linkedin.com/company/1edge'],
                 ['name' => 'Instagram', 'icon' => 'assets/images/insta.png', 'url' => 'https://instagram.com/1edge'],
             ],
@@ -53,7 +52,8 @@ class HomeController extends Controller
             'services' => [
                 ['name' => '1School', 'url' => '/services/1school'],
                 ['name' => '1Station', 'url' => '/services/1station'],
-                ['name' => 'Hospital Management', 'url' => '/services/hospital-management'],
+                ['name' => '1Hospital', 'url' => '/services/1hospital'],
+                ['name' => '1Dine', 'url' => '/services/1dine'],
             ],
         ];
     }

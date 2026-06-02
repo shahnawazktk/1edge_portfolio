@@ -99,7 +99,7 @@
   <div class="container-fluid">
     <nav class="navbar navbar-expand-lg custom_nav-container">
       <a class="navbar-brand" href="{{ url('/') }}">
-          <img src="{{ asset('assets/images/1edgeLogo-06.png') }}" 
+          <img src="{{ asset('assets/images/1edgeLogo T-06.png') }}" 
               alt="1Edge Logo" 
               class="site-logo">
       </a>

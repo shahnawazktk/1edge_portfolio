@@ -292,26 +292,22 @@
       <div class="col-md-3 col-6">
         <div class="stat-box">
           <h3>1200+</h3>
-          <p>Students Enrolled</p>
+          <p>Product</p>
         </div>
       </div>
       <div class="col-md-3 col-6">
         <div class="stat-box">
           <h3>80+</h3>
-          <p>Qualified Teachers</p>
+          <p>Client</p>
         </div>
       </div>
       <div class="col-md-3 col-6">
         <div class="stat-box">
           <h3>15+</h3>
-          <p>Academic Programs</p>
+          <p>Customer Satisfication</p>
         </div>
       </div>
-      <div class="col-md-3 col-6">
-        <div class="stat-box">
-          <h3>98%</h3>
-          <p>Pass Rate</p>
-        </div>
+      
       </div>
     </div>
   </div>
@@ -366,65 +362,6 @@
 </section>
 <!-- end mission & vision section -->
 
-<!-- why choose us section -->
-<!-- <section class="why_section layout_padding">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-6">
-        <div class="detail-box">
-          <div class="heading_container">
-            <h2>Why Choose <span>1Edge?</span></h2>
-          </div>
-          <p>
-            1Edge School System is built for modern schools that want to deliver excellence.
-            Our platform integrates academics, administration, communication, and analytics
-            into a single, easy-to-use solution trusted by schools across the region.
-          </p>
-          <ul>
-            <li>Complete Student Lifecycle Management</li>
-            <li>Real-Time Parent Communication App</li>
-            <li>Automated Attendance &amp; Timetable</li>
-            <li>Online Exams with Auto-Grading</li>
-            <li>Secure Fee Collection &amp; Receipts</li>
-            <li>Powerful Analytics Dashboard</li>
-          </ul>
-          <a href="{{ url('/service') }}">Explore Services</a>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="img-container">
-          <div class="row">
-            <div class="col-sm-6">
-              <div class="img-box">
-                <img src="{{ asset('assets/images/w-1.jpg') }}" alt="Classroom Learning">
-                <a href=""><img src="{{ asset('assets/images/link.png') }}" alt=""></a>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="img-box">
-                <img src="{{ asset('assets/images/w-2.jpg') }}" alt="School Library">
-                <a href=""><img src="{{ asset('assets/images/link.png') }}" alt=""></a>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="img-box">
-                <img src="{{ asset('assets/images/w-3.jpg') }}" alt="Sports Activities">
-                <a href=""><img src="{{ asset('assets/images/link.png') }}" alt=""></a>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="img-box">
-                <img src="{{ asset('assets/images/w-4.jpg') }}" alt="Science Lab">
-                <a href=""><img src="{{ asset('assets/images/link.png') }}" alt=""></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-<!-- end why choose us section -->
 
 <!-- our values section -->
 <section class="values_section">
@@ -504,51 +441,40 @@
       <div class="col-md-4 col-sm-6">
         <div class="team-card">
           <img src="{{ asset('assets/images/avatar/avatar-1.jpg') }}" alt="Principal">
-          <h5>Dr. Ayesha Khan</h5>
-          <span>School Principal</span>
-          <p>20+ years of experience in educational leadership and curriculum development across top institutions.</p>
+          <h5>Mr. Taimur Khan</h5>
+          <span>CEO</span>
+          
         </div>
       </div>
       <div class="col-md-4 col-sm-6">
         <div class="team-card">
           <img src="{{ asset('assets/images/avatar/avatar-2.jpg') }}" alt="Vice Principal">
-          <h5>Mr. Rahul Sharma</h5>
-          <span>Vice Principal</span>
-          <p>Expert in student affairs and academic planning, committed to creating a nurturing school environment.</p>
+          <h5>Mr. Abdullah</h5>
+          <span>MD</span>
         </div>
       </div>
       <div class="col-md-4 col-sm-6">
         <div class="team-card">
           <img src="{{ asset('assets/images/avatar/avatar-3.jpg') }}" alt="Head of Technology">
-          <h5>Ms. Priya Verma</h5>
-          <span>Head of Technology</span>
-          <p>Leads the digital transformation of school operations, ensuring seamless integration of 1Edge platform.</p>
+          <h5>Mr. Hamza</h5>
+          <span>Team Lead</span>
         </div>
       </div>
       <div class="col-md-4 col-sm-6">
         <div class="team-card">
           <img src="{{ asset('assets/images/avatar/avatar-4.jpg') }}" alt="Head of Academics">
-          <h5>Mr. Imran Siddiqui</h5>
+          <h5>Mr. Shahnawaz</h5>
           <span>Head of Academics</span>
-          <p>Oversees curriculum design and teacher training programs to maintain the highest academic standards.</p>
         </div>
       </div>
       <div class="col-md-4 col-sm-6">
         <div class="team-card">
           <img src="{{ asset('assets/images/avatar/avatar-5.jpg') }}" alt="Student Counselor">
-          <h5>Ms. Sunita Rao</h5>
+          <h5>Mr. Imran</h5>
           <span>Student Counselor</span>
-          <p>Dedicated to student well-being, career guidance, and building a positive school culture for all learners.</p>
         </div>
       </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="team-card">
-          <img src="{{ asset('assets/images/avatar/avatar-6.jpg') }}" alt="Admin Manager">
-          <h5>Mr. Arjun Mehta</h5>
-          <span>Admin Manager</span>
-          <p>Manages school operations, fee systems, and parent communications with efficiency and transparency.</p>
-        </div>
-      </div>
+      
     </div>
   </div>
 </section>

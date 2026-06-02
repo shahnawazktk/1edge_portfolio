@@ -316,27 +316,22 @@
       <div class="col-md-3 col-6">
         <div class="stat-box">
           <h3>500+</h3>
-          <p>Schools Using 1Edge</p>
+          <p>Product</p>
         </div>
       </div>
       <div class="col-md-3 col-6">
         <div class="stat-box">
-          <h3>2 Lakh+</h3>
-          <p>Students Managed</p>
+          <h3>2 </h3>
+          <p>Client</p>
         </div>
       </div>
       <div class="col-md-3 col-6">
         <div class="stat-box">
           <h3>9+</h3>
-          <p>Powerful Modules</p>
-        </div>
-      </div>
-      <div class="col-md-3 col-6">
-        <div class="stat-box">
-          <h3>98%</h3>
           <p>Customer Satisfaction</p>
         </div>
       </div>
+     
     </div>
   </div>
 </section>
@@ -346,8 +341,8 @@
 <section class="programs_section">
   <div class="container">
     <div class="sec-title">
-      <h2>Modules for Every School Need</h2>
-      <p>From admissions to analytics — 1Edge covers every aspect of school management in one platform.</p>
+      <h2>Smart Management Solutions</h2>
+      <p> At 1Edge, we specialize in innovative software solutions for School Management, Hospital Management, Station Management, and beyond—helping organizations digitize processes, improve control, and enhance productivity.</p>
     </div>
     <div class="row">
       <div class="col-md-4 d-flex">
@@ -361,7 +356,7 @@
             </svg>
           </div>
           <h5>1School</h5>
-          <p>Complete student profiles, academic records, and performance tracking in one place.</p>
+          <p>A complete system to manage students, teachers, attendance, exams, and overall academic operations efficiently.</p>
         </div>
       </div>
       <div class="col-md-4 d-flex">
@@ -373,7 +368,7 @@
             </svg>
           </div>
           <h5>1Station</h5>
-          <p>Automated fee collection, receipts, and financial reporting made simple.</p>
+          <p>A smart solution to manage fuel sales, stock, billing, and reporting for smooth and efficient station operations</p>
         </div>
       </div>
       <div class="col-md-4 d-flex">
@@ -383,8 +378,8 @@
               <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
             </svg>
           </div>
-          <h5>Hospital Managment</h5>
-          <p>Instant notifications and updates to keep parents informed and engaged.</p>
+          <h5> 1Hospital </h5>
+          <p>An integrated solution for managing patient records, appointments, billing, and hospital workflows in one system.</p>
         </div>
       </div>
     </div>

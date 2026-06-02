@@ -270,7 +270,6 @@
       1Edge brings every part of your school — students, teachers, parents, and administration —
       onto one powerful, easy-to-use platform.
     </p>
-    <a href="{{ url('/contact') }}" class="btn-demo">Request a Free Demo</a>
   </div>
 </section>
 <!-- ===== END PRODUCT HERO ===== -->

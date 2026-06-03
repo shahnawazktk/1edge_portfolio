@@ -304,46 +304,77 @@
 
         .programs_section .program-card {
             border: 1px solid #e0e0e0;
-            border-radius: 10px;
-            padding: 35px 20px;
+            border-radius: 12px;
+            padding: 35px 25px;
             text-align: center;
-            transition: all 0.3s;
-            margin-bottom: 30px;
-            height: 100%;
+            transition: all 0.3s ease;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .programs_section .program-card:hover {
             border-color: #fe4801;
-            box-shadow: 0 8px 25px rgba(254, 72, 1, 0.15);
-            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(254, 72, 1, 0.12);
+            transform: translateY(-6px);
         }
 
         .programs_section .program-card .icon {
-            width: 65px;
-            height: 65px;
+            width: 70px;
+            height: 70px;
             background: #fff3ee;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 18px;
+            margin: 0 auto 20px;
+            flex-shrink: 0;
         }
 
         .programs_section .program-card .icon svg {
-            width: 30px;
-            height: 30px;
+            width: 32px;
+            height: 32px;
             stroke: #fe4801;
         }
 
         .programs_section .program-card h5 {
             font-weight: 700;
             color: #022f4a;
-            margin-bottom: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
         }
 
         .programs_section .program-card p {
             color: #666;
             font-size: 0.9rem;
+            line-height: 1.6;
+            flex-grow: 1;
+            margin-bottom: 0;
+        }
+
+        .card-arrow-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #fe4801;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: gap 0.25s ease, color 0.25s ease;
+        }
+
+        .card-arrow-link:hover {
+            gap: 10px;
+            color: #c93900;
+        }
+
+        .card-arrow-link svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            flex-shrink: 0;
         }
 
         /* Programs Responsive */
@@ -363,15 +394,26 @@
             }
 
             .programs_section .sec-title {
-                margin-bottom: 35px;
+                margin-bottom: 30px;
             }
 
             .programs_section .sec-title h2 {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
             }
 
             .programs_section .program-card {
-                padding: 30px 15px;
+                padding: 28px 18px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .programs_section .sec-title h2 {
+                font-size: 1.35rem;
+            }
+
+            .programs_section .program-card .icon {
+                width: 58px;
+                height: 58px;
             }
         }
 
@@ -593,8 +635,8 @@
                     Station Management, and beyond—helping organizations digitize processes, improve control, and enhance
                     productivity.</p>
             </div>
-            <div class="row">
-                <div class="col-md-4 d-flex">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 col-12 d-flex">
                     <div class="program-card">
                         <div class="icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -608,23 +650,37 @@
                         <h5>1School</h5>
                         <p>A complete system to manage students, teachers, attendance, exams, and overall academic
                             operations efficiently.</p>
+                        <a href="{{ route('product.1school') }}" class="card-arrow-link">
+                            Learn More
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
-                <div class="col-md-4 d-flex">
+                <div class="col-lg-4 col-md-6 col-12 d-flex">
                     <div class="program-card">
                         <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
                                 <line x1="1" y1="10" x2="23" y2="10"></line>
                             </svg>
                         </div>
                         <h5>1Station</h5>
                         <p>A smart solution to manage fuel sales, stock, billing, and reporting for smooth and efficient
-                            station operations</p>
+                            station operations.</p>
+                        <a href="{{ route('product.1station') }}" class="card-arrow-link">
+                            Learn More
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
-                <div class="col-md-4 d-flex">
+                <div class="col-lg-4 col-md-6 col-12 d-flex">
                     <div class="program-card">
                         <div class="icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
@@ -632,9 +688,35 @@
                                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                             </svg>
                         </div>
-                        <h5> 1Hospital </h5>
+                        <h5>1Hospital</h5>
                         <p>An integrated solution for managing patient records, appointments, billing, and hospital
                             workflows in one system.</p>
+                        <a href="{{ route('product.1hospital') }}" class="card-arrow-link">
+                            Learn More
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 d-flex">
+                    <div class="program-card">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <h5>1Dine</h5>
+                        <p>An integrated solution for managing restaurant operations, including orders, inventory, and customer management.</p>
+                        <a href="{{ route('product.1dine') }}" class="card-arrow-link">
+                            Learn More
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -7,10 +7,16 @@
   }
 
   .site-logo {
-      max-height: 40px;
+      max-height: 60px;
       width: auto;
       object-fit: contain;
       margin-left: 80px;
+      transition: all 0.3s ease;
+      /* Fix logo visibility by adding white background with padding and border radius */
+      background-color: #022f4a;
+      padding: 8px 12px;
+      border-radius: 8px;
+      
   }
 
   .custom_nav-container { 
@@ -53,7 +59,11 @@
   @media (max-width: 991px) {
       .site-logo {
           margin-left: 40px;
-          max-height: 35px;
+          max-height: 50px;
+          /* Maintain white background on tablets */
+          background-color: rgba(255, 255, 255, 0.95);
+          padding: 6px 10px;
+          border-radius: 6px;
       }
 
       .custom_nav-container .navbar-collapse {
@@ -72,8 +82,12 @@
   /* Mobile responsive */
   @media (max-width: 768px) {
       .site-logo {
-          max-height: 32px;
+          max-height: 45px;
           margin-left: 15px;
+          /* Maintain white background on mobile */
+          background-color: rgba(255, 255, 255, 0.95);
+          padding: 5px 8px;
+          border-radius: 5px;
       }
 
       .custom_nav-container {
@@ -88,8 +102,12 @@
   /* Extra small mobile */
   @media (max-width: 576px) {
       .site-logo {
-          max-height: 28px;
+          max-height: 40px;
           margin-left: 10px;
+          /* Maintain white background on extra small mobile */
+          background-color: rgba(255, 255, 255, 0.95);
+          padding: 4px 6px;
+          border-radius: 4px;
       }
   }
 </style>

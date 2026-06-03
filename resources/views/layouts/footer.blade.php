@@ -18,6 +18,11 @@
     width: auto;
     object-fit: contain;
     display: block;
+    /* Fix footer logo visibility by adding white background */
+    background-color:#044964;
+    padding: 8px 12px;
+    border-radius: 8px;
+   
   }
   
   .info_section h6 {
@@ -210,6 +215,10 @@
     
     .footer-logo {
       max-height: 55px;
+      /* Maintain white background on mobile for footer logo */
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 6px 10px;
+      border-radius: 6px;
     }
     
     .info_section h6 {
@@ -280,6 +289,10 @@
     
     .footer-logo {
       max-height: 50px;
+      /* Maintain white background on small mobile for footer logo */
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 5px 8px;
+      border-radius: 5px;
     }
     
     .info_section h6 {
@@ -348,6 +361,10 @@
     
     .footer-logo {
       max-height: 45px;
+      /* Maintain white background on extra small mobile for footer logo */
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 4px 6px;
+      border-radius: 4px;
     }
     
     .info_section h6 {
@@ -387,11 +404,11 @@
         <p>
           {{ $footerData['company']['description'] ?? 'Innovative IT solutions for modern businesses' }}
         </p>
-        <div class="info_social">
+        <div class="info_social ">
           @foreach($footerData['social_media'] ?? [] as $social)
           <div>
-            <a href="{{ $social['url'] ?? '#' }}" target="_blank" rel="noopener noreferrer">
-              <img src="{{ asset($social['icon']) }}" alt="{{ $social['name'] }}">
+            <a href="{{ $social['url'] ?? '#' }}" target="_blank" rel="noopener noreferrer" >
+              <img src="{{ asset($social['icon']) }}" alt="{{ $social['name'] }}" style="width: 40px; height: 40px;">
             </a>
           </div>
           @endforeach

@@ -25,6 +25,29 @@
   <!-- responsive utilities -->
   <link href="{{asset('assets/css/responsive-utils.css')}}" rel="stylesheet" />
 
+  <style>
+    /* Fix footer to bottom of page properly */
+    html, body {
+      height: 100%;
+    }
+    
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    .main-content {
+      flex: 1;
+    }
+    
+    /* Ensure footer stays at bottom */
+    .info_section,
+    .footer_section {
+      margin-top: auto;
+    }
+  </style>
+
   @stack('styles')
 </head>
 
@@ -32,7 +55,9 @@
   
   @include('layouts.navbar')
 
-  @yield('content')
+  <main class="main-content">
+    @yield('content')
+  </main>
 
   @include('layouts.footer')
 
@@ -42,11 +67,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Custom JS -->
   <script src="{{ asset('assets/js/custom.js') }}"></script>
-  
-  @stack('scripts')
-</body>
-
-</html>
   
   @stack('scripts')
 </body>

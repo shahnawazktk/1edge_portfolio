@@ -324,12 +324,12 @@
   }
   .feature_section .box .detail-box h5 {
     font-weight: 700;
-    color: #022f4a;
+    color: #f3f6f8ff;
     margin-bottom: 10px;
     font-size: 1.2rem;
   }
   .feature_section .box .detail-box p {
-    color: #666;
+    color:#f8f9fa;
     font-size: 0.95rem;
   }
   

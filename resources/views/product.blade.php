@@ -530,18 +530,18 @@
 <!-- ===== END PRICING ===== -->
 
 <!-- ===== DEMO CTA ===== -->
-<section class="demo_section">
+{{-- <section class="demo_section">
   <div class="container">
     <h2>See 1Edge in Action</h2>
     <p>Book a free 30-minute live demo and discover how 1Edge can transform your school's operations today.</p>
     <a href="{{ url('/contact') }}" class="btn-white">Book Free Demo</a>
     <a href="{{ url('/contact') }}" class="btn-outline-white">Talk to Sales</a>
   </div>
-</section>
+</section> --}}
 <!-- ===== END DEMO CTA ===== -->
 
 <!-- ===== TESTIMONIALS ===== -->
-<section class="testimonial_section">
+{{-- <section class="testimonial_section">
   <div class="container">
     <div class="sec-heading">
       <h2>Trusted by Schools Across the Region</h2>
@@ -594,6 +594,6 @@
 
     </div>
   </div>
-</section>
+</section> --}}
 <!-- ===== END TESTIMONIALS ===== -->
 @endsection

@@ -236,7 +236,7 @@
 <!-- page banner -->
 <section class="page_banner">
   <div class="container">
-    <h1>About <span style="color:#fe4801;">1Edge Business </span></h1>
+    <h1>About <span style="color:#fe4801;">1Edge Innovation </span></h1>
     <p>Empowering students, teachers, and parents through smart education technology</p>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
@@ -258,7 +258,7 @@
       <div class="col-md-6">
         <div class="detail-box">
           <p>
-            1Edge School is a next-generation school management platform designed to
+            1Edge Innovation is a next-generation school management platform designed to
             transform the way schools operate. Founded with a vision to bridge the gap between
             education and technology, we serve hundreds of schools across the region.
           </p>

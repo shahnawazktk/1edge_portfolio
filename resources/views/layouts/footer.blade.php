@@ -379,7 +379,7 @@
     <div class="row">
       <div class="col-md-3">
         <div class="footer-logo-box">
-          <img src="{{ asset($footerData['company']['logo'] ?? 'assets/images/1edgeLogo T-06.png') }}" 
+          <img src="{{ asset('assets/images/1edgeLogoT-06.png') }}" 
                alt="{{ $footerData['company']['name'] ?? '1Edge' }} Logo" 
                class="footer-logo">
         </div>

@@ -61,7 +61,7 @@
           margin-left: 40px;
           max-height: 50px;
           /* Maintain white background on tablets */
-          background-color: rgba(255, 255, 255, 0.95);
+          background-color: #022f4a;
           padding: 6px 10px;
           border-radius: 6px;
       }
@@ -85,7 +85,7 @@
           max-height: 45px;
           margin-left: 15px;
           /* Maintain white background on mobile */
-          background-color: rgba(255, 255, 255, 0.95);
+          background-color: #022f4a;
           padding: 5px 8px;
           border-radius: 5px;
       }
@@ -105,7 +105,7 @@
           max-height: 40px;
           margin-left: 10px;
           /* Maintain white background on extra small mobile */
-          background-color: rgba(255, 255, 255, 0.95);
+          background-color: #022f4a;
           padding: 4px 6px;
           border-radius: 4px;
       }

@@ -16,6 +16,12 @@
     display: flex;
     align-items: center;
     background: transparent;
+    width: 100%;
+  }
+  
+  .slider_section > .container {
+    max-width: 1140px;
+    padding: 0 30px;
   }
   
   .slider_section .detail-box h1 {
@@ -89,9 +95,9 @@
   /* Image Box Styling - Larger and Responsive */
   .slider_section .img-box {
     width: 100%;
-    max-width: 650px;
+    max-width: 580px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0;
   }
   
   .slider_section .img-box img {
@@ -372,7 +378,7 @@
         </div>
 
         <!-- Right Side Image -->
-        <div class="col-lg-6 col-md-12 text-center mt-4 mt-lg-0">
+        <div class="col-lg-6 col-md-12 text-center mt-4 mt-lg-0 d-flex align-items-center justify-content-center">
           <div class="img-box">
             <img src="{{asset('assets/images/working_01.jpg')}}" alt="1Edge Technologies" class="img-fluid">
           </div>

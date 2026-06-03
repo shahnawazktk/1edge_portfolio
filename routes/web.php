@@ -13,6 +13,7 @@ Route::get('/product/1school', [HomeController::class, 'product1school'])->name(
 Route::get('/product/1station', [HomeController::class, 'product1station'])->name('product.1station');
 Route::get('/product/1hospital', [HomeController::class, 'product1hospital'])->name('product.1hospital');
 Route::get('/product/1dine', [HomeController::class, 'product1dine'])->name('product.1dine');
+Route::get('/service/{slug}', [HomeController::class, 'serviceDetail'])->name('service.detail');
 
 // Temporary route to seed stats (remove after seeding)
 Route::get('/seed-stats', function () {

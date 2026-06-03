@@ -122,31 +122,37 @@ class HomeController extends Controller
                 'title'       => 'Website Development',
                 'description' => 'Custom websites that are fast, responsive, and optimized for conversions.',
                 'icon'        => 'users',
+                'slug'        => 'website-development',
             ],
             [
                 'title'       => 'Web App Development',
                 'description' => 'Scalable web applications built with modern frameworks and best practices.',
                 'icon'        => 'monitor',
+                'slug'        => 'web-app-development',
             ],
             [
                 'title'       => 'Mobile App Development',
                 'description' => 'Native and cross-platform mobile apps for iOS and Android.',
                 'icon'        => 'smartphone',
+                'slug'        => 'mobile-app-development',
             ],
             [
                 'title'       => 'UI/UX Design',
                 'description' => 'User-centered design that delivers intuitive and engaging digital experiences.',
                 'icon'        => 'pen-tool',
+                'slug'        => 'ui-ux-design',
             ],
             [
                 'title'       => 'Database Solutions',
                 'description' => 'Robust database design, optimization, and management services.',
                 'icon'        => 'database',
+                'slug'        => 'database-solutions',
             ],
             [
                 'title'       => 'Cloud Services',
                 'description' => 'Cloud migration, deployment, and infrastructure management.',
                 'icon'        => 'cloud',
+                'slug'        => 'cloud-services',
             ],
         ];
 
@@ -158,6 +164,14 @@ class HomeController extends Controller
         ];
 
         return view('services', compact('footerData', 'services', 'steps'));
+    }
+
+    public function serviceDetail($slug)
+    {
+        $footerData = $this->getFooterData();
+        $view = 'service-detail-' . $slug;
+        abort_unless(view()->exists($view), 404);
+        return view($view, compact('footerData'));
     }
 
     /**

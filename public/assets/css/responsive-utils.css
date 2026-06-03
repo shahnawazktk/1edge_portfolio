@@ -1,0 +1,282 @@
+/* ================================================
+   RESPONSIVE UTILITIES FOR 1EDGE PORTFOLIO
+   Additional mobile optimizations and utilities
+   ================================================ */
+
+/* ===== FLEXBOX UTILITIES ===== */
+.d-flex { display: flex !important; }
+.flex-column { flex-direction: column !important; }
+.flex-wrap { flex-wrap: wrap !important; }
+.justify-content-center { justify-content: center !important; }
+.justify-content-between { justify-content: space-between !important; }
+.align-items-center { align-items: center !important; }
+.flex-grow-1 { flex-grow: 1 !important; }
+
+/* ===== SPACING UTILITIES ===== */
+.mb-mobile-20 {
+  margin-bottom: 20px !important;
+}
+
+@media (max-width: 767px) {
+  .mb-mobile-30 {
+    margin-bottom: 30px !important;
+  }
+  
+  .mt-mobile-20 {
+    margin-top: 20px !important;
+  }
+  
+  .p-mobile-15 {
+    padding: 15px !important;
+  }
+}
+
+/* ===== RESPONSIVE TEXT UTILITIES ===== */
+@media (max-width: 767px) {
+  .text-mobile-center {
+    text-align: center !important;
+  }
+  
+  .text-mobile-left {
+    text-align: left !important;
+  }
+}
+
+/* ===== HIDE/SHOW UTILITIES ===== */
+@media (max-width: 767px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .show-mobile {
+    display: none !important;
+  }
+}
+
+/* ===== RESPONSIVE IMAGES ===== */
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ===== RESPONSIVE CONTAINERS ===== */
+@media (max-width: 767px) {
+  .container-mobile-full {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* ===== RESPONSIVE BUTTONS ===== */
+@media (max-width: 575px) {
+  .btn-mobile-block {
+    display: block !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* ===== TOUCH DEVICE OPTIMIZATIONS ===== */
+.touch-device a,
+.touch-device button {
+  -webkit-tap-highlight-color: rgba(254, 72, 1, 0.2);
+}
+
+.touch-device .btn,
+.touch-device .nav-link {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== SCROLLBAR STYLING ===== */
+@media (min-width: 992px) {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #fe4801;
+  }
+}
+
+/* ===== MOBILE MENU ENHANCEMENTS ===== */
+@media (max-width: 991px) {
+  .navbar-scrolled {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .navbar-collapse {
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ===== CARD HOVER EFFECTS (Disabled on touch) ===== */
+@media (hover: none) {
+  .service-card:hover,
+  .module-card:hover,
+  .program-card:hover,
+  .team-card:hover,
+  .price-card:hover {
+    transform: none !important;
+  }
+}
+
+/* ===== ASPECT RATIO UTILITIES ===== */
+.ratio-16x9 {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.ratio-16x9 > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ratio-4x3 {
+  position: relative;
+  width: 100%;
+  padding-bottom: 75%;
+}
+
+.ratio-4x3 > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== LOADING STATES ===== */
+.btn-loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.btn-loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  margin-left: -8px;
+  margin-top: -8px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== SAFE AREA INSETS (iPhone X+) ===== */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+  }
+  
+  .info_section,
+  .footer_section {
+    padding-left: max(15px, env(safe-area-inset-left));
+    padding-right: max(15px, env(safe-area-inset-right));
+  }
+}
+
+/* ===== FOCUS STATES (Accessibility) ===== */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #fe4801;
+  outline-offset: 2px;
+}
+
+/* ===== REDUCED MOTION (Accessibility) ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== HIGH CONTRAST MODE ===== */
+@media (prefers-contrast: high) {
+  .btn,
+  .nav-link {
+    border: 2px solid currentColor;
+  }
+}
+
+/* ===== PRINT OPTIMIZATIONS ===== */
+@media print {
+  .navbar,
+  .info_social,
+  .btn,
+  .footer_section {
+    display: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+  
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  
+  .container {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}

@@ -96,18 +96,19 @@
     display: flex;
     gap: 15px;
     margin-top: 20px;
+    flex-wrap: wrap;
   }
   
   .info_social div {
     width: 40px;
     height: 40px;
-    margin-right: 15px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    flex-shrink: 0;
   }
   
   .info_social div:hover {
@@ -124,8 +125,8 @@
   }
   
   .info_social div img {
-    width: 100%;
-    height: 100%;
+    width: 18px;
+    height: 18px;
     object-fit: contain;
     filter: brightness(0) invert(1);
   }

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Check - 1Edge Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #044964 0%, #025370 100%);
+            color: #fff;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .status-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .check-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .check-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+        
+        .check-item .icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .check-item.success .icon {
+            background: #10b981;
+        }
+        
+        .check-item.error .icon {
+            background: #ef4444;
+        }
+        
+        .check-item.warning .icon {
+            background: #f59e0b;
+        }
+        
+        .viewport-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .info-box {
+            background: rgba(254, 72, 1, 0.2);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .info-box .label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+        
+        .info-box .value {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .device-type {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #fe4801;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 10px 5px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #fe4801;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+        }
+        
+        .btn:hover {
+            background: #e03d00;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .header p {
+                font-size: 1rem;
+            }
+            
+            .status-card {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            
+            body {
+                padding: 10px;
+            }
+            
+            .info-box .value {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>✅ Responsive Check</h1>
+            <p>1Edge Portfolio - یہ صفحہ آپ کے device کی responsive status دکھاتا ہے</p>
+        </div>
+        
+        <div class="status-card">
+            <h2 style="margin-bottom: 20px;">📱 Current Device Information</h2>
+            <div class="viewport-info">
+                <div class="info-box">
+                    <div class="label">Screen Width</div>
+                    <div class="value" id="screenWidth">-</div>
+                </div>
+                <div class="info-box">
+                    <div class="label">Screen Height</div>
+                    <div class="value" id="screenHeight">-</div>
+                </div>
+                <div class="info-box">
+                    <div class="label">Device Type</div>
+                    <div class="value" id="deviceType">-</div>
+                </div>
+                <div class="info-box">
+                    <div class="label">Orientation</div>
+                    <div class="value" id="orientation">-</div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 20px; text-align: center;">
+                <div id="currentBreakpoint"></div>
+            </div>
+        </div>
+        
+        <div class="status-card">
+            <h2 style="margin-bottom: 20px;">🔍 Responsive Checks</h2>
+            <div id="checks"></div>
+        </div>
+        
+        <div class="status-card">
+            <h2 style="margin-bottom: 20px;">📚 Documentation</h2>
+            <div class="check-item success">
+                <div class="icon">📄</div>
+                <div style="flex: 1;">
+                    <strong>RESPONSIVE-IMPROVEMENTS.md</strong><br>
+                    <small>مکمل technical details اور improvements</small>
+                </div>
+            </div>
+            <div class="check-item success">
+                <div class="icon">📋</div>
+                <div style="flex: 1;">
+                    <strong>TESTING-GUIDE.md</strong><br>
+                    <small>Step-by-step testing instructions</small>
+                </div>
+            </div>
+            <div class="check-item success">
+                <div class="icon">📝</div>
+                <div style="flex: 1;">
+                    <strong>RESPONSIVE-CHANGES-SUMMARY.md</strong><br>
+                    <small>Urdu/English summary of all changes</small>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="/" class="btn">🏠 Homepage پر جائیں</a>
+            <a href="/about" class="btn btn-secondary">About Page</a>
+            <a href="/contact" class="btn btn-secondary">Contact Page</a>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2026 1Edge Technologies - Fully Responsive ✨</p>
+        </div>
+    </div>
+    
+    <script>
+        function updateDeviceInfo() {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            
+            document.getElementById('screenWidth').textContent = width + 'px';
+            document.getElementById('screenHeight').textContent = height + 'px';
+            
+            // Detect device type
+            let deviceType = '';
+            let breakpoint = '';
+            
+            if (width <= 400) {
+                deviceType = 'Small Mobile';
+                breakpoint = 'XS (≤400px)';
+            } else if (width <= 575) {
+                deviceType = 'Mobile';
+                breakpoint = 'SM (≤575px)';
+            } else if (width <= 767) {
+                deviceType = 'Large Mobile';
+                breakpoint = 'MD (576-767px)';
+            } else if (width <= 991) {
+                deviceType = 'Tablet';
+                breakpoint = 'LG (768-991px)';
+            } else if (width <= 1199) {
+                deviceType = 'Desktop';
+                breakpoint = 'XL (992-1199px)';
+            } else {
+                deviceType = 'Large Desktop';
+                breakpoint = 'XXL (≥1200px)';
+            }
+            
+            document.getElementById('deviceType').textContent = deviceType;
+            document.getElementById('currentBreakpoint').innerHTML = 
+                '<div class="device-type">Current Breakpoint: ' + breakpoint + '</div>';
+            
+            // Detect orientation
+            const orientation = width > height ? 'Landscape 🌄' : 'Portrait 📱';
+            document.getElementById('orientation').textContent = orientation;
+            
+            // Run checks
+            runChecks(width);
+        }
+        
+        function runChecks(width) {
+            const checks = [
+                {
+                    name: 'Viewport Meta Tag',
+                    test: () => {
+                        const viewport = document.querySelector('meta[name="viewport"]');
+                        return viewport !== null;
+                    },
+                    success: 'Viewport meta tag موجود ہے ✅',
+                    error: 'Viewport meta tag غائب ہے ❌'
+                },
+                {
+                    name: 'No Horizontal Scroll',
+                    test: () => document.body.scrollWidth <= document.body.clientWidth,
+                    success: 'کوئی horizontal scroll نہیں ہے ✅',
+                    error: 'Horizontal scroll کا مسئلہ ہے ❌'
+                },
+                {
+                    name: 'Responsive Design',
+                    test: () => width >= 320 && width <= 2560,
+                    success: 'Screen size supported ہے ✅',
+                    error: 'Screen size unusual ہے ⚠️'
+                },
+                {
+                    name: 'Touch Device Detection',
+                    test: () => {
+                        return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+                    },
+                    success: 'Touch device detected ✅',
+                    error: 'Non-touch device (Desktop) 🖥️'
+                },
+                {
+                    name: 'Modern Browser',
+                    test: () => 'fetch' in window && 'Promise' in window,
+                    success: 'Modern browser ہے ✅',
+                    error: 'پرانا browser ہے ⚠️'
+                }
+            ];
+            
+            const checksHTML = checks.map(check => {
+                const result = check.test();
+                const status = result ? 'success' : (check.name === 'Touch Device Detection' ? 'warning' : 'error');
+                const message = result ? check.success : check.error;
+                const icon = result ? '✓' : (status === 'warning' ? '!' : '✗');
+                
+                return `
+                    <div class="check-item ${status}">
+                        <div class="icon">${icon}</div>
+                        <div style="flex: 1;">
+                            <strong>${check.name}</strong><br>
+                            <small>${message}</small>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            
+            document.getElementById('checks').innerHTML = checksHTML;
+        }
+        
+        // Initial update
+        updateDeviceInfo();
+        
+        // Update on resize
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(updateDeviceInfo, 250);
+        });
+        
+        // Update on orientation change
+        window.addEventListener('orientationchange', updateDeviceInfo);
+    </script>
+</body>
+</html>

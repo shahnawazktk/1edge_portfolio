@@ -170,6 +170,156 @@
     padding: 40px 0 !important;
   }
 
+  .school_stats .stat-box {
+    padding: 20px 10px;
+  }
+
+  .school_stats .stat-box h3 {
+    font-size: 2rem !important;
+  }
+
+  .school_stats .stat-box p {
+    font-size: 0.8rem !important;
+  }
+
+  /* Find section - prevent overlap */
+  .find_section {
+    transform: translateY(0) !important;
+    margin-top: 20px;
+  }
+
+  /* Service section */
+  .service_section {
+    padding: 40px 0 !important;
+  }
+
+  /* Programs section */
+  .programs_section {
+    padding: 40px 0 !important;
+  }
+
+  .programs_section .program-card {
+    padding: 25px 15px;
+  }
+
+  .programs_section .program-card .icon {
+    width: 55px;
+    height: 55px;
+  }
+
+  .programs_section .program-card .icon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  /* Buttons */
+  .slider_section .btn {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto 12px;
+  }
+
+  /* Images */
+  .slider_section .img-box,
+  .about_intro .img-box,
+  .why_section .img-box {
+    margin-top: 25px;
+  }
+
+  .slider_section .img-box img,
+  .about_intro .img-box img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Extra Small Screens (up to 400px) */
+@media (max-width: 400px) {
+  .page_banner h1,
+  .heading_container h2 {
+    font-size: 1.4rem !important;
+  }
+
+  .slider_section .detail-box h1 {
+    font-size: 1.3rem !important;
+  }
+
+  .slider_section .detail-box p {
+    font-size: 0.85rem !important;
+  }
+
+  .feature_section .box h5 {
+    font-size: 1rem !important;
+  }
+
+  .school_stats .stat-box h3 {
+    font-size: 1.8rem !important;
+  }
+
+  .school_stats .stat-box p {
+    font-size: 0.75rem !important;
+  }
+
+  .btn,
+  .slider_section .btn {
+    padding: 9px 20px !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* Navbar logo extra small */
+  .site-logo {
+    max-height: 26px !important;
+  }
+
+  /* Footer extra small */
+  .info_section {
+    padding: 30px 0 15px !important;
+  }
+
+  .info_section h6 {
+    font-size: 0.95rem !important;
+  }
+
+  .info_section p {
+    font-size: 0.8rem !important;
+  }
+}
+
+/* Landscape mode fix for very short screens */
+@media (max-height: 500px) and (orientation: landscape) {
+  .slider_section {
+    min-height: auto !important;
+    padding: 30px 0 !important;
+  }
+
+  .hero_area {
+    height: auto !important;
+  }
+
+  .page_banner {
+    padding: 40px 0 30px !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .navbar,
+  .custom_nav-container,
+  .info_section,
+  .footer_section {
+    display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+  }
+
   .school_stats .stat-box h3 {
     font-size: 2rem !important;
   }

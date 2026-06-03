@@ -504,7 +504,7 @@
                             </div>
                             <div class="details">
                                 <h5>Call Us</h5>
-                                <p><a href="tel:03499088073">03499088073</a></p>
+                                <p><a href="tel:03029419892">0302 9419892</a></p>
                             </div>
                         </div>
 
@@ -519,7 +519,7 @@
                             </div>
                             <div class="details">
                                 <h5>Email Us</h5>
-                                <p><a href="mailto:info@1edge.com">info@1edge.com</a></p>
+                                <p><a href="mailto:info@1edge.online">info@1edge.online</a></p>
                             </div>
                         </div>
 
@@ -533,7 +533,7 @@
                             </div>
                             <div class="details">
                                 <h5>Our Location</h5>
-                                <p>Peshawar, Pakistan</p>
+                                <p>Address: KP IT Park, Peshawar, Khyber Pakhtunkhwa, Pakistan</p>
                             </div>
                         </div>
                     </div>

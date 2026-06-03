@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactFormMail;
 use App\Models\Contact;
 
 class HomeController extends Controller
@@ -158,7 +160,7 @@ class HomeController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'phone' => 'required|string|max:20',
-            'subject' => 'nullable|string|max:255',
+            'subject' => 'required|string|in:1School,1Station,1Hospital,1Dine,Other',
             'message' => 'required|string|max:2000',
         ], [
             'name.required' => 'Please enter your full name.',
@@ -166,6 +168,7 @@ class HomeController extends Controller
             'email.email' => 'Please enter a valid email address.',
             'phone.required' => 'Please enter your phone number.',
             'message.required' => 'Please enter your message.',
+            'subject.required' => 'Please select a product.',
             'message.max' => 'Message cannot exceed 2000 characters.',
         ]);
 
@@ -173,11 +176,12 @@ class HomeController extends Controller
             // Save to database
             Contact::create($validated);
 
-            // You can also add email notification here
-            // Mail::to('info@1edge.com')->send(new ContactFormMail($validated));
+            // Send email notification
+            Mail::to('shah@1edge.online')->send(new ContactFormMail($validated));
 
             return redirect()->route('contact')->with('success', 'Thank you for contacting 1Edge! Our representative will call you shortly.');
         } catch (\Exception $e) {
+            \Log::error('Contact form error: ' . $e->getMessage());
             return redirect()->route('contact')->with('error', 'Something went wrong. Please try again later.');
         }
     }

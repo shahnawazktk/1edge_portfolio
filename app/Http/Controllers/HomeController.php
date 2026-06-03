@@ -67,7 +67,8 @@ class HomeController extends Controller
     public function about()
     {
         $footerData = $this->getFooterData();
-        return view('about', compact('footerData'));
+        $stats = \App\Models\Stat::active()->ordered()->get();
+        return view('about', compact('footerData', 'stats'));
     }
 
     /**

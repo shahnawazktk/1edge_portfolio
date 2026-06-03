@@ -15,25 +15,25 @@ class StatSeeder extends Seeder
         $stats = [
             [
                 'title' => 'Products',
-                'value' => '500+',
+                'value' => '1200+',
                 'order' => 1,
                 'is_active' => true,
             ],
             [
                 'title' => 'Clients',
-                'value' => '2',
+                'value' => '80+',
                 'order' => 2,
                 'is_active' => true,
             ],
             [
                 'title' => 'Customer Satisfaction',
-                'value' => '9+',
+                'value' => '98%',
                 'order' => 3,
                 'is_active' => true,
             ],
             [
                 'title' => 'Years Experience',
-                'value' => '5+',
+                'value' => '8+',
                 'order' => 4,
                 'is_active' => true,
             ],

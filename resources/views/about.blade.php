@@ -27,6 +27,16 @@
   .about_intro .detail-box a:hover { background: #022f4a; }
   .about_intro .img-box { text-align: center; }
   .about_intro .img-grid img { width: 100%; border-radius: 8px; object-fit: cover; height: 200px; margin-bottom: 15px; }
+  
+  /* Key Highlights */
+  .key-highlights { margin-top: 20px; }
+  .highlight-list { list-style: none; padding: 0; margin: 0; }
+  .highlight-list li { padding: 5px 0; color: #444; font-weight: 500; }
+  .highlight-list li:before { content: ""; margin-right: 8px; }
+  
+  /* Stats Animation */
+  .stats_section .stat-box h3.counter { transition: all 0.3s ease; }
+  .stats_section .stat-box:hover h3 { transform: scale(1.1); }
   /* Mission & Vision */
   .mission_section { background: #f8f9fa; padding: 70px 0; }
   .mission_section .heading_container { text-align: center; margin-bottom: 40px; }
@@ -257,21 +267,41 @@
     <div class="row align-items-center">
       <div class="col-md-6">
         <div class="detail-box">
+          <h2>Transforming Education Through <span>Innovation</span></h2>
           <p>
-            1Edge Innovation is a next-generation school management platform designed to
-            transform the way schools operate. Founded with a vision to bridge the gap between
-            education and technology, we serve hundreds of schools across the region.
+            <strong>1Edge Innovation</strong> is a pioneering technology company specializing in comprehensive school management solutions. 
+            Founded with a vision to revolutionize educational administration, we bridge the gap between traditional education 
+            systems and cutting-edge technology to create seamless, efficient, and impactful learning environments.
           </p>
           <p>
-            Our platform brings together students, teachers, parents, and administrators on a
-            single unified system — making communication seamless, administration effortless,
-            and learning more impactful than ever before.
+            Our flagship platform serves as a unified ecosystem that connects students, teachers, parents, and administrators 
+            on a single, intelligent system. By streamlining communication channels, automating administrative tasks, and 
+            providing real-time insights, we empower educational institutions to focus on their core mission: 
+            <strong>delivering exceptional education and nurturing tomorrow's leaders.</strong>
           </p>
           <p>
-            With powerful features like automated attendance tracking, real-time parent communication,
-            online examination systems, and comprehensive analytics, we empower schools to focus on
-            what truly matters — delivering quality education and nurturing future leaders.
+            With advanced features including AI-powered attendance tracking, comprehensive parent-teacher communication portals, 
+            robust online examination systems, detailed analytics dashboards, and cloud-based data management, 
+            we serve <strong>hundreds of schools</strong> across the region, impacting thousands of students' educational journeys.
           </p>
+          <div class="key-highlights mt-4">
+            <div class="row">
+              <div class="col-md-6">
+                <ul class="highlight-list">
+                  <li>✓ Cloud-Based Infrastructure</li>
+                  <li>✓ Real-Time Data Analytics</li>
+                  <li>✓ Mobile-Responsive Design</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="highlight-list">
+                  <li>✓ 24/7 Technical Support</li>
+                  <li>✓ Secure Data Management</li>
+                  <li>✓ Scalable Solutions</li>
+                </ul>
+              </div>
+            </div>
+          </div>
           <a href="{{ url('/contact') }}">Get In Touch</a>
         </div>
       </div>
@@ -289,26 +319,14 @@
 <section class="stats_section">
   <div class="container">
     <div class="row">
+      @foreach($stats as $stat)
       <div class="col-md-3 col-6">
         <div class="stat-box">
-          <h3>1200+</h3>
-          <p>Product</p>
+          <h3 class="counter" data-target="{{ preg_replace('/[^0-9]/', '', $stat->value) }}">{{ $stat->value }}</h3>
+          <p>{{ $stat->title }}</p>
         </div>
       </div>
-      <div class="col-md-3 col-6">
-        <div class="stat-box">
-          <h3>80+</h3>
-          <p>Client</p>
-        </div>
-      </div>
-      <div class="col-md-3 col-6">
-        <div class="stat-box">
-          <h3>15+</h3>
-          <p>Customer Satisfication</p>
-        </div>
-      </div>
-      
-      </div>
+      @endforeach
     </div>
   </div>
 </section>
@@ -379,8 +397,8 @@
             </svg>
           </div>
           <div>
-            <h5>Excellence in Education</h5>
-            <p>We are committed to raising the bar for educational quality by giving schools the tools they need to help every student succeed.</p>
+            <h5>Code Excellence & Best Practices</h5>
+            <p>We follow Laravel's elegant conventions, SOLID principles, and clean architecture patterns to deliver maintainable, scalable, and robust educational management systems.</p>
           </div>
         </div>
         <div class="value-box">
@@ -393,8 +411,21 @@
             </svg>
           </div>
           <div>
-            <h5>Community &amp; Collaboration</h5>
-            <p>We believe education thrives when students, teachers, parents, and administrators work together as one connected community.</p>
+            <h5>Agile Development & Continuous Integration</h5>
+            <p>We leverage modern DevOps practices, automated testing (PHPUnit, Laravel Dusk), and CI/CD pipelines to ensure rapid, reliable software delivery and deployment.</p>
+          </div>
+        </div>
+        <div class="value-box">
+          <div class="v-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+          <div>
+            <h5>Performance Optimization & Scalability</h5>
+            <p>Using Laravel's caching mechanisms (Redis, Memcached), database optimization, queue systems, and horizontal scaling strategies to handle growing educational institutions.</p>
           </div>
         </div>
       </div>
@@ -407,21 +438,32 @@
             </svg>
           </div>
           <div>
-            <h5>Data Privacy &amp; Security</h5>
-            <p>Student and school data is protected with enterprise-grade security. We follow strict data privacy standards to keep your information safe.</p>
+            <h5>Security-First Architecture</h5>
+            <p>Implementing Laravel's built-in security features, OAuth 2.0, JWT authentication, CSRF protection, SQL injection prevention, and data encryption to safeguard sensitive educational data.</p>
           </div>
         </div>
         <div class="value-box">
           <div class="v-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="2" y1="12" x2="22" y2="12"></line>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22 6 12 13 2 6"></polyline>
             </svg>
           </div>
           <div>
-            <h5>Accessibility for All</h5>
-            <p>Our platform is designed to be affordable and accessible for schools of all sizes — from small community schools to large institutions.</p>
+            <h5>API-First Development</h5>
+            <p>Building RESTful APIs with Laravel Sanctum, comprehensive API documentation, rate limiting, and version control to enable seamless third-party integrations and mobile applications.</p>
+          </div>
+        </div>
+        <div class="value-box">
+          <div class="v-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          </div>
+          <div>
+            <h5>Cloud-Native Solutions</h5>
+            <p>Deploying on AWS/Digital Ocean with Laravel Forge, implementing microservices architecture, containerization (Docker), and leveraging cloud services for maximum reliability and uptime.</p>
           </div>
         </div>
       </div>
@@ -480,3 +522,52 @@
 </section>
 <!-- end team section -->
 @endsection
+
+@push('scripts')
+<script>
+// Counter Animation
+function animateCounters() {
+    const counters = document.querySelectorAll('.counter');
+    
+    counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target')) || 0;
+        const originalText = counter.textContent;
+        let current = 0;
+        const increment = target / 100;
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                counter.textContent = originalText;
+                clearInterval(timer);
+            } else {
+                // Extract suffix from original text (like +, %, etc.)
+                const suffix = originalText.replace(/[0-9]/g, '').replace(/^[0-9]+/, '');
+                counter.textContent = Math.ceil(current) + suffix;
+            }
+        }, 20);
+    });
+}
+
+// Intersection Observer for counter animation
+function setupCounterObserver() {
+    const statsSection = document.querySelector('.stats_section');
+    if (!statsSection) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounters();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(statsSection);
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+    setupCounterObserver();
+});
+</script>
+@endpush

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '1Edge School System - Home')
+@section('title', '1Edge Innovation - Home')
 
 @push('styles')
 <style>
@@ -32,6 +32,24 @@
     line-height: 1.6;
     margin-bottom: 30px;
   }
+  .img-box {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    border: 2px dotted #fff;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-icon {
+    width: 40px;
+    height: 40px;
+    color: #fff;
+}
+
   
   .slider_section .btn {
     padding: 12px 32px;
@@ -181,10 +199,68 @@
   }
 
   /* Stats section */
-  .school_stats { background-color: #f8f9fa; padding: 60px 0; }
-  .school_stats .stat-box { text-align: center; padding: 30px 20px; }
-  .school_stats .stat-box h3 { font-size: 2.8rem; font-weight: bold; color: #fe4801; }
-  .school_stats .stat-box p { color: #022f4a; font-weight: 600; margin: 0; }
+  .school_stats { 
+    background-color: #f8f9fa; 
+    padding: 60px 0; 
+  }
+  .school_stats .stat-box { 
+    text-align: center; 
+    padding: 30px 20px; 
+    transition: transform 0.3s ease;
+  }
+  .school_stats .stat-box:hover {
+    transform: translateY(-5px);
+  }
+  .school_stats .stat-box h3 { 
+    font-size: 2.8rem; 
+    font-weight: bold; 
+    color: #fe4801; 
+    margin-bottom: 10px;
+  }
+  .school_stats .stat-box p { 
+    color: #0c2f44ff; 
+    font-weight: 600; 
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  /* Stats Responsive */
+  @media (max-width: 991px) {
+    .school_stats { 
+      padding: 50px 0; 
+    }
+    .school_stats .stat-box h3 { 
+      font-size: 2.2rem; 
+    }
+    .school_stats .stat-box p { 
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .school_stats { 
+      padding: 40px 0; 
+    }
+    .school_stats .stat-box { 
+      padding: 25px 15px; 
+      margin-bottom: 20px;
+    }
+    .school_stats .stat-box h3 { 
+      font-size: 1.8rem; 
+    }
+    .school_stats .stat-box p { 
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 575px) {
+    .school_stats .stat-box h3 { 
+      font-size: 1.5rem; 
+    }
+    .school_stats .stat-box p { 
+      font-size: 0.85rem;
+    }
+  }
 
   /* Programs section */
   .programs_section { padding: 75px 0; background: #fff; }
@@ -218,6 +294,62 @@
   }
   .programs_section .program-card h5 { font-weight: 700; color: #022f4a; margin-bottom: 10px; }
   .programs_section .program-card p { color: #666; font-size: 0.9rem; }
+  
+  /* Programs Responsive */
+  @media (max-width: 991px) {
+    .programs_section { padding: 60px 0; }
+    .programs_section .sec-title h2 { font-size: 1.8rem; }
+  }
+  
+  @media (max-width: 767px) {
+    .programs_section { padding: 50px 0; }
+    .programs_section .sec-title { margin-bottom: 35px; }
+    .programs_section .sec-title h2 { font-size: 1.6rem; }
+    .programs_section .program-card { padding: 30px 15px; }
+  }
+  
+  /* Feature Section Responsive */
+  .feature_section { padding: 60px 0; }
+  .feature_section .box {
+    text-align: center;
+    padding: 30px 20px;
+    transition: all 0.3s;
+    margin-bottom: 30px;
+  }
+  .feature_section .box:hover {
+    transform: translateY(-5px);
+  }
+  .feature_section .box .img-box {
+    margin-bottom: 20px;
+  }
+  .feature_section .box .detail-box h5 {
+    font-weight: 700;
+    color: #022f4a;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+  .feature_section .box .detail-box p {
+    color: #666;
+    font-size: 0.95rem;
+  }
+  
+  @media (max-width: 767px) {
+    .feature_section { padding: 50px 0; }
+    .feature_section .box { padding: 25px 15px; }
+    .feature_section .box .img-box svg { width: 48px; height: 48px; }
+    .feature_section .box .detail-box h5 { font-size: 1.1rem; }
+    .feature_section .box .detail-box p { font-size: 0.9rem; }
+  }
+  
+  /* Find Section Responsive */
+  .find_section { padding: 50px 0; }
+  
+  @media (max-width: 767px) {
+    .find_section { padding: 40px 0; }
+    .find_section .text-center { padding: 35px 25px !important; }
+    .find_section h2 { font-size: 1.5rem !important; }
+    .find_section p { font-size: 1rem !important; }
+  }
 </style>
 @endpush
 
@@ -273,37 +405,67 @@
     <div class="row">
       <div class="col-md-4">
         <div class="box">
-          <div class="img-box">
-            <img src="{{asset('assets/images/money.png')}}" alt="Affordable Plans">
-          </div>
-          <div class="detail-box">
-            <h5>Fast & Efficient</h5>
-            <p>Lightning-fast solutions that scale with your business</p>
-          </div>
-        </div>
+        <div class="img-box">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             fill="none"
+             viewBox="0 0 24 24"
+             stroke-width="1.5"
+             stroke="currentColor"
+             class="feature-icon">
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+        </svg>
+    </div>
+
+    <div class="detail-box">
+        <h5>Fast & Efficient</h5>
+        <p>Lightning-fast solutions that scale with your business</p>
+    </div>
+</div>
       </div>
       <div class="col-md-4">
-        <div class="box">
-          <div class="img-box">
-            <img src="{{asset('assets/images/clock.png')}}" alt="Quick Setup">
-          </div>
-          <div class="detail-box">
+    <div class="box">
+        <div class="img-box">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 fill="none"
+                 viewBox="0 0 24 24"
+                 stroke-width="1.5"
+                 stroke="currentColor"
+                 class="feature-icon">
+                <path stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+            </svg>
+        </div>
+
+        <div class="detail-box">
             <h5>Secure & Reliable</h5>
             <p>Enterprise-grade security for your peace of mind</p>
-          </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="box">
-          <div class="img-box">
-            <img src="{{asset('assets/images/man.png')}}" alt="Dedicated Support">
-          </div>
-          <div class="detail-box">
+    </div>
+</div>
+     <div class="col-md-4">
+    <div class="box">
+        <div class="img-box">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 fill="none"
+                 viewBox="0 0 24 24"
+                 stroke-width="1.5"
+                 stroke="currentColor"
+                 class="feature-icon">
+                <path stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
+            </svg>
+        </div>
+
+        <div class="detail-box">
             <h5>Innovation First</h5>
             <p>Cutting-edge technology to keep you ahead</p>
-          </div>
         </div>
-      </div>
+    </div>
+</div>
     </div>
   </div>
 </section>
@@ -313,25 +475,18 @@
 <section class="school_stats">
   <div class="container">
     <div class="row">
-      <div class="col-md-3 col-6">
-        <div class="stat-box">
-          <h3>500+</h3>
-          <p>Product</p>
+      @forelse($stats as $stat)
+        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+          <div class="stat-box">
+            <h3>{{ $stat->value }}</h3>
+            <p>{{ $stat->title }}</p>
+          </div>
         </div>
-      </div>
-      <div class="col-md-3 col-6">
-        <div class="stat-box">
-          <h3>2 </h3>
-          <p>Client</p>
+      @empty
+        <div class="col-12 text-center">
+          <p>No statistics available at the moment.</p>
         </div>
-      </div>
-      <div class="col-md-3 col-6">
-        <div class="stat-box">
-          <h3>9+</h3>
-          <p>Customer Satisfaction</p>
-        </div>
-      </div>
-     
+      @endforelse
     </div>
   </div>
 </section>

@@ -15,7 +15,8 @@ class HomeController extends Controller
     public function index()
     {
         $footerData = $this->getFooterData();
-        return view('welcome', compact('footerData'));
+        $stats = \App\Models\Stat::active()->ordered()->get();
+        return view('welcome', compact('footerData', 'stats'));
     }
     
     /**

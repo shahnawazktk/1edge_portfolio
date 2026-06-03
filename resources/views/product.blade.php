@@ -732,12 +732,10 @@
                 <div class="col-md-4">
                     <div class="module-card">
                         <div class="mod-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                                <circle cx="9" cy="7" r="4" />
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                              <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                          </svg>
                         </div>
                         <h5>1 School</h5>
                         <p>Complete student profiles with academic records, attendance history, health info, and
@@ -753,12 +751,13 @@
                 <div class="col-md-4">
                     <div class="module-card">
                         <div class="mod-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                                <line x1="16" y1="2" x2="16" y2="6" />
-                                <line x1="8" y1="2" x2="8" y2="6" />
-                                <line x1="3" y1="10" x2="21" y2="10" />
-                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M3 22V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path>
+                              <path d="M3 22h12"></path>
+                              <path d="M9 6v4"></path>
+                              <path d="M17 5h1a2 2 0 0 1 2 2v3a2 2 0 0 0 2 2h0v6a2 2 0 0 1-2 2h-1"></path>
+                              <rect x="5" y="10" width="8" height="4" rx="1"></rect>
+                          </svg>
                         </div>
                         <h5>1 Station</h5>
                         <p>Mark and monitor daily attendance digitally. Auto-alerts to parents when a student is absent,
@@ -774,12 +773,11 @@
                 <div class="col-md-4">
                     <div class="module-card">
                         <div class="mod-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                                <line x1="16" y1="13" x2="8" y2="13" />
-                                <line x1="16" y1="17" x2="8" y2="17" />
-                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                              <path d="M12 8v8"></path>
+                              <path d="M8 12h8"></path>
+                          </svg>
                         </div>
                         <h5>1Hospital</h5>
                         <p>Manage patients, appointments, billing, pharmacy, and lab reports — all in one integrated hospital management platform.</p>
@@ -793,12 +791,11 @@
                 <div class="col-md-4">
                     <div class="module-card">
                         <div class="mod-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                                <line x1="16" y1="13" x2="8" y2="13" />
-                                <line x1="16" y1="17" x2="8" y2="17" />
-                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path>
+                              <path d="M7 2v20"></path>
+                              <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"></path>
+                          </svg>
                         </div>
                         <h5>1Dine</h5>
                         <p>Take orders, manage tables, track kitchen activity, and process payments — all in one smart restaurant management platform.</p>

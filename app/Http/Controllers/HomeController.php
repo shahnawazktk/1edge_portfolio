@@ -84,6 +84,30 @@ class HomeController extends Controller
         return view('product', compact('footerData'));
     }
 
+    public function product1school()
+    {
+        $footerData = $this->getFooterData();
+        return view('product-detail-1school', compact('footerData'));
+    }
+
+    public function product1station()
+    {
+        $footerData = $this->getFooterData();
+        return view('product-detail-1station', compact('footerData'));
+    }
+
+    public function product1hospital()
+    {
+        $footerData = $this->getFooterData();
+        return view('product-detail-1hospital', compact('footerData'));
+    }
+
+    public function product1dine()
+    {
+        $footerData = $this->getFooterData();
+        return view('product-detail-1dine', compact('footerData'));
+    }
+
     /**
      * Display the services page.
      *

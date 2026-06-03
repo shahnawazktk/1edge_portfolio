@@ -73,12 +73,16 @@
   .team_section .heading_container h2 { font-size: 2rem; font-weight: 700; color: #022f4a; }
   .team_section .heading_container h2 span { color: #fe4801; }
   .team_section .heading_container p { color: #666; margin-top: 10px; }
-  .team_section .team-card { text-align: center; padding: 25px 15px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin-bottom: 30px; transition: transform 0.3s; }
-  .team_section .team-card:hover { transform: translateY(-5px); }
-  .team_section .team-card img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 3px solid #fe4801; margin-bottom: 15px; }
-  .team_section .team-card h5 { font-weight: 700; color: #022f4a; margin-bottom: 4px; }
-  .team_section .team-card span { font-size: 0.85rem; color: #fe4801; font-weight: 600; }
-  .team_section .team-card p { font-size: 0.88rem; color: #666; margin-top: 10px; }
+  .team_section .team-card { text-align: center; padding: 30px 20px; border-radius: 12px; box-shadow: 0 4px 25px rgba(0,0,0,0.09); margin-bottom: 30px; transition: transform 0.3s, box-shadow 0.3s; background: #fff; height: calc(100% - 30px); display: flex; flex-direction: column; align-items: center; }
+  .team_section .team-card:hover { transform: translateY(-6px); box-shadow: 0 10px 35px rgba(0,0,0,0.13); }
+  .team_section .team-card .avatar-wrapper { position: relative; margin-bottom: 18px; }
+  .team_section .team-card .avatar-wrapper img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 4px solid #fe4801; display: block; }
+  .team_section .team-card .avatar-wrapper::after { content: ''; position: absolute; inset: -5px; border-radius: 50%; border: 2px dashed rgba(254,72,1,0.3); }
+  .team_section .team-card h5 { font-weight: 700; color: #022f4a; margin-bottom: 4px; font-size: 1.05rem; }
+  .team_section .team-card .role-badge { display: inline-block; background: rgba(254,72,1,0.1); color: #fe4801; font-size: 0.8rem; font-weight: 600; padding: 3px 12px; border-radius: 20px; margin-bottom: 14px; }
+  .team_section .team-card .team-social { display: flex; gap: 8px; justify-content: center; margin-top: auto; }
+  .team_section .team-card .team-social a { width: 32px; height: 32px; border-radius: 50%; background: #f0f4f8; color: #022f4a; display: flex; align-items: center; justify-content: center; transition: background 0.3s, color 0.3s; text-decoration: none; font-size: 0.78rem; }
+  .team_section .team-card .team-social a:hover { background: #fe4801; color: #fff; }
   /* Values Section */
   .values_section { background: #f8f9fa; padding: 70px 0; }
   .values_section .heading_container { text-align: center; margin-bottom: 40px; }
@@ -479,44 +483,72 @@
       <h2>Meet Our <span>Leadership Team</span></h2>
       <p>Dedicated educators and technologists working together to shape the future of school management.</p>
     </div>
-    <div class="row">
-      <div class="col-md-4 col-sm-6">
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="team-card">
-          <img src="{{ asset('assets/images/avatar/avatar-1.jpg') }}" alt="Principal">
+          <div class="avatar-wrapper">
+            <img src="{{ asset('assets/images/avatar/avatar-1.jpg') }}" alt="CEO">
+          </div>
           <h5>Mr. Taimur Khan</h5>
-          <span>CEO</span>
-          
+          <span class="role-badge">CEO</span>
+          <div class="team-social">
+            <a href="#" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="#" title="Email"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          </div>
         </div>
       </div>
-      <div class="col-md-4 col-sm-6">
+      <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="team-card">
-          <img src="{{ asset('assets/images/avatar/avatar-2.jpg') }}" alt="Vice Principal">
+          <div class="avatar-wrapper">
+            <img src="{{ asset('assets/images/avatar/avatar-44.jpg') }}" alt="MD">
+          </div>
           <h5>Mr. Abdullah</h5>
-          <span>MD</span>
+          <span class="role-badge">MD</span>
+          <div class="team-social">
+            <a href="#" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="#" title="Email"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          </div>
         </div>
       </div>
-      <div class="col-md-4 col-sm-6">
+      <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="team-card">
-          <img src="{{ asset('assets/images/avatar/avatar-3.jpg') }}" alt="Head of Technology">
+          <div class="avatar-wrapper">
+            <img src="{{ asset('assets/images/avatar/avatar-3.jpg') }}" alt="Team Lead">
+          </div>
           <h5>Mr. Hamza</h5>
-          <span>Team Lead</span>
+          <span class="role-badge">Team Lead</span>
+          <div class="team-social">
+            <a href="#" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="#" title="Email"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          </div>
         </div>
       </div>
-      <div class="col-md-4 col-sm-6">
+      <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="team-card">
-          <img src="{{ asset('assets/images/avatar/avatar-4.jpg') }}" alt="Head of Academics">
+          <div class="avatar-wrapper">
+            <img src="{{ asset('assets/images/avatar/avatar-4.jpeg') }}" alt="Head of Academics">
+          </div>
           <h5>Mr. Shahnawaz</h5>
-          <span>Head of Academics</span>
+          <span class="role-badge">Developer</span>
+          <div class="team-social">
+            <a href="#" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="#" title="Email"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          </div>
         </div>
       </div>
-      <div class="col-md-4 col-sm-6">
+      <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="team-card">
-          <img src="{{ asset('assets/images/avatar/avatar-5.jpg') }}" alt="Student Counselor">
+          <div class="avatar-wrapper">
+            <img src="{{ asset('assets/images/avatar/avatar-5.jpg') }}" alt="Student Counselor">
+          </div>
           <h5>Mr. Imran</h5>
-          <span>Student Counselor</span>
+          <span class="role-badge">Developer</span>
+          <div class="team-social">
+            <a href="#" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="#" title="Email"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          </div>
         </div>
       </div>
-      
     </div>
   </div>
 </section>

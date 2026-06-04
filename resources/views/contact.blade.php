@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Contact Us | 1Edge School System')
+@section('title', 'Contact Us | 1Edge Innovation')
 @section('body_class', 'sub_page')
 
 @push('styles')
@@ -643,8 +643,7 @@
                                     <span class="btn-text">Send Message</span>
                                     <span class="btn-loading d-none">
                                         <span class="spinner-border spinner-border-sm me-2" role="status"
-                                            aria-hidden="true"></span>
-                                        Sending...
+                                            aria-hidden="true"></span>Sending...
                                     </span>
                                 </button>
                             </div>
@@ -671,6 +670,27 @@
                 btnText.classList.add('d-none');
                 btnLoading.classList.remove('d-none');
             });
+
+            // Check if there are validation errors or success message
+            const hasErrors = document.querySelector('.is-invalid') || document.querySelector('.alert-danger');
+            const hasSuccess = document.querySelector('.alert-success');
+
+            // Reset button if there are errors (form wasn't actually submitted)
+            if (hasErrors) {
+                submitBtn.disabled = false;
+                btnText.classList.remove('d-none');
+                btnLoading.classList.add('d-none');
+            }
+
+            // Keep button disabled on success
+            if (hasSuccess) {
+                setTimeout(function() {
+                    // Reset button after success message auto-hides
+                    submitBtn.disabled = false;
+                    btnText.classList.remove('d-none');
+                    btnLoading.classList.add('d-none');
+                }, 5000);
+            }
 
             // Auto-hide alerts after 5 seconds
             const alerts = document.querySelectorAll('.alert');

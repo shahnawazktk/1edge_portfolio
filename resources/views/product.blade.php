@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Products | 1Edge School System')
+@section('title', 'Products | 1Edge Innovation')
 @section('body_class', 'sub_page')
 
 @push('styles')

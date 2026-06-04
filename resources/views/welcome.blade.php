@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '1Edge Innovation - Home')
+@section('title', 'Home - 1Edge Innovation')
 
 @push('styles')
     <style>

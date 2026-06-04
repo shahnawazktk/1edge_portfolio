@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '1Dine | 1Edge Restaurant Management System')
+@section('title', '1Dine | 1Edge Innovation')
 @section('body_class', 'sub_page')
 
 @push('styles')

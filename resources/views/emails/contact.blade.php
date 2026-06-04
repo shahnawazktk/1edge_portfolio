@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>New Contact Form Submission</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Inquiry Received</title>
     <style>
-        /* Reset & Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -16,251 +15,350 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #eef2f5;
-            font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', Helvetica, Arial, sans-serif;
-            line-height: 1.5;
-            color: #1a2c3e;
+            background: linear-gradient(135deg, #f5f7fa 0%, #eef2f5 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
         }
 
-        /* Main Container - Responsive & Centered */
-        .email-container {
-            max-width: 620px;
+        /* Main Container */
+        .email-wrapper {
+            max-width: 640px;
             margin: 0 auto;
-            background-color: #ffffff;
-            border-radius: 28px;
+            padding: 20px;
+        }
+
+        .email-container {
+            background: #ffffff;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.12), 0 4px 10px -4px rgba(0, 0, 0, 0.02);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08), 0 0 1px rgba(0, 0, 0, 0.05);
         }
 
-        /* Header Accent Area */
-        .email-header {
-            background: linear-gradient(135deg, #022f4a 0%, #043a5a 100%);
-            padding: 32px 32px 28px 32px;
-            text-align: left;
-            border-bottom: 5px solid #fe4801;
+        /* ========== HEADER SECTION ========== */
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 48px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .email-header h1 {
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
             color: #ffffff;
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 700;
-            letter-spacing: -0.2px;
-            margin: 0 0 8px 0;
-            line-height: 1.2;
+            margin: 0 0 12px 0;
+            letter-spacing: -0.5px;
         }
 
-        .email-header p {
-            color: #cbdbe6;
+        .header-subtitle {
+            color: rgba(255, 255, 255, 0.9);
             font-size: 16px;
             margin: 0;
             font-weight: 400;
         }
 
-        /* Content Body */
-        .email-body {
-            padding: 32px 32px 24px 32px;
-            background: #ffffff;
+        /* ========== CONTENT SECTION ========== */
+        .content {
+            padding: 48px 40px;
         }
 
-        /* Modern Card Style for each field */
-        .info-grid {
-            display: flex;
-            flex-direction: column;
+        /* Contact Info Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 24px;
-            margin-bottom: 32px;
+            margin-bottom: 48px;
         }
 
-        .field-card {
-            background: #f9fafc;
-            border-radius: 20px;
-            padding: 6px 0 6px 0;
-            transition: all 0.2s ease;
-            border: 1px solid #eef2f8;
+        .contact-card {
+            background: linear-gradient(135deg, #f8f9fc 0%, #ffffff 100%);
+            border: 1px solid #e8ecf1;
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
         }
 
-        .field-row {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            padding: 6px 20px;
+        .contact-card:hover {
+            border-color: #2a5298;
+            box-shadow: 0 4px 12px rgba(42, 82, 152, 0.08);
+            transform: translateY(-2px);
         }
 
-        /* Icon placeholder using unicode / symbols (no external assets) */
-        .field-icon {
-            flex-shrink: 0;
-            width: 42px;
-            height: 42px;
-            background: #ffffff;
-            border-radius: 30px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
-            border: 1px solid #e2e8f0;
-            color: #fe4801;
-        }
-
-        .field-content {
-            flex: 1;
-        }
-
-        .field-label {
-            font-size: 13px;
-            font-weight: 600;
+        .contact-label {
+            font-size: 12px;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: #5b6f82;
-            margin-bottom: 6px;
+            letter-spacing: 1px;
+            color: #7f8fa3;
+            margin-bottom: 10px;
+            display: block;
         }
 
-        .field-value {
-            font-size: 17px;
-            font-weight: 500;
-            color: #022f4a;
+        .contact-value {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e3c72;
             word-break: break-word;
             line-height: 1.4;
         }
 
-        /* Special message box - elevated style */
-        .message-wrapper {
-            background: #ffffff;
-            border-radius: 20px;
-            border: 1px solid #eef2f8;
-            margin-top: 8px;
-            overflow: hidden;
-            transition: all 0.2s;
+        .contact-value a {
+            color: #2a5298;
+            text-decoration: none;
+            border-bottom: 2px solid #2a5298;
+            transition: all 0.2s ease;
         }
 
-        .message-header {
-            background: #fef5ed;
-            padding: 12px 20px;
-            border-bottom: 2px solid #fe4801;
+        .contact-value a:hover {
+            color: #1e3c72;
+            background: rgba(42, 82, 152, 0.05);
+            padding: 2px 4px;
+            border-radius: 2px;
         }
 
-        .message-header span {
-            font-weight: 700;
+        /* Subject/Interest Section */
+        .subject-section {
+            background: linear-gradient(135deg, #fff5e6 0%, #fffcf7 100%);
+            border: 1px solid #ffe8cc;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .subject-section .contact-label {
+            color: #b8860b;
+        }
+
+        .subject-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 25px;
             font-size: 15px;
-            color: #022f4a;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(42, 82, 152, 0.2);
         }
 
-        .message-content {
-            padding: 22px 24px;
-            background-color: #ffffff;
-            font-size: 16px;
-            color: #1e2f3d;
-            line-height: 1.55;
+        /* Message Section */
+        .message-section {
+            margin-bottom: 32px;
+        }
+
+        .message-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #7f8fa3;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .message-box {
+            background: linear-gradient(135deg, #f0f3f7 0%, #f8f9fc 100%);
+            border: 1px solid #e0e6f0;
+            border-left: 4px solid #2a5298;
+            border-radius: 8px;
+            padding: 28px 24px;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #2c3e50;
             white-space: pre-wrap;
             word-break: break-word;
         }
 
-        /* Product badge style */
-        .product-badge {
-            display: inline-block;
-            background: #eef2ff;
-            padding: 4px 14px;
-            border-radius: 40px;
-            font-size: 15px;
-            font-weight: 500;
-            color: #022f4a;
-            margin-top: 2px;
+        /* ========== DIVIDER ========== */
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #e8ecf1, transparent);
+            margin: 40px 0;
         }
 
-        /* CTA / Footer */
-        .footer-note {
-            margin-top: 36px;
-            padding-top: 20px;
-            border-top: 1px solid #e9edf2;
+        /* ========== ACTION SECTION ========== */
+        .action-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .action-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+            color: #ffffff;
+            padding: 14px 42px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(42, 82, 152, 0.3);
+        }
+
+        .action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(42, 82, 152, 0.4);
+        }
+
+        /* ========== FOOTER SECTION ========== */
+        .footer {
+            background: linear-gradient(135deg, #f8f9fc 0%, #f2f5fa 100%);
+            border-top: 1px solid #e8ecf1;
+            padding: 32px 40px;
             text-align: center;
         }
 
-        .footer-note p {
+        .footer-meta {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
             font-size: 13px;
-            color: #7e8c9e;
-            margin-bottom: 8px;
+            color: #7f8fa3;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
-        .timestamp {
-            font-size: 12px;
-            color: #9aaebf;
-            background: #f8fafd;
-            display: inline-block;
-            padding: 6px 14px;
-            border-radius: 50px;
+        .footer-text {
+            font-size: 13px;
+            color: #8a9aaa;
+            line-height: 1.6;
+            margin: 0;
         }
 
-        /* Responsive breakpoints */
+        .footer-text strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        /* ========== RESPONSIVE DESIGN ========== */
         @media (max-width: 600px) {
-            .email-container {
-                margin: 0 12px;
-                border-radius: 28px;
+            .email-wrapper {
+                padding: 12px;
             }
 
-            .email-header {
-                padding: 24px 20px;
+            .header {
+                padding: 36px 24px;
             }
 
-            .email-header h1 {
-                font-size: 24px;
+            .header h1 {
+                font-size: 26px;
             }
 
-            .email-body {
-                padding: 24px 20px 20px 20px;
+            .content {
+                padding: 28px 24px;
             }
 
-            .field-row {
-                padding: 6px 16px;
-                gap: 12px;
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                margin-bottom: 24px;
             }
 
-            .field-icon {
-                width: 36px;
-                height: 36px;
-                font-size: 18px;
+            .contact-card {
+                padding: 18px;
             }
 
-            .field-value {
+            .contact-label {
+                font-size: 11px;
+                letter-spacing: 0.5px;
+            }
+
+            .contact-value {
                 font-size: 16px;
             }
 
-            .message-content {
-                padding: 18px 20px;
-                font-size: 15px;
-            }
-
-            .product-badge {
+            .message-box {
+                padding: 20px 18px;
                 font-size: 14px;
             }
-        }
 
-        @media (max-width: 460px) {
-            .field-row {
-                flex-direction: column;
-                gap: 6px;
-                padding: 12px 16px;
+            .footer {
+                padding: 24px 20px;
             }
 
-            .field-icon {
-                margin-bottom: 0px;
+            .footer-meta {
+                gap: 16px;
             }
 
-            .field-label {
+            .meta-item {
                 font-size: 12px;
             }
 
-            .info-grid {
-                gap: 16px;
+            .footer-text {
+                font-size: 12px;
             }
         }
 
-        /* Keep consistent spacing */
-        .attribution {
-            font-size: 0.1px;
-            height: 0;
-            opacity: 0;
+        @media (max-width: 480px) {
+            .header {
+                padding: 28px 16px;
+            }
+
+            .header-icon {
+                font-size: 40px;
+                margin-bottom: 12px;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .header-subtitle {
+                font-size: 14px;
+            }
+
+            .content {
+                padding: 20px 16px;
+            }
+
+            .contact-card {
+                padding: 16px;
+            }
+
+            .subject-section {
+                padding: 16px;
+            }
+
+            .divider {
+                margin: 28px 0;
+            }
+        }
+
+        /* Utility Classes */
+        .text-muted {
+            color: #8a9aaa;
+        }
+
+        .text-primary {
+            color: #2a5298;
         }
 
         a {
@@ -269,98 +367,99 @@
     </style>
 </head>
 
-<body style="margin:0; padding:20px 0; background:#eef2f5;">
-    <!-- Centered responsive email container -->
-    <div style="max-width: 620px; margin: 0 auto; padding: 12px 0 30px 0;">
+<body style="margin: 0; padding: 0; background: linear-gradient(135deg, #f5f7fa 0%, #eef2f5 100%);">
+    <div class="email-wrapper">
         <div class="email-container">
 
-            <!-- Modern header with brand accent -->
-            <div class="email-header">
-                <h1> New inquiry received</h1>
-                <p>Lead details from your website contact form</p>
-            </div>
-
-            <!-- Main content -->
-            <div class="email-body">
-                <div class="info-grid">
-
-                    <!-- Name field with icon row -->
-                    <div class="field-card">
-                        <div class="field-row">
-                            <div class="field-icon"></div>
-                            <div class="field-content">
-                                <div class="field-label">Full name</div>
-                                <div class="field-value">{{ $data['name'] }}</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Email field -->
-                    <div class="field-card">
-                        <div class="field-row">
-                            <div class="field-icon"></div>
-                            <div class="field-content">
-                                <div class="field-label">Email address</div>
-                                <div class="field-value" style="word-break: break-all;">
-                                    <a href="mailto:{{ $data['email'] }}"
-                                        style="color:#fe4801; text-decoration:none; border-bottom:1px dotted #fe4801;">{{ $data['email'] }}</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Phone field with clickable (optional but professional) -->
-                    <div class="field-card">
-                        <div class="field-row">
-                            <div class="field-icon"></div>
-                            <div class="field-content">
-                                <div class="field-label">Phone number</div>
-                                <div class="field-value">
-                                    <a href="tel:{{ $data['phone'] }}"
-                                        style="color:#022f4a; text-decoration:none; font-weight:500;">{{ $data['phone'] }}</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product interested in (subject) with badge style -->
-                    <div class="field-card">
-                        <div class="field-row">
-                            <div class="field-icon"></div>
-                            <div class="field-content">
-                                <div class="field-label">Product / Service interest</div>
-                                <div class="field-value">
-                                    <span class="product-badge">{{ $data['subject'] }}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Message section - distinctive professional card -->
-                <div style="margin-top: 8px;">
-                    <div class="message-wrapper">
-                        <div class="message-header">
-                            <span>Detailed message</span>
-                        </div>
-                        <div class="message-content">
-                            {{ $data['message'] }}
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Additional info + subtle footer -->
-                <div class="footer-note">
-                    <div class="timestamp">
-                        Submitted via contact form
-                    </div>
-                    <p style="margin-top: 18px;">This lead was generated from your website contact form.<br>Reply
-                        directly to the customer using the email above.</p>
+            <!-- ========== HEADER ========== -->
+            <div class="header">
+                <div class="header-content">
+                    <div class="header-icon"></div>
+                    <h1>New Inquiry Received</h1>
+                    <p class="header-subtitle">Lead from your website contact form</p>
                 </div>
             </div>
+
+            <!-- ========== CONTENT ========== -->
+            <div class="content">
+
+                <!-- Contact Information Grid -->
+                <div class="contact-grid">
+                    <!-- Name Card -->
+                    <div class="contact-card">
+                        <span class="contact-label">👤 Full Name</span>
+                        <div class="contact-value">{{ $data['name'] }}</div>
+                    </div>
+
+                    <!-- Email Card -->
+                    <div class="contact-card">
+                        <span class="contact-label">✉️ Email Address</span>
+                        <div class="contact-value">
+                            <a href="mailto:{{ $data['email'] }}">{{ $data['email'] }}</a>
+                        </div>
+                    </div>
+
+                    <!-- Phone Card -->
+                    <div class="contact-card">
+                        <span class="contact-label">📞 Phone Number</span>
+                        <div class="contact-value">
+                            <a href="tel:{{ $data['phone'] }}">{{ $data['phone'] }}</a>
+                        </div>
+                    </div>
+
+                    <!-- Subject Card -->
+                    <div class="contact-card">
+                        <span class="contact-label">💼 Interest Category</span>
+                        <div class="contact-value">{{ $data['subject'] }}</div>
+                    </div>
+                </div>
+
+                <!-- Subject/Interest Highlight Section -->
+                <div class="subject-section">
+                    <span class="contact-label">🎯 Service Interest</span>
+                    <span class="subject-badge">{{ $data['subject'] }}</span>
+                </div>
+
+                <!-- Message Section -->
+                <div class="message-section">
+                    <span class="message-label">💬 Message Details</span>
+                    <div class="message-box">{{ $data['message'] }}</div>
+                </div>
+
+                <!-- Divider -->
+                <div class="divider"></div>
+
+                <!-- Action Section -->
+                <div class="action-section">
+                    <a href="mailto:{{ $data['email'] }}" class="action-button">Reply to Inquiry</a>
+                </div>
+
+            </div>
+
+            <!-- ========== FOOTER ========== -->
+            <div class="footer">
+                <div class="footer-meta">
+                    <div class="meta-item">
+                        <span>📅</span>
+                        <span>{{ now()->format('M d, Y') }}</span>
+                    </div>
+                    <div class="meta-item">
+                        <span>🕐</span>
+                        <span>{{ now()->format('H:i A') }}</span>
+                    </div>
+                </div>
+
+                <p class="footer-text">
+                    This is a <strong>new inquiry</strong> from your website contact form.<br>
+                    Please respond promptly to build strong customer relationships.
+                </p>
+
+                <p class="text-muted" style="margin-top: 16px; font-size: 12px;">
+                    This is an automated message. Do not reply to this email.
+                </p>
+            </div>
+
         </div>
-        <!-- tiny spacer for email clients -->
-        <div style="height: 10px;"></div>
     </div>
 </body>
 

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '1Station | 1Edge Petrol Station Management System')
+@section('title', '1Station | 1Edge Innovation')
 @section('body_class', 'sub_page')
 
 @push('styles')

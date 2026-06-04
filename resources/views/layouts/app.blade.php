@@ -12,7 +12,7 @@
   <meta name="description" content="1Edge School System - Smart Education Management" />
   <meta name="author" content="1Edge" />
 
-  <title>@yield('title', '1Edge School System')</title>
+  <title>@yield('title', '1Edge Innovation')</title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.css')}}" />

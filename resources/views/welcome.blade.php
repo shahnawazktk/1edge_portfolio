@@ -12,7 +12,7 @@
         /* Hero/Slider Section */
         .slider_section {
             padding: 80px 0;
-            min-height: 500px;
+            min-height: 600px;
             display: flex;
             align-items: center;
             background: transparent;
@@ -21,22 +21,49 @@
 
         .slider_section>.container {
             max-width: 1140px;
-            padding: 0 30px;
+            padding: 0 15px;
+            width: 100%;
+        }
+
+        .slider_section .row {
+            display: flex !important;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .slider_section .col-lg-6 {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .slider_section .detail-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .slider_section .detail-box h1 {
             font-size: 2.8rem;
             font-weight: 700;
             color: #fff;
-            line-height: 1.2;
-            margin-bottom: 20px;
+            line-height: 1.3;
+            margin-bottom: 25px;
+            padding: 0;
         }
 
         .slider_section .detail-box p {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.9);
-            line-height: 1.6;
-            margin-bottom: 30px;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.7;
+            margin-bottom: 35px;
+            padding: 0;
+        }
+
+        .slider_section .detail-box > div {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
         }
 
         .img-box {
@@ -65,8 +92,6 @@
             text-decoration: none;
             display: inline-block;
             transition: all 0.3s;
-            margin-right: 15px;
-            margin-bottom: 10px;
         }
 
         .slider_section .btn-primary {
@@ -96,68 +121,63 @@
         /* Image Box Styling - Larger and Responsive */
         .slider_section .img-box {
             width: 100%;
-            max-width: 580px;
-            margin: 0 auto;
+            max-width: 550px;
+            flex: 0 0 auto;
+            margin: 0;
             padding: 0;
+            border: none;
+            border-radius: 0;
+            background: none;
         }
 
         .slider_section .img-box img {
             width: 100%;
             height: auto;
             display: block;
-            border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
             transition: transform 0.3s ease;
         }
 
         .slider_section .img-box img:hover {
-            transform: scale(1.02);
+            transform: scale(1.03);
         }
 
         /* Responsive Design for Large Screens (Desktop) */
         @media (min-width: 1200px) {
-            .slider_section .img-box {
-                max-width: 700px;
-            }
-
             .slider_section {
                 padding: 100px 0;
+                min-height: 700px;
+            }
+
+            .slider_section .detail-box h1 {
+                font-size: 3.2rem;
+            }
+
+            .slider_section .img-box {
+                max-width: 2000px;
             }
         }
 
         /* Responsive Design for Medium Screens (Tablets) */
-        @media (max-width: 991px) {
+        @media (max-width: 991px) and (min-width: 768px) {
             .slider_section {
-                padding: 60px 0;
+                padding: 10px 0;
+                min-height: auto;
+            }
+
+            .slider_section .row {
+                display: flex !important;
+                gap: 30px;
+            }
+
+            .slider_section .col-lg-6 {
+                flex: 1;
             }
 
             .slider_section .detail-box h1 {
                 font-size: 2.2rem;
-            }
-
-            .slider_section .detail-box p {
-                font-size: 1rem;
-            }
-
-            .slider_section .img-box {
-                max-width: 550px;
-            }
-        }
-
-        /* Responsive Design for Small Screens (Mobile) */
-        @media (max-width: 767px) {
-            .slider_section {
-                padding: 40px 0;
-                min-height: auto;
-            }
-
-            .slider_section .detail-box {
-                text-align: center;
-            }
-
-            .slider_section .detail-box h1 {
-                font-size: 1.8rem;
-                margin-bottom: 15px;
+                margin-bottom: 20px;
             }
 
             .slider_section .detail-box p {
@@ -165,43 +185,94 @@
                 margin-bottom: 25px;
             }
 
-            .slider_section .btn {
-                padding: 10px 24px;
-                font-size: 0.9rem;
-                margin-right: 8px;
-                margin-bottom: 10px;
+            .slider_section .detail-box > div {
+                gap: 15px;
             }
 
             .slider_section .img-box {
-                margin-top: 30px;
+                max-width: 450px;
+            }
+        }
+
+        /* Responsive Design for Small Screens (Mobile) */
+        @media (max-width: 767px) {
+            .slider_section {
+                padding: 50px 0;
+                min-height: auto;
+            }
+
+            .slider_section .row {
+                display: flex !important;
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .slider_section .col-lg-6 {
+                width: 100%;
+                flex: none;
+            }
+
+            .slider_section .detail-box {
+                text-align: center;
+            }
+
+            .slider_section .detail-box h1 {
+                font-size: 2rem;
+                margin-bottom: 18px;
+            }
+
+            .slider_section .detail-box p {
+                font-size: 0.9rem;
+                margin-bottom: 25px;
+            }
+
+            .slider_section .detail-box > div {
+                gap: 12px;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .slider_section .btn {
+                width: 100%;
+                text-align: center;
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+
+            .slider_section .img-box {
                 max-width: 100%;
-                padding: 0 10px;
+                margin-top: 20px;
             }
 
             .slider_section .img-box img {
-                border-radius: 8px;
+                border-radius: 12px;
             }
         }
 
         /* Responsive Design for Extra Small Screens */
         @media (max-width: 575px) {
+            .slider_section {
+                padding: 40px 0;
+                min-height: auto;
+            }
+
             .slider_section .detail-box h1 {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
+                margin-bottom: 15px;
+            }
+
+            .slider_section .detail-box p {
+                font-size: 0.85rem;
+                margin-bottom: 20px;
             }
 
             .slider_section .btn {
-                display: block;
-                width: 100%;
-                margin-right: 0;
-                margin-bottom: 12px;
-            }
-
-            .slider_section .img-box {
-                padding: 0 5px;
+                padding: 10px 18px;
+                font-size: 0.8rem;
             }
 
             .slider_section .img-box img {
-                border-radius: 6px;
+                border-radius: 10px;
             }
         }
 
@@ -504,7 +575,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <!-- Left Side Content -->
-                    <div class="col-lg-6 col-md-12">
+                    <div class="col-lg-6">
                         <div class="detail-box">
                             <h1>Transform Your Business with 1Edge Technologies</h1>
                             <p>We deliver innovative IT solutions and cutting-edge products that empower businesses to
@@ -517,8 +588,7 @@
                     </div>
 
                     <!-- Right Side Image -->
-                    <div
-                        class="col-lg-6 col-md-12 text-center mt-4 mt-lg-0 d-flex align-items-center justify-content-center">
+                    <div class="col-lg-6">
                         <div class="img-box">
                             <img src="{{ asset('assets/images/working_01.jpg') }}" alt="1Edge Technologies"
                                 class="img-fluid">

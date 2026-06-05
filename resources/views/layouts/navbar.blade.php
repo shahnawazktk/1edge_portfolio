@@ -23,7 +23,11 @@
       background-color: #022f4a;
       padding: 10px 0;
   }
-
+.header_section {
+    padding: 5px 0;
+    font-family: "Roboto", sans-serif;
+    height: auto;
+}
   .custom_nav-container .navbar-toggler {
       border-color: rgba(255, 255, 255, 0.3);
       padding: 8px 12px;

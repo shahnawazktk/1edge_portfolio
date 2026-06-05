@@ -216,7 +216,7 @@
     .footer-logo {
       max-height: 55px;
       /* Maintain white background on mobile for footer logo */
-      background-color: rgba(255, 255, 255, 0.95);
+      background-color:#154663;
       padding: 6px 10px;
       border-radius: 6px;
     }
@@ -290,7 +290,7 @@
     .footer-logo {
       max-height: 50px;
       /* Maintain white background on small mobile for footer logo */
-      background-color: rgba(255, 255, 255, 0.95);
+      background-color: #154663;
       padding: 5px 8px;
       border-radius: 5px;
     }
@@ -362,7 +362,7 @@
     .footer-logo {
       max-height: 45px;
       /* Maintain white background on extra small mobile for footer logo */
-      background-color: rgba(255, 255, 255, 0.95);
+      background-color:#154663;
       padding: 4px 6px;
       border-radius: 4px;
     }

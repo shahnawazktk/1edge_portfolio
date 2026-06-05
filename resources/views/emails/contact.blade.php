@@ -407,17 +407,17 @@
                         </div>
                     </div>
 
-                    <!-- Subject Card -->
+                    <!-- Product Card -->
                     <div class="contact-card">
-                        <span class="contact-label">💼 Interest Category</span>
-                        <div class="contact-value">{{ $data['subject'] }}</div>
+                        <span class="contact-label">💼 Product Interest</span>
+                        <div class="contact-value">{{ $data['product'] }}</div>
                     </div>
                 </div>
 
-                <!-- Subject/Interest Highlight Section -->
+                <!-- Subject Highlight Section -->
                 <div class="subject-section">
-                    <span class="contact-label">🎯 Service Interest</span>
-                    <span class="subject-badge">{{ $data['subject'] }}</span>
+                    <span class="contact-label">📋 Subject</span>
+                    <span class="subject-badge">{{ $data['subject_text'] }}</span>
                 </div>
 
                 <!-- Message Section -->

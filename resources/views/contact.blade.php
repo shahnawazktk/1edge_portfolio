@@ -575,64 +575,65 @@
 
                         <form action="{{ route('contact.submit') }}" method="POST" id="contactForm">
                             @csrf
+                            
+                            <!-- Row 1: Name and Email -->
                             <div class="row">
                                 <div class="col-md-6 form-group mb-3">
                                     <label for="name">Full Name *</label>
-                                    <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                        id="name" name="name" value="{{ old('name') }}" required
-                                        placeholder="Enter your name">
+                                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" required placeholder="Enter your full name" maxlength="100">
                                     @error('name')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="col-md-6 form-group mb-3">
                                     <label for="email">Email Address *</label>
-                                    <input type="email" class="form-control @error('email') is-invalid @enderror"
-                                        id="email" name="email" value="{{ old('email') }}" required
-                                        placeholder="Enter your email">
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" required placeholder="example@company.com" maxlength="100">
                                     @error('email')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
 
+                            <!-- Row 2: Phone and Product -->
                             <div class="row">
                                 <div class="col-md-6 form-group mb-3">
                                     <label for="phone">Phone Number *</label>
-                                    <input type="text" class="form-control @error('phone') is-invalid @enderror"
-                                        id="phone" name="phone" value="{{ old('phone') }}" required
-                                        placeholder="Enter your phone number">
+                                    <input type="tel" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" value="{{ old('phone') }}" required placeholder="03XX XXXXXXX" maxlength="16">
                                     @error('phone')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="col-md-6 form-group mb-3">
-                                    <label for="subject">Product Interested In *</label>
-                                    <select class="form-control @error('subject') is-invalid @enderror" id="subject"
-                                        name="subject" required>
-                                        <option value="" disabled {{ old('subject') ? '' : 'selected' }}>Select a
-                                            product</option>
-                                        <option value="1School" {{ old('subject') == '1School' ? 'selected' : '' }}>
-                                            1School</option>
-                                        <option value="1Station" {{ old('subject') == '1Station' ? 'selected' : '' }}>
-                                            1Station</option>
-                                        <option value="1Hospital" {{ old('subject') == '1Hospital' ? 'selected' : '' }}>
-                                            1Hospital</option>
-                                        <option value="1Dine" {{ old('subject') == '1Dine' ? 'selected' : '' }}>1Dine
-                                        </option>
-                                        <option value="Other" {{ old('subject') == 'Other' ? 'selected' : '' }}>Other
-                                        </option>
+                                    <label for="product">Product Number *</label>
+                                    <select class="form-control @error('product') is-invalid @enderror" id="product" name="product" required>
+                                        <option value="" disabled {{ old('product') ? '' : 'selected' }}>Select a product</option>
+                                        <option value="1School" {{ old('product') == '1School' ? 'selected' : '' }}>1School</option>
+                                        <option value="1Station" {{ old('product') == '1Station' ? 'selected' : '' }}>1Station</option>
+                                        <option value="1Hospital" {{ old('product') == '1Hospital' ? 'selected' : '' }}>1Hospital</option>
+                                        <option value="1Dine" {{ old('product') == '1Dine' ? 'selected' : '' }}>1Dine</option>
+                                        <option value="Other" {{ old('product') == 'Other' ? 'selected' : '' }}>Other</option>
                                     </select>
-                                    @error('subject')
+                                    @error('product')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
 
+                            <!-- Row 3: Subject -->
+                            <div class="row">
+                                <div class="col-md-12 form-group mb-3">
+                                    <label for="subject_text">Subject *</label>
+                                    <input type="text" class="form-control @error('subject_text') is-invalid @enderror" id="subject_text" name="subject_text" value="{{ old('subject_text') }}" required placeholder="Enter Subject Here">
+                                    @error('subject_text')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <!-- Row 4: Message -->
                             <div class="form-group mb-3">
                                 <label for="message">Your Message *</label>
-                                <textarea class="form-control @error('message') is-invalid @enderror" id="message" name="message" rows="5"
-                                    required placeholder="Write your message here...">{{ old('message') }}</textarea>
+                                <textarea class="form-control @error('message') is-invalid @enderror" id="message" name="message" rows="5" required placeholder="Write your message here...">{{ old('message') }}</textarea>
                                 @error('message')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -663,8 +664,198 @@
             const submitBtn = contactForm.querySelector('.btn_submit');
             const btnText = submitBtn.querySelector('.btn-text');
             const btnLoading = submitBtn.querySelector('.btn-loading');
+            const phoneInput = document.getElementById('phone');
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
 
+            // ============ NAME FIELD MASKING ============
+            nameInput.addEventListener('input', function(e) {
+                // Remove numbers and special characters, allow only letters and spaces
+                let value = e.target.value;
+                
+                // Remove any digits and special characters except spaces
+                value = value.replace(/[^a-zA-Z\s]/g, '');
+                
+                // Remove multiple consecutive spaces
+                value = value.replace(/\s+/g, ' ');
+                
+                // Capitalize first letter of each word
+                value = value.replace(/\b\w/g, function(char) {
+                    return char.toUpperCase();
+                });
+                
+                e.target.value = value;
+            });
+
+            // Validate name on blur
+            nameInput.addEventListener('blur', function(e) {
+                const value = e.target.value.trim();
+                
+                // Check if name has at least 3 characters and contains at least one space (full name)
+                if (value.length < 3) {
+                    showFieldError(nameInput, 'Name must be at least 3 characters long.');
+                } else if (!value.includes(' ')) {
+                    showFieldError(nameInput, 'Please enter your full name (First and Last name).');
+                } else {
+                    clearFieldError(nameInput);
+                }
+            });
+
+            nameInput.addEventListener('focus', function() {
+                clearFieldError(nameInput);
+            });
+
+            // ============ EMAIL FIELD MASKING ============
+            emailInput.addEventListener('input', function(e) {
+                // Convert to lowercase and remove spaces
+                let value = e.target.value.toLowerCase().replace(/\s/g, '');
+                e.target.value = value;
+            });
+
+            // Validate email on blur
+            emailInput.addEventListener('blur', function(e) {
+                const value = e.target.value.trim();
+                
+                // Email regex pattern
+                const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                
+                if (value.length > 0 && !emailPattern.test(value)) {
+                    showFieldError(emailInput, 'Please enter a valid email address (e.g., name@company.com).');
+                } else if (value.length > 0) {
+                    clearFieldError(emailInput);
+                }
+            });
+
+            emailInput.addEventListener('focus', function() {
+                clearFieldError(emailInput);
+            });
+
+            // ============ PHONE NUMBER MASKING ============
+            phoneInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, ''); // Remove all non-digits
+                let formattedValue = '';
+
+                // Handle Pakistani format
+                if (value.startsWith('92')) {
+                    // International format: +92 3XX XXXXXXX
+                    formattedValue = '+92';
+                    if (value.length > 2) {
+                        formattedValue += ' ' + value.substring(2, 5);
+                    }
+                    if (value.length > 5) {
+                        formattedValue += ' ' + value.substring(5, 12);
+                    }
+                } else if (value.startsWith('0')) {
+                    // Local format: 03XX XXXXXXX
+                    formattedValue = value.substring(0, 4);
+                    if (value.length > 4) {
+                        formattedValue += ' ' + value.substring(4, 11);
+                    }
+                } else if (value.length > 0) {
+                    // If starts with 3, add 0 prefix
+                    if (value.startsWith('3')) {
+                        value = '0' + value;
+                        formattedValue = value.substring(0, 4);
+                        if (value.length > 4) {
+                            formattedValue += ' ' + value.substring(4, 11);
+                        }
+                    } else {
+                        // Just format as entered
+                        formattedValue = value.substring(0, 4);
+                        if (value.length > 4) {
+                            formattedValue += ' ' + value.substring(4, 11);
+                        }
+                    }
+                }
+
+                e.target.value = formattedValue;
+            });
+
+            // Validate phone on blur
+            phoneInput.addEventListener('blur', function(e) {
+                const value = e.target.value.replace(/\D/g, '');
+                
+                // Check if it's a valid Pakistani phone number
+                const isValidPakistani = (value.startsWith('92') && value.length === 12) || 
+                                        (value.startsWith('0') && value.length === 11);
+                
+                if (!isValidPakistani && value.length > 0) {
+                    showFieldError(phoneInput, 'Please enter a valid Pakistani phone number (e.g., 0300 1234567).');
+                } else {
+                    clearFieldError(phoneInput);
+                }
+            });
+
+            phoneInput.addEventListener('focus', function() {
+                clearFieldError(phoneInput);
+            });
+
+            // ============ HELPER FUNCTIONS ============
+            function showFieldError(field, message) {
+                field.setCustomValidity(message);
+                field.classList.add('is-invalid');
+                
+                // Remove existing custom error
+                const existingError = field.parentNode.querySelector('.invalid-feedback.custom-error');
+                if (existingError) {
+                    existingError.remove();
+                }
+                
+                // Add error message if not exists or it's not a server error
+                const serverError = field.parentNode.querySelector('.invalid-feedback:not(.custom-error)');
+                if (!serverError) {
+                    const errorDiv = document.createElement('div');
+                    errorDiv.className = 'invalid-feedback custom-error';
+                    errorDiv.style.display = 'block';
+                    errorDiv.textContent = message;
+                    field.parentNode.insertBefore(errorDiv, field.nextSibling);
+                }
+            }
+
+            function clearFieldError(field) {
+                field.setCustomValidity('');
+                field.classList.remove('is-invalid');
+                
+                // Remove custom error message only
+                const customError = field.parentNode.querySelector('.invalid-feedback.custom-error');
+                if (customError) {
+                    customError.remove();
+                }
+            }
+
+            // ============ FORM SUBMISSION ============
             contactForm.addEventListener('submit', function(e) {
+                // Final validation before submit
+                let isValid = true;
+
+                // Validate name
+                const nameValue = nameInput.value.trim();
+                if (nameValue.length < 3 || !nameValue.includes(' ')) {
+                    showFieldError(nameInput, 'Please enter your full name (First and Last name).');
+                    isValid = false;
+                }
+
+                // Validate email
+                const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (!emailPattern.test(emailInput.value.trim())) {
+                    showFieldError(emailInput, 'Please enter a valid email address.');
+                    isValid = false;
+                }
+
+                // Validate phone
+                const phoneValue = phoneInput.value.replace(/\D/g, '');
+                const isValidPhone = (phoneValue.startsWith('92') && phoneValue.length === 12) || 
+                                    (phoneValue.startsWith('0') && phoneValue.length === 11);
+                if (!isValidPhone) {
+                    showFieldError(phoneInput, 'Please enter a valid Pakistani phone number.');
+                    isValid = false;
+                }
+
+                if (!isValid) {
+                    e.preventDefault();
+                    return false;
+                }
+
                 // Show loading state
                 submitBtn.disabled = true;
                 btnText.classList.add('d-none');

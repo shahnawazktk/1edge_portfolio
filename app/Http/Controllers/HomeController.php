@@ -197,16 +197,23 @@ class HomeController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
-            'phone' => 'required|string|max:20',
-            'subject' => 'required|string|in:1School,1Station,1Hospital,1Dine,Other',
+            'phone' => [
+                'required',
+                'string',
+                'regex:/^(\+92|0)?[0-9\s]{10,15}$/',
+            ],
+            'product' => 'required|string|in:1School,1Station,1Hospital,1Dine,Other',
+            'subject_text' => 'required|string|max:255',
             'message' => 'required|string|max:2000',
         ], [
             'name.required' => 'Please enter your full name.',
             'email.required' => 'Please enter your email address.',
             'email.email' => 'Please enter a valid email address.',
             'phone.required' => 'Please enter your phone number.',
+            'phone.regex' => 'Please enter a valid Pakistani phone number (e.g., 0300 1234567 or +92 300 1234567).',
+            'product.required' => 'Please select a product.',
+            'subject_text.required' => 'Please enter the subject.',
             'message.required' => 'Please enter your message.',
-            'subject.required' => 'Please select a product.',
             'message.max' => 'Message cannot exceed 2000 characters.',
         ]);
 

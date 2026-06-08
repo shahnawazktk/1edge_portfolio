@@ -642,10 +642,7 @@
                             <div class="mt-4">
                                 <button type="submit" class="btn_submit">
                                     <span class="btn-text">Send Message</span>
-                                    <span class="btn-loading d-none">
-                                        <span class="spinner-border spinner-border-sm me-2" role="status"
-                                            aria-hidden="true"></span>Sending...
-                                    </span>
+                                    <span class="loader spinner-border spinner-border-sm d-none ms-2" role="status" aria-hidden="true"></span>
                                 </button>
                             </div>
                         </form>
@@ -663,29 +660,31 @@
             const contactForm = document.getElementById('contactForm');
             const submitBtn = contactForm.querySelector('.btn_submit');
             const btnText = submitBtn.querySelector('.btn-text');
-            const btnLoading = submitBtn.querySelector('.btn-loading');
+            const btnLoading = submitBtn.querySelector('.loader');
+
             const phoneInput = document.getElementById('phone');
             const nameInput = document.getElementById('name');
             const emailInput = document.getElementById('email');
 
             // ============ NAME FIELD MASKING ============
             nameInput.addEventListener('input', function(e) {
-                // Remove numbers and special characters, allow only letters and spaces
+                // Allow only letters and spaces
                 let value = e.target.value;
-                
-                // Remove any digits and special characters except spaces
+
+                // Remove digits and special characters
                 value = value.replace(/[^a-zA-Z\s]/g, '');
-                
-                // Remove multiple consecutive spaces
+
+                // Collapse multiple spaces
                 value = value.replace(/\s+/g, ' ');
-                
+
                 // Capitalize first letter of each word
                 value = value.replace(/\b\w/g, function(char) {
                     return char.toUpperCase();
                 });
-                
+
                 e.target.value = value;
             });
+
 
             // Validate name on blur
             nameInput.addEventListener('blur', function(e) {
@@ -864,8 +863,6 @@
 
             // Check if there are validation errors or success message
             const hasErrors = document.querySelector('.is-invalid') || document.querySelector('.alert-danger');
-            const hasSuccess = document.querySelector('.alert-success');
-
             // Reset button if there are errors (form wasn't actually submitted)
             if (hasErrors) {
                 submitBtn.disabled = false;
@@ -873,15 +870,6 @@
                 btnLoading.classList.add('d-none');
             }
 
-            // Keep button disabled on success
-            if (hasSuccess) {
-                setTimeout(function() {
-                    // Reset button after success message auto-hides
-                    submitBtn.disabled = false;
-                    btnText.classList.remove('d-none');
-                    btnLoading.classList.add('d-none');
-                }, 5000);
-            }
 
             // Auto-hide alerts after 5 seconds
             const alerts = document.querySelectorAll('.alert');
